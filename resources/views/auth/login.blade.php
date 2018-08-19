@@ -47,11 +47,16 @@
              <button style="padding-top:3px;margin: 0 10px;float: none;height: 38px;" type="submit" class="btn btn-primary btn-lg col-lg-12 col-centered">{{ __('Login') }}</button>
              <br>
              <br>
-             <span class="underL">You dont have account, please <a href="/register">sign up</a></span>
+             <span class="underL">You dont have account, please try agian <a href="/register">sign up</a></span>
          </div>
      </form>
  </div>
 </div>
+
+
+
+
+
 </div>
 </body>
 </html>

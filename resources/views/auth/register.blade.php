@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>دفترچه تلفن</title>
+    <title>Phone Book</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css">
 
@@ -67,12 +67,18 @@
                     <input name="password" type="text" class="form-control top-buffer" placeholder="Password" style="margin:15px 10px;">
                     <button style="padding-top:3px;margin: 0 10px;float: none;height: 38px;" type="submit" class="btn btn-primary btn-lg col-lg-12 col-centered">Sign Up</button>
                     <br>
+
                     <br>
-                    <span class="underL">Do you have account, please <a href="/login">login</a> in your account</span>
+                    <span class="underL">Do you have account, please try again <a href="/login">login</a> in your account</span>
                 </div>
+
             </form>
         </div>
+
+
     </div>
+
 </div>
 </body>
+
 </html>
