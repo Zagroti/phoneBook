@@ -1,0 +1,178 @@
+
+#header{
+    width: 800px;
+    height: 75px;
+    background: lightskyblue;
+    margin: -8px 60px;
+    padding: 10px 50px;
+}
+.myPhone{
+    height: 70px;
+    font-size: 18px;
+    color: white;
+    margin: 15px;
+}
+.logReg{
+    float: right;
+    font-size: 13px;
+    color: white;
+    margin: 17px -14px;
+}
+.underL{
+    font-size: 10px;
+    color: dimgray;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+#formL{
+    width: 400px;
+    height:auto;
+    margin: 60px 300px;
+}
+#formC{
+    width: 870px;
+    height: auto;
+    margin: 45px 74px;
+}
+#email{
+    width: 250px;
+    height: 35px;
+    border-radius: 5px;
+    margin: 15px 75px;
+    border: 1px solid darkgray;
+}
+#password{
+    width: 250px;
+    height: 35px;
+    border-radius: 5px;
+    margin: -22px 75px;
+    border: 1px solid darkgray;
+}
+#userName{
+    width: 250px;
+    height: 35px;
+    border-radius: 5px;
+    margin: -35px 75px;
+    border: 1px solid darkgray;
+}
+.logBtn{
+    width: 250px;
+    height: 35px;
+    border-radius: 5px;
+    margin: 25px 75px;
+    background: lightskyblue;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+.logBtn:hover,.addBtn:hover{
+    background: #005cbf;
+}
+.login:hover,.register:hover{
+    color: wheat;
+}
+.login,.register{
+    cursor: pointer;
+}
+.view{
+    width: 250px;
+    height: 35px;
+    border-radius: 5px;
+    margin: 7px 5px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    float: right;
+    background: burlywood;
+}
+.view:hover{
+    background: #d39e00;
+}
+#addCon{
+    width: 400px;
+    height: 45px;
+    margin: 5px 0px;
+    border-radius: 5px;
+    border: 1px solid darkgray;
+}
+.backBtn{
+    border-radius: 5px;
+    margin: 0px 0px;
+    color: #ccc;
+    font-size: 15px;
+    font-weight: bold;
+    width: 130px;
+    height: 35px;
+    background: #aaa;
+}
+.backBtn:hover{
+    background: #4e555b;
+}
+.addBtn{
+    width: 250px;
+    height: 35px;
+    border-radius: 5px;
+    margin: 15px 14px;
+    background: lightskyblue;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+.search{
+    width: 265px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid darkcyan;
+    margin: 8px 0;
+}
+.ulContact{
+    width: 828px;
+    height: auto;
+    list-style: none;
+    display: flex;
+    border: 1px solid #aaa;
+    margin: 8px 0;
+    background: silver;
+}
+.liContact{
+    width: 114px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    height: 35px;
+    padding: 5px 0;
+}
+.ulContact2{
+    width: 828px;
+    height: auto;
+    list-style: none;
+    display: flex;
+    border: 1px solid #aaa;
+    margin: 8px 0;
+}
+.liContact2{
+    width: 114px;
+    text-align: center;
+    font-size: 12px;
+    height: 35px;
+    padding: 5px 0;
+}
+
+.ulContact2:nth-child(even) {
+    background: #f8d7da;
+}
+.ulContact2:nth-child(odd) {
+    background: antiquewhite;
+}
+
+/*tbody > tr:nth-child(2n+1) > td,.table-striped > tbody > tr:nth-child(2n+1) > th  {*/
+    /*background-color: #fcfcfc;*/
+/*}*/
+/*tbody > tr:nth-child(2n) > td,.table-striped > tbody > tr:nth-child(2n) > th  {*/
+    /*background-color: #fdf5db;*/
+/*}*/
+
+
+/*tr:not(.no-hover):hover {*/
+    /*background-color: green;*/
+/*}*/

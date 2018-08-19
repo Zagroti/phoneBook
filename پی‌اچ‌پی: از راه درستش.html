@@ -1,0 +1,3251 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>پی‌اچ‌پی: از راه درستش</title>
+        <meta charset="utf-8">
+        <meta name="description" content="An easy-to-read, quick reference for PHP best practices, accepted coding standards, and links to authoritative PHP tutorials around the Web">
+        <meta name="robots" content="index,follow,archive">
+        <meta name="language" content="fa">
+        <meta property="og:image" content="http://www.phptherightway.com/images/og-logo.png">
+        <meta property="og:title" content="پی‌اچ‌پی: از راه درستش">
+        <meta property="og:description" content="An easy-to-read, quick reference for PHP best practices, accepted coding standards, and links to authoritative PHP tutorials around the Web">
+        <meta property="og:url" content="http://www.phptherightway.com">
+        <meta property="og:site_name" content="پی‌اچ‌پی: از راه درستش">
+        <meta property="og:type" content="website">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link href="%D9%BE%DB%8C%E2%80%8C%D8%A7%DA%86%E2%80%8C%D9%BE%DB%8C:%20%D8%A7%D8%B2%20%D8%B1%D8%A7%D9%87%20%D8%AF%D8%B1%D8%B3%D8%AA%D8%B4_files/css.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="%D9%BE%DB%8C%E2%80%8C%D8%A7%DA%86%E2%80%8C%D9%BE%DB%8C:%20%D8%A7%D8%B2%20%D8%B1%D8%A7%D9%87%20%D8%AF%D8%B1%D8%B3%D8%AA%D8%B4_files/all.css">
+        <link rel="stylesheet" href="%D9%BE%DB%8C%E2%80%8C%D8%A7%DA%86%E2%80%8C%D9%BE%DB%8C:%20%D8%A7%D8%B2%20%D8%B1%D8%A7%D9%87%20%D8%AF%D8%B1%D8%B3%D8%AA%D8%B4_files/print.css" media="print, handheld">
+        <link rel="stylesheet" href="%D9%BE%DB%8C%E2%80%8C%D8%A7%DA%86%E2%80%8C%D9%BE%DB%8C:%20%D8%A7%D8%B2%20%D8%B1%D8%A7%D9%87%20%D8%AF%D8%B1%D8%B3%D8%AA%D8%B4_files/syntax.css">
+        <link rel="icon" href="http://novid.github.io/php-the-right-way/images/favicon.png" type="image/png">
+        <script id="twitter-wjs" src="%D9%BE%DB%8C%E2%80%8C%D8%A7%DA%86%E2%80%8C%D9%BE%DB%8C:%20%D8%A7%D8%B2%20%D8%B1%D8%A7%D9%87%20%D8%AF%D8%B1%D8%B3%D8%AA%D8%B4_files/widgets.html"></script><script type="text/javascript" async="" src="%D9%BE%DB%8C%E2%80%8C%D8%A7%DA%86%E2%80%8C%D9%BE%DB%8C:%20%D8%A7%D8%B2%20%D8%B1%D8%A7%D9%87%20%D8%AF%D8%B1%D8%B3%D8%AA%D8%B4_files/dc.js"></script><script>
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-362072-7']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+        </script>
+    </head>
+    <body>
+        <nav class="site-navigation">
+            <div class="build-date">آخرین بروزرسانی: 2015-02-17 13:23:44 +0330</div>
+            <ul>
+                <li><a href="#site-header">خوش آمدید</a>
+                    <ul>
+                        <li><a href="#translations">ترجمه‌ها</a></li>
+                        <li><a href="#how-to-contribute">چگونگی مشارکت</a></li>
+                        <li><a href="#spread-the-word">اطلاع رسانی کنید!</a></li>
+                    </ul>
+                </li>
+                
+                
+                    
+                        
+                    
+                    <li><a href="#getting_started" class="">آغاز</a>
+                    
+                        <ul>
+                        
+                    
+                    
+                
+                    
+                    <li><a href="#use_the_current_stable_version" class="">استفاده از آخرین نسخه پایدار (۵.۶)</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#builtin_web_server" class="">وب سرور پیش فرض</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#mac_setup" class="">نصب در مکینتاش</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#windows_setup">نصب در ویندوز</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#vagrant">Vagrant</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            </ul>
+                            </li>
+                            
+                        
+                    
+                    <li><a href="#code_style_guide" class="">راهنمای سبک کدنویسی</a>
+                    
+                        <ul>
+                        
+                    
+                    
+                
+                    
+                        
+                            </ul>
+                            </li>
+                            
+                        
+                    
+                    <li><a href="#language_highlights" class="">قابلیت‌های زبان</a>
+                    
+                        <ul>
+                        
+                    
+                    
+                
+                    
+                    <li><a href="#programming_paradigms" class="">الگوهای برنامه‌نویسی</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#namespaces" class="">فضای نام‌گذاری</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#standard_php_library" class="">کتابخانه‌ی استاندارد PHP</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#command_line_interface" class="">رابط خط فرمان</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#xdebug" class="">XDebug</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            </ul>
+                            </li>
+                            
+                        
+                    
+                    <li><a href="#dependency_management" class="">مدیریت وابستگی</a>
+                    
+                        <ul>
+                        
+                    
+                    
+                
+                    
+                    <li><a href="#composer_and_packagist" class="">Composer و Packagist</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#pear" class="">PEAR</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            </ul>
+                            </li>
+                            
+                        
+                    
+                    <li><a href="#coding_practices" class="">عادت‌های کدنویسی</a>
+                    
+                        <ul>
+                        
+                    
+                    
+                
+                    
+                    <li><a href="#the_basics" class="">مفاهیم مقدماتی</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#date_and_time" class="">تاریخ و زمان</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#design_patterns">الگوهای طراحی</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#php_and_utf8" class="">کار با UTF-8</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            </ul>
+                            </li>
+                            
+                        
+                    
+                    <li><a href="#dependency_injection" class="">تعریف وابستگی</a>
+                    
+                        <ul>
+                        
+                    
+                    
+                
+                    
+                    <li><a href="#basic_concept" class="">مفهوم پایه</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#complex_problem">مشکل پیچیده</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#containers">ظرف وابستگی</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#further_reading" class="">مطالعه بیشتر</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            </ul>
+                            </li>
+                            
+                        
+                    
+                    <li><a href="#databases" class="">پایگاه‌داده</a>
+                    
+                        <ul>
+                        
+                    
+                    
+                
+                    
+                    <li><a href="#databases_interacting" class="active">ارتباط با پایگاه‌داده</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#databases_abstraction_layers">لایه‌های انتزاعی</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            </ul>
+                            </li>
+                            
+                        
+                    
+                    <li><a href="#templating">قالب</a>
+                    
+                        <ul>
+                        
+                    
+                    
+                
+                    
+                    <li><a href="#templating_benefits">مزیت‌ها</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#plain_php_templates">قالب‌های خام PHP</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#compiled_templates">قالب‌های کامپایل شدنی</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#templating_further_reading">مطالعه‌ی بیشتر</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            </ul>
+                            </li>
+                            
+                        
+                    
+                    <li><a href="#errors_and_exceptions">خطا و استثنا</a>
+                    
+                        <ul>
+                        
+                    
+                    
+                
+                    
+                    <li><a href="#errors">خطا</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#exceptions">استثنا</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            </ul>
+                            </li>
+                            
+                        
+                    
+                    <li><a href="#security">امنیت</a>
+                    
+                        <ul>
+                        
+                    
+                    
+                
+                    
+                    <li><a href="#web_application_security">امنیت در نرم‌افزار وب</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#password_hashing">ایمن‌سازی گذرواژه</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#data_filtering">بررسی داده‌ی ورودی</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#configuration_files">فایل‌های پیکربندی</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#register_globals">استفاده از متغیرهای سراسری</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#error_reporting">گزارش خطا</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            </ul>
+                            </li>
+                            
+                        
+                    
+                    <li><a href="#testing">آزمون</a>
+                    
+                        <ul>
+                        
+                    
+                    
+                
+                    
+                    <li><a href="#test_driven_development">توسعه مبتنی بر آزمون</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#behavior_driven_development">توسعه مبتنی بر رفتار</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#complementary_testing_tools">ابزار مکمل برای آزمون‌نویسی</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            </ul>
+                            </li>
+                            
+                        
+                    
+                    <li><a href="#servers_and_deployment">سرورها و توسعه‌ی آن‌ها</a>
+                    
+                        <ul>
+                        
+                    
+                    
+                
+                    
+                    <li><a href="#platform_as_a_service">Platform as a Service یا (PaaS)</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#virtual_or_dedicated_servers">سرورهای مجازی یا اختصاصی</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#shared_servers">سرورهای اشتراکی</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#building_and_deploying_your_application">ایجاد و راه‌اندازی نرم‌افزار خود</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            </ul>
+                            </li>
+                            
+                        
+                    
+                    <li><a href="#caching">ذخیره‌سازی موقت</a>
+                    
+                        <ul>
+                        
+                    
+                    
+                
+                    
+                    <li><a href="#bytecode_cache">ذخیره‌سازی Bytecode</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#object_caching">ذخیره‌سازی Object</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            </ul>
+                            </li>
+                            
+                        
+                    
+                    <li><a href="#resources">منابع</a>
+                    
+                        <ul>
+                        
+                    
+                    
+                
+                    
+                    <li><a href="#frameworks">چارچوب‌های نرم‌افزاری</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#components">بسته‌ها</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                    <li><a href="#books">کتاب‌ها</a>
+                    
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            </ul>
+                            </li>
+                            
+                        
+                    
+                    <li><a href="#community">جامعه‌کاربری</a>
+                    
+                        <ul>
+                        
+                    
+                    
+                
+                    
+                        
+                            </ul>
+                            </li>
+                            
+                        
+                    
+                    <li><a href="#phpdoc">PHPDoc</a>
+                    
+                        <ul>
+                        
+                    
+                    
+                
+                    </ul>
+                </li>
+                <li><a href="#site-footer">Credits</a></li>
+            </ul>
+        </nav>
+        <div class="site-content">
+
+            <a class="fork-me" href="https://github.com/codeguy/php-the-right-way">
+                <img style="position: absolute; top: 0; left: 0; border: 0;" src="%D9%BE%DB%8C%E2%80%8C%D8%A7%DA%86%E2%80%8C%D9%BE%DB%8C:%20%D8%A7%D8%B2%20%D8%B1%D8%A7%D9%87%20%D8%AF%D8%B1%D8%B3%D8%AA%D8%B4_files/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875.png" alt="Fork me on GitHub">
+            </a>
+
+            <header class="site-header" id="site-header">
+                <hgroup>
+                    <h1 class="site-title"><a href="http://novid.github.io/php-the-right-way">PHP</a></h1>
+                    <h2 class="site-slogan">از راه درستش</h2>
+                </hgroup>
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.phptherightway.com/" data-size="large" data-hashtags="php">Tweet</a>
+            </header>
+            
+<h1 id="section">خوش آمدید</h1>
+
+<p>اطلاعات بسیار قدیمی موجود در وب باعث می‌شود کاربران جدید پی‌اچ‌پی 
+دچار سرگردانی شده و عادت‌های بد کدنوشتن (از جمله نا امن بودن کد) را در 
+آن‌ها ایجاد می‌کند. <em>پی‌اچ‌پی: از راه درستش</em> یک راهنمای ساده و 
+جامع از بهترین روش‌های کدنویسی در پی‌اچ‌پی است، که به بسیاری از 
+راهنماهای معتبر در وب پیوند دارد که اکثر آن‌ها شامل بهترین روش‌های 
+کدنویسی هستند.</p>
+
+<p><em>استفاده از پی‌اچ‌پی استاندارد خاصی ندارد</em>. هدف این وبسایت 
+معرفی موضوعاتی برای توسعه‌دهندگان پی‌اچ‌پی است که تا به حال با آن برخورد
+ نکرده‌اند، همچنین معرفی ایده‌هایی برای افراد حرفه‌ای است که ممکن است 
+سال‌ها از این ایده‌ها استفاده کرده بدون اینکه به یاد داشته باشند. این 
+وبسایت شما را به استفاده از یک ابزار خاص سوق نمی‌دهد بلکه گزینه‌های 
+مختلفی پیش روی شما می‌گذارد، که هر زمان لازم باشد تفاوت بین آن‌ها گفته 
+می‌شود.</p>
+
+<p>این یک سند فعال و در حال تغییر است که طی بازه‌های زمانی با اطلاعات جدید و کاربردی جایگزین می‌شود.</p>
+
+<h2 id="section-1">ترجمه‌ها</h2>
+
+<p>وبسایت پی‌اچ‌پی: از راه درستش به زبان‌های مختلفی ترجمه شده است (یا در حال ترجمه است):</p>
+
+<ul>
+  <li><a href="http://www.phptherightway.com/">انگلیسی</a></li>
+  <li><a href="http://wulijun.github.com/php-the-right-way">چینی</a></li>
+  <li><a href="http://eilgin.github.io/php-the-right-way/">فرانسوی</a></li>
+  <li><a href="http://ja.phptherightway.com/">ژاپنی</a></li>
+  <li><a href="http://wafe.github.io/php-the-right-way/">کره‌ای</a></li>
+  <li><a href="http://id.phptherightway.com/">اندونزیایی</a></li>
+  <li><a href="http://it.phptherightway.com/">ایتالیایی</a></li>
+  <li><a href="http://novid.github.io/php-the-right-way/">پارسی</a></li>
+  <li><a href="http://pl.phptherightway.com/">لهستانی</a></li>
+  <li><a href="http://br.phptherightway.com/">پرتغالی</a></li>
+  <li><a href="https://bgui.github.io/php-the-right-way/">رومانیایی</a></li>
+  <li><a href="http://getjump.github.io/ru-php-the-right-way">روسی</a></li>
+  <li><a href="http://phpdevenezuela.github.io/php-the-right-way/">اسپانیایی</a></li>
+  <li><a href="http://iflista.github.com/php-the-right-way/">اوکراینی</a></li>
+  <li><a href="http://bg.phptherightway.com/">بلغارستانی</a></li>
+  <li><a href="http://rwetzlmayr.github.io/php-the-right-way/">آلمانی</a></li>
+  <li><a href="https://apzentral.github.io/php-the-right-way/">تایلندی</a></li>
+  <li><a href="http://hkulekci.github.io/php-the-right-way/">ترکی</a></li>
+  <li><a href="http://sl.phptherightway.com/">اسلونیایی</a></li>
+</ul>
+
+<h2 id="section-2">چگونه مشارکت کنم</h2>
+
+<p>کمک کنید تا این وبسایت را به بهترین منبع برای برنامه‌نویسان پی‌اچ‌پی (مخصوصا تازه واردها) تبدیل کنیم! <a href="https://github.com/codeguy/php-the-right-way/tree/gh-pages">مشارکت در Github</a></p>
+
+<h2 id="section-3">اطلاع رسانی کنید!</h2>
+
+<p>وبسایت <em>پی‌اچ‌پی: از راه درستش</em> بنرهایی مخصوص وب دارد که 
+می‌توانید در سایت خود قرار دهید. پشتیبانی کنید و بگذارید تازه‌واردهای 
+PHP به منابع خوب دسترسی داشته باشند.</p>
+
+<p><a href="http://novid.github.io/php-the-right-way/banners.html">مشاهده‌ی بنرها</a></p>
+
+
+
+
+
+    
+    <p><a href="#top" class="top">Back to Top</a></p>
+
+    
+    <div id="getting_started">
+    <h1 id="getting_started_title">شروع کنید</h1>
+
+
+    </div>
+
+    
+    <div id="use_the_current_stable_version">
+    <h2 id="use_the_current_stable_version_title">استفاده از آخرین نسخه پایدار (۵.۶)</h2>
+
+<p>اگر تازه با PHP آشنا شده‌اید توصیه می‌کنیم از آخرین نسخه‌ی پایدار <a href="http://www.php.net/downloads.php">PHP 5.5</a> استفاده کنید. PHP طی سال‌های اخیر <a href="#language_highlights">ویژگی‌های جدید</a> قدرتمندی را اضافه کرده است. با اینکه تفاوت نسخه‌های 5.2 تا 5.6 ناچیز به نظر می‌رسد اما تغییرات <em>بزرگی</em> را شامل می‌شود. اگر به دنبال تابع یا عملکرد خاصی هستید، مستندات رسمی <a href="http://www.php.net/manual/en/">php.net</a> پاسخگوی شماست.</p>
+
+
+    </div>
+
+    
+    <div id="builtin_web_server">
+    <h2 id="builtin_web_server_title">وب سرور پیش فرض</h2>
+
+<p>در PHP 5.4 و نسخه‌های بعد از آن، شما می‌توانید به راحتی یادگیری را 
+آغاز کنید بدون آنکه نیاز به یک وب سرور کامل داشته باشید. برای راه‌اندازی
+ سرور، دستور زیر را در زیرشاخه‌ی اصلی پروژه‌ی خود اجرا کنید:</p>
+
+<pre><code>&gt; php -S localhost:8000
+</code></pre>
+
+<ul>
+  <li><a href="http://www.php.net/manual/en/features.commandline.webserver.php">درباره‌ی وب سرور پیش فرض PHP بیشتر بدانید.</a></li>
+</ul>
+
+
+    </div>
+
+    
+    <div id="mac_setup">
+    <h2 id="mac_setup_title">نصب در مکینتاش</h2>
+
+<p>سیستم عامل OSX به صورت پیش فرض PHP را نصب دارد اما از نسخه‌های 
+قدیمی‌تر آن استفاده می‌کند. Lion با PHP 5.3.6، Mountain Lion با PHP 
+5.3.10 و Mavericks با PHP 5.4.17 همراه است.</p>
+
+<p>برای بروزرسانی PHP در OSX می‌توانید از <a href="http://www.php.net/manual/en/install.macosx.packages.php">مدیر بسته‌های</a> مختلف استفاده کنید، که توصیه ما استفاده از <a href="http://php-osx.liip.ch/">php-osx توسط Liip</a> است.</p>
+
+<p>شما همچنین می‌توانید خودتان آن را <a href="http://www.php.net/manual/en/install.macosx.compile.php">کامپایل</a> کنید; در این صورت، اطمینان حاصل کنید که قبل از آن Xcode یا <a href="https://developer.apple.com/downloads">جایگزین Apple</a> برای آن را نصب کرده باشید، که از وبسایت رسمی Apple قابل دریافت است.</p>
+
+<p>بسته‌های آماده‌ای مانند <a href="http://www.mamp.info/en/downloads/index.html">MAMP</a> یا <a href="http://www.apachefriends.org/en/xampp.html">XAMPP</a> هستند که شامل زبان برنامه‌نویسی PHP، وب سرور Apache و پایگاه داده‌ی MySQL به همراه محیط گرافیکی ساده هستند.</p>
+
+
+    </div>
+
+    
+    <div id="windows_setup">
+    <h2 id="windows_setup_title">نصب در ویندوز</h2>
+
+<p>در ویندوز نسخه‌های مختلفی از PHP وجود دارد. شما می‌توانید از <a href="http://windows.php.net/">باینری‌های مخصوص ویندوز</a> یا فایل‌های msi استفاده کنید. فایل‌های msi از نسخه‌ی PHP 5.3.0 به بعد توسعه داده نشدند.</p>
+
+<p>به منظور یادگیری و استفاده شخصی می‌توانید از وب سرور پیش فرض PHP که 
+از نسخه‌ی 5.4 به بالا قابل دسترسی است استفاده کنید. اگر تمایل دارید از 
+بسته‌های کاملی که شامل یک وب سرور کامل و پایگاه داده‌ی MySQL هستند 
+استفاده کنید ابزارهایی مانند <a href="http://www.microsoft.com/web/downloads/platform.aspx">Web Platform Installer</a> و <a href="http://www.zend.com/en/products/server-ce/">Zend Server CE</a> و <a href="http://www.apachefriends.org/en/xampp.html">XAMPP</a> و <a href="http://www.easyphp.org/">EasyPHP</a> و <a href="http://www.wampserver.com/">WAMP</a>
+ وجود دارند که به سرعت می‌توانید کار را با آن‌ها آغاز کنید. توجه داشته 
+باشید، این ابزارها نسب به محیط اصلی سرور کمی متفاوت عمل می‌کنند و شما 
+باید متوجه تغییرات آن‌ها در مقایسه با محیط سرورهای مبتنی بر لینوکس 
+باشید.</p>
+
+<p>اگر قصد دارید محیط اصلی توسعه نرم‌افزار تحت وب در ویندوز را 
+پیاده‌سازی کنید بنابراین IIS7 بهترین گزینه برای شماست. شما می‌توانید از 
+پلاگین <a href="http://phpmanager.codeplex.com/">phpmanager</a> جهت 
+پیکربندی PHP در ویندوز استفاده کنید. IIS7 به صورت پیش فرض با FastCGI 
+ارایه می‌شود، تنها کافی است PHP را به صورت یک کنترل‌کننده در آن تنظیم 
+کنید. جهت پشتیبانی و دسترسی به منابع بیشتر <a href="http://php.iis.net/">وبسایت iis.net بخشی مختص</a> به PHP را دارد.</p>
+
+
+    </div>
+
+    
+    <div id="vagrant">
+    <h2 id="vagrant_title">Vagrant</h2>
+
+<p>نرم‌افزار در محیط‌های متفاوت (محیط توسعه و تولید) دچار باگ‌های عجیبی 
+می‌شود که هنگام اجرای رسمی، با آن مواجه می‌شوید. زمانی که با تیمی از 
+توسعه‌دهندگان همکاری می‌کنید، بسیار دشوار است که محیط‌های مختلف توسعه را
+ با یکدیگر سازگار و یکسان نگاه دارید.</p>
+
+<p>اگر محیط توسعه‌ی شما ویندوز و محیط تولید شما لینوکس (یا هر محیط غیر 
+ویندوزی) است یا در قالب یک تیم فعالیت می‌کنید، استفاده از یک ماشین مجازی
+ را باید مد نظر داشته باشید. ممکن است کمی دشوار باشد، اما با استفاده از 
+ابزاری مانند <a href="http://vagrantup.com/">Vagrant</a> می‌توانید یک 
+ماشین مجازی ساده را در کوتاه‌ترین زمان آماده کنید. این بسته‌های پایه به 
+صورت دستی قابل نصب هستند، یا می‌توانید از نرم‌افزارهایی مانند <a href="http://www.puppetlabs.com/">Puppet</a> یا <a href="http://www.opscode.com/">Chef</a>
+ جهت پیاده‌سازی اولیه‌ی آن‌ها برای شما، استفاده کنید. استفاده از این 
+ابزارها برای ایجاد بسته‌های پایه روش مناسبی است جهت اطمینان حاصل کردن از
+ این مورد که تمام بسته‌ها در محیط‌های متفاوت، عمکرد یکسانی خواهند داشت. 
+همچنین می‌توانید بسته‌ی پایه‌ی خود را “نابود” کرده و دوباره آن را 
+بسازید، بدون آنکه این کار را دستی انجام دهید.</p>
+
+<p>Vagrant پوشه‌هایی را جهت اشتراک‌گذاری کد شما روی ماشین شما و ماشین 
+مجازی ایجاد می‌کند، که به این معنی است شما فایل‌های خود را در ماشین خود 
+ایجاد یا ویرایش می‌کنید و برنامه‌ی شما در ماشین مجازی اجرا می‌شود.</p>
+
+<h3 id="section">اندکی راهنمایی</h3>
+
+<p>اگر در استفاده از Vagrant به کمی راهنمایی نیاز دارید سه سرویس مختلف وجود دارند که شما را یاری می‌رسانند:</p>
+
+<ul>
+  <li><a href="http://rove.io/">Rove</a>: سرویسی که عمومی‌ترین خدمات Vagrant را برای شما تولید می‌کند، از جمله PHP. آماده‌سازی توسط Chef صورت می‌گیرد.</li>
+  <li><a href="https://puphpet.com/">Puphpet</a>: رابط گرافیکی ساده‌ای که برای توسعه در PHP، ماشین مجازی می‌سازد. <strong>تمرکز زیادی روی PHP دارد</strong>. آماده‌سازی توسط Puppet صورت می‌گیرد.</li>
+  <li><a href="http://getprotobox.com/">Protobox</a>: به عنوان لایه‌ای 
+در بالای Vagrant عمل می‌کند که با محیط گرافیکی تحت وب اجازه می‌دهد ماشین
+ مجازی بسازید. یک سند ساده‌ی YAML مسیولیت کنترل تمام موارد را به ععده 
+دارد.</li>
+</ul>
+
+
+    </div>
+
+    
+    <p><a href="#top" class="top">Back to Top</a></p>
+
+    
+    <div id="code_style_guide">
+    <h1 id="code_style_guide_title">راهنمای سَبک کدنویسی</h1>
+
+<p>جامعه‌ی PHP بزرگ و پراکنده است که از کتابخانه‌ها، فریم‌ورک‌ها و اجزای
+ گوناگونی تشکیل شده است. برای توسعه‌دهندگان PHP امری طبیعی است که بخشی 
+از این ابزار را در پروژه‌های خود به کار ببرند. از این رو، بسیار مهم است 
+که کد PHP از یک سبک استاندارد (تا آنجا که امکان دارد) طبعیت کند تا 
+توسعه‌دهندگان بتوانند به سادگی از کتابخانه‌های مختلف در پروژه‌ی خود 
+استفاده کنند.</p>
+
+<p><a href="http://www.php-fig.org/">گروه تعاملی فریم‌ورک PHP</a> مجموعه‌ای از سبک‌ها را تهیه و آماده کرده است. تمام آن‌ها مربوط به کدنویسی نمی‌شوند، اما آن‌هایی که هستند عبارتند از:</p>
+
+<ul>
+  <li><a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md">PSR-0</a></li>
+  <li><a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md">PSR-1</a></li>
+  <li><a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md">PSR-2</a></li>
+  <li><a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md">PSR-4</a></li>
+</ul>
+
+<p>این توصیه‌ها تقریبا مجموعه‌ای از قوانین هستند که پروژه‌هایی نظیر 
+Drupal، Zend، Symfony، CakePHP و بسیاری دیگر از آن‌ها استفاده می‌کنند. 
+شما می‌توانید از آن‌ها در پروژه‌های خود استفاده کنید، یا همان سبک 
+کدنویسی خود را ادامه دهید.</p>
+
+<p>در حقیقت باید طوری کد بنویسید که از یک استاندارد شناخته‌شده طبعیت 
+کند. این استاندارد می‌تواند هر ترکیبی از PSRها یا یکی از استانداردهای 
+ایجاد شده توسط PEAR یا Zend باشد. این بدان معنی است که سایر 
+توسعه‌دهندگان به سادگی بتوانند با کد شما ارتباط برقرار کنند، و 
+نرم‌افزارهایی که از اجزای جداگانه تشکیل شده‌اند با یکدیگر سازگاری داشته 
+باشند.</p>
+
+<ul>
+  <li><a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md">درباره PSR-0 بیشتر بدانید</a></li>
+  <li><a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md">درباره PSR-1 بیشتر بدانید</a></li>
+  <li><a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md">درباره PSR-2 بیشتر بدانید</a></li>
+  <li><a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md">درباره PSR-4 بیشتر بدانید</a></li>
+  <li><a href="http://pear.php.net/manual/en/standards.php">استانداردهای کدنویسی PEAR</a></li>
+  <li><a href="http://framework.zend.com/wiki/display/ZFDEV2/Coding+Standards">استانداردهای کدنویسی Zend</a></li>
+  <li><a href="http://symfony.com/doc/current/contributing/code/standards.html">استانداردهای کدنویسی Symfony</a></li>
+</ul>
+
+<p>شما می‌توانید از ابزاری مانند <a href="http://pear.php.net/package/PHP_CodeSniffer/">PHP CodeSniffer</a> برای بررسی هر یک از این استانداردها، یا از افزونه‌هایی برای ویرایشگرهای متن مانند <a href="https://github.com/benmatselby/sublime-phpcs">Sublime Text 2</a> استفاده کنید.</p>
+
+<p>همچنین ابزار <a href="http://cs.sensiolabs.org/">PHP Coding Standards Fixer</a>
+ که توسط Fabien Potencier توسعه داده شده، به صورت خودکار کد شما را نسبت 
+به این استانداردها بررسی می‌کند و تغییرات لازم را انجام می‌دهد، لازم هم 
+نیست شما این کار را به صورت دستی انجام دهید.</p>
+
+<p>انگلیسی زبان اصلی برای تمام نمادها و ساختار کد است. کامنت‌ها 
+می‌توانند به هر زبانی که برنامه‌نویسان در پروژه با آن آشنا هستند، نوشته 
+شوند.</p>
+
+
+    </div>
+
+    
+    <p><a href="#top" class="top">Back to Top</a></p>
+
+    
+    <div id="language_highlights">
+    <h1 id="language_highlights_title">قابلیت‌های زبان</h1>
+
+    </div>
+
+    
+    <div id="programming_paradigms">
+    <h2 id="programming_paradigms_title">الگوهای برنامه‌نویسی</h2>
+
+<p>PHP زبانی انعطاف پذیر و پویا است که از تکنیک‌های برنامه‌نویسی مختلفی 
+پشتیبانی می‌کند. طی سال‌ها تغییرات زیادی در آن ایجاد شده است که می‌توان 
+به موارد زیر اشاره کرد:</p>
+
+<ul>
+  <li>مدل شی‌گرا در نسخه‌ی 5.0 (سال ۲۰۰۴)</li>
+  <li>توابع بی‌نام (anonymous function) و فضای‌نام (namespace) در نسخه‌ی 5.3 (سال ۲۰۰۹)</li>
+  <li>ویژگی‌‌های خاص (traits) در نسخه‌ی 5.4 (سال ۲۰۱۲)</li>
+</ul>
+
+<h3 id="section">برنامه‌نویسی شی‌گرا</h3>
+
+<p>ویژگ‌های بسیاری از مدل برنامه‌نویسی شی‌گرا در PHP پشتیبانی می‌شوند از
+ جمله کلاس‌ها (Classes)، کلاس‌های انتزاعی (Abstract Classes)، رابط‌ها 
+(Interfaces)، وراثت (Inheritance)، سازنده‌ها (Constructors)، کپی‌کردن 
+(Cloning)، استثناها (Exceptions) و بسیاری دیگر.</p>
+
+<ul>
+  <li><a href="http://www.php.net/manual/en/language.oop5.php">درباره‌ی شی‌گرایی در PHP بیشتر بدانید</a></li>
+  <li><a href="http://www.php.net/traits">درباره‌ی Traits بیشتر بدانید</a></li>
+</ul>
+
+<h3 id="section-1">برنامه‌نویسی تابعی</h3>
+
+<p>PHP از توابعی پشتیبانی می‌کند که می‌توانند به متغیرها انتساب داده 
+شوند. چه توسط کاربر تعریف شده باشند چه داخلی باشند، می‌توانند توسط یک 
+متغیر فراخوانی شوند. توابع می‌توانند به عنوان یک آرگومان به سایر توابع 
+فرستاده شوند (قابلیتی که به آن توابع مرتبه-بالا گفته می‌شود) و هر تابعی 
+می‌تواند توابعی دیگری را به عنوان خروجی بازگرداند.</p>
+
+<p>بازگشت (Recursion)، قابلیتی که به یک تابع اجازه می‌دهد خود را 
+فراخوانی کند، توسط زبان پشتیبانی می‌شود اما بیشتر کد PHP روی تکرار 
+(Iteration) تاکید دارد.</p>
+
+<p>توابع بی‌نام جدید (که از Closure پشتیبانی می‌کنند) از PHP 5.3 به بعد (۲۰۰۹) وجود دارند.</p>
+
+<p>نسخه‌ی 5.4 از PHP قابلیت اتصال Closure به قلمرو شی (Object’s Scope) 
+را اضافه کرده و همچنین پشتیبانی از فراخوانی‌هایی با توابع بی‌نام را 
+بهبود بخشیده است.</p>
+
+<ul>
+  <li>ادامه‌ی مطالعه‌ی <a href="http://novid.github.io/php-the-right-way/pages/Functional-Programming.html">برنامه‌نویسی تابعی در PHP</a></li>
+  <li><a href="http://www.php.net/manual/en/functions.anonymous.php">درباره‌ی توابع بی‌نام بیشتر بدانید</a></li>
+  <li><a href="http://php.net/manual/en/class.closure.php">درباره‌ی کلاس Closure بیشتر بدانید</a></li>
+  <li><a href="https://wiki.php.net/rfc/closures">اطلاعات بیشتر درباره‌ی Closure RFC</a></li>
+  <li><a href="http://php.net/manual/en/language.types.callable.php">درباره‌ی فراخوانی‌ها بیشتر بدانید</a></li>
+  <li><a href="http://php.net/manual/en/function.call-user-func-array.php">درباره‌ی فراخوانی پویا توسط ‘call_user_func_array’ بیشتر بدانید</a></li>
+</ul>
+
+<h3 id="meta">برنامه‌نویسی Meta</h3>
+
+<p>از طریق مکانیسم‌هایی مانند Reflection API و Magic Meghods است که PHP 
+از این سبک برنامه‌نویسی پشتیبانی می‌کند. متدهای مختلفی مانند ()get__ و 
+()set__ و ()clone__ و ()toString__ و ()invoke__ وجود دارند که به 
+توسعه‌دهندگان اجازه می‌دهند رفتار داخلی یک کلاس را تغییر دهند. 
+توسعه‌دهندگان Ruby اغلب می‌گویند PHP از نبود ‘method_missing’ رنج می‌برد
+ در حالی که این عملکرد توسط ()call__ و ()callStatic__ قابل دسترسی است.</p>
+
+<ul>
+  <li><a href="http://php.net/manual/en/language.oop5.magic.php">درباره‌ی Magic Methods بیشتر بدانید</a></li>
+  <li><a href="http://www.php.net/manual/en/intro.reflection.php">درباره‌ی Reflection بیشتر بدانید</a></li>
+</ul>
+
+
+    </div>
+
+    
+    <div id="namespaces">
+    <h2 id="namespaces_title">فضای نام‌گذاری</h2>
+
+<p>همان‌طور که اشاره شد، جامعه‌ی PHP توسعه‌دهندگان زیادی دارد که کدهای 
+فراوانی تولید می‌کنند. این بدان معناست که کد PHP یک کتابخانه (Library) 
+ممکن است از یک نام کلاس در کتابخانه‌ای دیگر استفاده کرده باشد. وقتی این 
+دو کتابخانه در یک فضا استفاده می‌شوند، تداخل آن‌ها مشکل آفرین می‌شود.</p>
+
+<p><em>فضای نام‌گذاری (Namespace)</em> این مشکل را حل می‌کند. همان‌طور 
+که در راهنمای رسمی PHP توضیح داده شده است، فضای نام‌گذاری در PHP مانند 
+ساختار دایرکتوری در سیستم‌عامل عمل می‌کند. همان‌طور که دو فایل با 
+نام‌های یکسان در دو دایرکتوری می‌توانند وجود داشته باشند، دو کلاس PHP با
+ نام‌های یکسان در دو فضای نام‌گذاری جداگونه می‌توانند وجود داشته باشند. 
+به همین سادگی!</p>
+
+<p>مهم است که شما کد خود را با استفاده از فضای نام‌گذاری شده توسعه دهید 
+تا اگر دیگران قصد استفاده از آن را داشتند، تداخلی به وجود نیاید.</p>
+
+<p>یک روش توصیه شده در استفاده از فضای‌ نام‌گذاری در راهنمای <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md">PSR-0</a> موجود است، که ساختاری استاندارد برای فایل و کلاس ایجاد می‌کند.</p>
+
+<p>در دی ماه ۱۳۹۲ PHP-FIG استانداردی جدید را به وجود آورد: <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md">PSR-4</a>
+ که روزی جایگزین PSR-0 خواهد شد. هم‌اکنون هر دو قابل استفاده هستند با 
+این تفاوت که PSR-4 به PHP 5.3 نیازمند است در حالی بسیاری پروژه‌های مبتنی
+ بر PhP 5.2 از PSR-0 استفاده می‌کنند. اگر قصد استفاده از این استاندارد 
+برای نرم‌افزار جدید خود را دارید بهتر است به PSR-4 نگاهی بیندازید.</p>
+
+<ul>
+  <li><a href="http://php.net/manual/en/language.namespaces.php">درباره‌ی فضای نام‌گذاری بیشتر بدانید</a></li>
+  <li><a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md">درباره‌ی PSR-0 بیشتر بدانید</a></li>
+  <li><a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md">درباره‌ی PSR-4 بیشتر بدانید</a></li>
+</ul>
+
+
+    </div>
+
+    
+    <div id="standard_php_library">
+    <h2 id="standard_php_library_title">کتابخانه‌ی استاندارد PHP</h2>
+
+<p>کتابخانه‌ی استاندارد PHP یا همان SPL مجموعه‌ای از کلاس‌ها و رابط‌ها 
+را ارایه می‌دهد. از معمول‌ترین ساختارداده‌های مورد نیاز (پُشته، صَف و …)
+ تشکیل شده است و تکرارشونده‌ها (Iterators) که اجازه می‌دهند این 
+ساختارهای داده مورد پیمایش قرار گیرند یا اینکه کلاس‌های خود شما وظیفه‌ی 
+پیاده‌سازی این عملکرد‌ها را بر عهده می‌گیرند.</p>
+
+<ul>
+  <li><a href="http://php.net/manual/en/book.spl.php">درباره‌ی SPL بیشتر بدانید</a></li>
+</ul>
+
+
+    </div>
+
+    
+    <div id="command_line_interface">
+    <h2 id="command_line_interface_title">رابط خط فرمان</h2>
+
+<p>هدف اصلی از توسعه‌ی PHP ایجاد نرم‌افزارهای تحت وب است اما می‌توان از 
+آن در نرم‌افزارهای خط فرمان (CLI) استفاده کرد. برنامه‌های خط فرمان مبتنی
+ بر PHP می‌توانند در تست، توسعه و مدیریت نرم‌افزار، مورد استفاده قرار 
+گیرند.</p>
+
+<p>این گونه نرم‌افزارها بسیار قدرتمند هستند چرا که شما می‌توانید به صورت
+ مستقیم با کد ارتباط برقرار کنید و نیازی به رابط گرافیکی تحت وب نیست، 
+فقط اطمینان حاصل کنید نرم‌افزار خط فرمان شما در محیط عمومی قرار نداشته 
+باشد!</p>
+
+<p>اجرای PHP از خط فرمان:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; php -i</code></pre></div>
+
+<p>گزینه <code>i-</code> تنظیمات محیط PHP را نمایش می‌دهد درست مانند تابع <a href="http://php.net/manual/en/function.phpinfo.php"><code>phpinfo</code></a>.</p>
+
+<p>گزینه <code>a-</code> یک پوسته (Shell) تعاملی را فراهم می‌آورد، شبیه به IRB در Ruby یا پوسته‌ی تعاملی در Python. همچنین <a href="http://www.php.net/manual/en/features.commandline.options.php">گزینه‌های</a> کاربردی دیگری نیز وجود دارند.</p>
+
+<p>بیایید یک برنامه‌ی ساده “Hello, $name” بنویسیم. جهت آزمایش، فایل <code>hello.php</code> را طبق خطوط زیر ایجاد کنید.</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$argc</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"Usage: php hello.php [name].</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+    <span class="k">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nv">$name</span> <span class="o">=</span> <span class="nv">$argv</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="k">echo</span> <span class="s2">"Hello, </span><span class="si">$name\n</span><span class="s2">"</span><span class="p">;</span></code></pre></div>
+
+<p>بر اساس آرگومان‌هایی که اسکریپت شما با آن اجرا می‌شود، PHP دو متغیر مخصوص را راه‌اندازی می‌کند. <a href="http://php.net/manual/en/reserved.variables.argc.php"><code>argc$</code></a> یک متغیر عددی که <em>تعداد</em> آرگومان‌ها را مشخص می‌کند و <a href="http://php.net/manual/en/reserved.variables.argv.php"><code>argv$</code></a> یک متغیر از نوع آرایه که <em>مقدار</em> هر آرگومان را ذخیره می‌کند. اولین آرگومان همیشه نام فایل اسکریپت است، در اینجا <code>hello.php</code>.</p>
+
+<p>عبارت <code>()exit</code> به همراه یک عدد غیر صفر به کار رفته است که به پوسته اعلام می‌کند فرمان دریافت‌شده نامعتبر است. کدهای متداول برای این عبارت از <a href="http://www.gsp.com/cgi-bin/man.cgi?section=3&amp;topic=sysexits">این قسمت</a> قابل دسترسی هستند.</p>
+
+<p>برای اجرای اسکریپت بالا، از خط فرمان:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; php hello.php
+Usage: php hello.php <span class="o">[</span>name<span class="o">]</span>
+&gt; php hello.php world
+Hello, world</code></pre></div>
+
+<ul>
+  <li><a href="http://php.net/manual/en/features.commandline.php">درباره‌ی اجرای PHP از خط فرمان بیشتر بدانید</a></li>
+  <li><a href="http://www.php.net/manual/en/install.windows.commandline.php">درباره‌ی اجرای PHP از خطر فرمان در سیستم عامل ویندوز بیشتر بدانید</a></li>
+</ul>
+
+
+    </div>
+
+    
+    <div id="xdebug">
+    <h2 id="xdebug_title">XDebug</h2>
+
+<p>یکی از کاربردی‌ترین ابزارها در توسعه‌ی نرم‌افزار، اشکال‌زدا 
+(Debugger) است. به شما اجازه‌ می‌دهد نحوه‌ی اجرای کد را پیگیری کرده و در
+ هر لحظه محتویات حافظه را ببینید. نرم‌افزاری که در PHP به این منظور 
+استفاده می‌شود، XDebug نام دارد که توسط IDEهای مختلفی پشتیبانی می‌شود. 
+همچنین به ابزارهایی مانند PHPUnit و KCacheGrid اجازه می‌دهد عملیات تحلیل
+ و بررسی کد را انجام دهند.</p>
+
+<p>اگر در کد شما مشکلی به وجود آمده و قادر نیستید با استفاده از var_dump
+ یا print_r خطایابی کنید، شاید زمان آن فرارسیده باشد که از یک اشکال‌زدا 
+استفاده کنید.</p>
+
+<p><a href="http://xdebug.org/docs/install">نصب XDebug</a> می‌تواند کمی 
+دشوار باشد، اما یکی از مهم‌ترین ویژگی‌های آن “اشکال‌زدایی از راه‌دور” 
+است. اگر کد را در سیستم خود و عملیات آزمایش و اجرا را در یک ماشین مجازی 
+یا سرور دیگری انجام می‌دهید، اشکال‌زدایی از راه‌دور ویژگی‌ای است که به 
+آن نیاز خواهید داشت.</p>
+
+<p>به طور معمول، می‌توانید فایل VirtualHost مربوط به Apache یا فایل htaccess. را اینگونه تنظیم کنید:</p>
+
+<pre><code>php_value xdebug.remote_host=192.168.?.?
+php_value xdebug.remote_port=9000
+</code></pre>
+
+<p>عبارت‌های “remote_host” و “remote_port” مربوط به رایانه‌ی شخصی شما 
+هستند و پورتی که IDE از طریق آن منتظر دریافت پاسخ است. فقط کافی است IDE 
+را طوری تنظیم کنید که به حالت “انتظار” برود و نشانی زیر را بارگذاری 
+کنید:</p>
+
+<pre><code>http://your-website.example.com/index.php?XDEBUG_SESSION_START=1
+</code></pre>
+
+<p>اکنون IDE شما می‌تواند در لحظه‌ی اجرای اسکریپت، عملیات مختلف اشکال‌زدایی را انجام دهد.</p>
+
+<p>اشکال‌زداهای گرافیکی کار را بسیار آسان می‌کنند تا بتوانید کد را 
+ببینید، متغیرها را شناساسی کنید و حتی به صورت زنده تغییرات را مشاهده 
+کنید. بسیاری از IDEها یا خود از این عملکرد پشیتبانی می‌کنند یا با 
+استفاده از افزونه‌ها امکان ایجاد اشکال‌زداهای گرافیکی را فراهم می‌آورند.
+ برای نمونه، MacGDBp یک ابزار رایگان و جداگانه برای محیط گرافیکی XDebug 
+در سیستم عامل مکینتاش است.</p>
+
+<ul>
+  <li><a href="http://xdebug.org/docs/">درباره‌ی XDebug بیشتر بدانید</a></li>
+  <li><a href="http://www.bluestatic.org/software/macgdbp/">درباره‌ی MacGDBp بیشتر بدانید</a></li>
+</ul>
+
+
+    </div>
+
+    
+    <p><a href="#top" class="top">Back to Top</a></p>
+
+    
+    <div id="dependency_management">
+    <h1 id="dependency_management_title">مدیریت وابستگی</h1>
+
+<p>کتابخانه‌ها، فریم‌وُرک‌ها و اجزای مختلفی از PHP وجود دارند که 
+می‌توانید از آن‌ها استفاده کنید. به احتمال زیاد پروژه‌ی شما از این اجزا 
+استفاده می‌کند، این‌ها وابستگی‌ (dependency) نام دارند. تا همین اواخر، 
+روش مناسبی برای مدیریت این وابستگی‌ها درPHP وجود نداشت. حتی اگر شما این 
+کار را می‌کردید، باید نگران فراخوانی‌های خودکار (autoloaders) می‌بودید. 
+این روند دیگر ادامه ندارد.</p>
+
+<p>هم اکنون دو مدیر بسته‌ی اصلی برای PHP وجود دارد، Composer و PEAR. کدام یک برای شما مناسب است؟ هر دو.</p>
+
+<ul>
+  <li>از <strong>Composer</strong> برای مدیریت وابستگی‌ها در یک پروژه استفاده کنید.</li>
+  <li>از <strong>PEAR</strong> برای مدیریت وابستگی‌ها در PHP به صورت کلی استفاده کنید.</li>
+</ul>
+
+<p>در حالت کلی، بسته‌های Composer تنها در پروژه‌هایی که شما تعیین 
+می‌کنید وجود خواهند داشت در صورتی که بسته‌های PEAR برای تمام پروژه‌ها در
+ دسترس خواهند بود. در ابتدا ممکن است به نظر برسد استفاده از PEAR مناسب 
+است اما مزایایی در روش پروژه به پروژه وجود دارد که باید به آن‌ها فکر 
+کنید.</p>
+
+    </div>
+
+    
+    <div id="composer_and_packagist">
+    <h2 id="composer_and_packagist_title">Composer و Packagist</h2>
+
+<p>Composer یک مدیر بسته‌ی <strong>فوق‌العاده</strong> برای PHP است. وابستگی‌های پروژه‌ی خود را در یک فایل <code>composer.json</code> فهرست کنید و، با تنها چند فرمان ساده، تمام وابستگی‌ها دانلود شده و به صورت پیش‌فرض فراخوانی می‌شوند.</p>
+
+<p>کتابخانه‌های بسیاری از PHP وجود دارند که با Composer سازگار هستند، که
+ می‌توانید از آن‌ها استفاده کنید. این “بسته‌ها” در مخزن رسمی بسته‌های 
+سازگار با Composer، یعنی <a href="http://packagist.org/">Packagist</a> فهرست شده‌اند.</p>
+
+<h3 id="composer">چگونگی نصب خودکار Composer</h3>
+
+<p>شما می‌توانید Composer را به صورت محلی (در دایرکتوری فعلی، که توصیه 
+نمی‌شود) یا سراسری (برای نمونه در usr/local/bin/) نصب کنید. فرض کنیم 
+می‌خواهید به صورت محلی نصب کنید. از دایرکتوری اصلی پروژه‌ی خود:</p>
+
+<pre><code>curl -s https://getcomposer.org/installer | php
+</code></pre>
+
+<p>این فرمان <code>composer.phar</code> (فایل باینری PHP) را دانلود می‌کند. می‌توانید با استفاده از <code>php</code> برای مدیریت وابستگی‌ها در پروژه‌ی خود، از آن استفاده کنید. <strong>توجه کنید:</strong> اگر به صورت مستقیم کد دانلود شده را به یک مفسر (interpreter) ارجاع دهید، ابتدا از امن بودن کد اطمینان حاصل کنید.</p>
+
+<h4 id="section">نصب در ویندوز</h4>
+
+<p>برای کاربران ویندوز راحت‌ترین روش استفاده از نرم‌افزار <a href="https://getcomposer.org/Composer-Setup.exe">ComposerSetup</a> است، که نصب را به صورت سراسری انجام می‌دهد و <code>PATH$</code> را طوری تنظیم می‌کند که بتوانید از هر دایرکتوری در خط فرمان، <code>composer</code> را فراخوانی کنید.</p>
+
+<h3 id="composer-1">چگونگی نصب دستی Composer</h3>
+
+<p>این روش نصب کمی پیچیدگی دارد; اگرچه، دلایل مختلفی وجود دارد که یک 
+توسعه‌دهنده این روش را نسبت به روش خودکار ترجیح دهد. در نصب خودکار، 
+بررسی می‌شود در محیط PHP شما:</p>
+
+<ul>
+  <li>دارای حداقل نسخه‌ی سازگار باشد</li>
+  <li>فایل‌های <code>phar</code> به درستی اجر شوند</li>
+  <li>مجوزهای کافی در دایرکتوری وجود داشته باشد</li>
+  <li>برخی افزونه‌ها (extensions) مشکل‌ساز اجرا نشوند</li>
+  <li>برخی تنظیمات <code>php.ini</code> وجود داشته باشند</li>
+</ul>
+
+<p>در صورتی که نصب دستی، هیچ کدام از موارد فوق را پوشش نمی‌دهد، البته 
+شما باید تصمیم نهایی را بگیرید. در هر صورت، می‌توانید Composer را به 
+صورت دستی با استفاده از فرمان‌های زیر نصب کنید:</p>
+
+<pre><code>curl -s https://getcomposer.org/composer.phar -o $HOME/local/bin/composer
+chmod +x $HOME/local/bin/composer
+</code></pre>
+
+<p>مسیر <code>HOME/local/bin$</code> (یا هر دایرکتوری دیگر به انتخاب شما) باید در متغیر محیطی <code>PATH$</code> وجود داشته باشد. این کار منجر به ایجاد فرمان <code>composer</code> می‌گردد.</p>
+
+<p>وقتی به مستندات مراجعه می‌کنید که می‌گوید Composer را با استفاده از <code>php composer.phar install</code> اجرا کنید، می‌توانید آن را با فرمان زیر جایگزین کنید:</p>
+
+<pre><code>composer install
+</code></pre>
+
+<p>در ادامه فرض می‌کنیم که Composer را به صورت سراسری نصب کرده‌اید.</p>
+
+<h3 id="section-1">ایجاد و نصب وابستگی‌ها</h3>
+
+<p>تمام وابستگی‌های پروژه‌ی شما در فایلی با نام <code>composer.json</code> توسط Composer ردیابی می‌شوند. می‌توانید خود آن را مدیریت کنید یا بگذارید Composer این کار را انجام دهد. فرمان <code>composer require</code> یک وابستگی برای پروژه تعریف می‌کند و اگر فایل <code>composer.json</code> وجود نداشته باشد، یکی ساخته می‌شود. برای نمونه، این فرمان <a href="http://twig.sensiolabs.org/">Twig</a> را به عنوان یک وابستگی برای پروژه تعریف می‌کند.</p>
+
+<pre><code>composer require twig/twig:~1.8
+</code></pre>
+
+<p>همچنین فرمان <code>composer init</code> شما را در ایجاد یک فایل کامل <code>composer.json</code> راهنمایی می‌کند. در هر صورت، هر زمان که فایل <code>composer.json</code> ساخته شود می‌توانید به Composer بگویید تمام وابستگی‌های پروژه را در دایرکتوری <code>/vendors</code> دانلود و نصب کند. این شامل پروژه‌هایی هم می‌شود که خود یک فایل <code>composer.json</code> دارند:</p>
+
+<pre><code>composer install
+</code></pre>
+
+<p>گام بعد اضافه کردن این خط کد در فایل اصلی PHP است; که به PHP می‌گوید 
+از فراخوانی‌های Composer برای مدیریت وابستگی‌ها استفاده کند.</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span></code></pre></div>
+
+<p>هم اکنون می‌توانید از وابستگی‌های پروژه‌ی خود استفاده کنید و هر زمان لازم باشد به صورت خودکار فراخوانی می‌شوند.</p>
+
+<h3 id="section-2">بروزرسانی وابستگی‌ها</h3>
+
+<p>وقتی برای اولین بار <code>php composer.phar install</code> را اجرا کردید، Composer فایلی با نام <code>composer.lock</code> را ایجاد می‌کند که نسخه‌ی دقیق هر بسته را در خود نگاه می‌دارد. زمانی که پروژه‌ی خود را با دیگران به اشتراک می‌گذارید و فایل <code>composer.lock</code> نیز همراه آن است، وقتی آن‌ها <code>php composer.phar install</code> را اجرا می‌کنند دقیقا همان نسخه از وابستگی‌ها را دریافت خواهند کرد. برای بروزرسانی وابستگی‌های خود، <code>php composer.phar update</code> را اجرا کنید.</p>
+
+<p>این کار زمانی بسیار مفید است که در انتخاب نسخه‌ی وابستگی‌ها سخت‌گیری 
+خاصی ندارید. برای نمونه، نیازمندی یک نسخه به 1.8~ یعنی “هر چیزی جدیدتر 
+از 1.8.0 ولی قبل از 2.0”. می‌توانید از <code>*</code> نیز در <code>*.1.8</code> استفاده کنید. حال فرمان <code>php composer.phar update</code> تمام وابستگی‌های شما را با توجه به محدودیتی که برایشان تعریف کرده‌اید، بروزرسانی خواهد کرد.</p>
+
+<h3 id="section-3">اطلاعیه‌های بروزرسانی</h3>
+
+<p>برای دریافت اطلاعیه درباره‌ی آخرین نسخه‌ها می‌توانید در <a href="https://www.versioneye.com/">VersionEye</a> ثبت نام کنید، سرویسی که با مشاهده‌ی فایل <code>composer.json</code> موجود در حساب GitHub و BitBucket شما، با انتشار هر نسخه‌ی جدید با ایمیل به شما خبر می‌دهد.</p>
+
+<h3 id="section-4">بررسی مشکلات امنیتی در وابستگی‌ها</h3>
+
+<p>سرویس <a href="https://security.sensiolabs.org/">Security Advisories Checker</a> که از خط فرمان نیز قابل اجرا است، با بررسی فایل <code>composer.lock</code> به شما می‌گوید آیا باید وابستگی‌های خود را بروزرسانی کنید یا خیر.</p>
+
+<ul>
+  <li><a href="http://getcomposer.org/doc/00-intro.md">درباره‌ی Composer بیشتر بدانید</a></li>
+</ul>
+
+
+    </div>
+
+    
+    <div id="pear">
+    <h2 id="pear_title">PEAR</h2>
+
+<p>مدیر بسته‌ی مشهور دیگری که بسیاری از توسعه‌دهندگان PHP از آن لذت می‌برند <a href="http://pear.php.net/">PEAR</a> است. شبیه به Composer عمل می‌کند اما تفاوت‌های قابل توجه‌ای دارد.</p>
+
+<p>هر بسته باید ساختار مشخصی داشته باشد، به این معنی که نویسنده‌ی بسته 
+باید آن‌ را مطابق با استانداردهای PEAR آماده کند. استفاده از پروژه‌ای که
+ با PEAR سازگار نیست، غیرممکن است.</p>
+
+<p>تمام بسته‌ها در PEAR به صورت سراسری روی سرور نصب می‌شوند و برای تمام 
+پروژه‌ها قابل استفاده هستند. برای پروژه‌های مختلفی که به یک بسته وابسته 
+هستند راهکار بسیار خوبی است اما زمانی که دو پروژه در یک نسخه تفاوت داشته
+ باشند، مشکل‌ساز خواهد شد.</p>
+
+<h3 id="pear">چگونگی نصب PEAR</h3>
+
+<p>شما می‌توانید با دانلود و اجرای فایل phar مربوط به PEAR آن را نصب کنید. مستندات PEAR به جزییات <a href="http://pear.php.net/manual/en/installation.getting.php">دستورات نصب</a> برای سیستم عامل‌های مختلف اشاره کرده است.</p>
+
+<p>اگر از گنو/لینوکس استفاده می‌کنید، می‌توانید نگاهی به مدیر بسته توزیع خود بیندازید. برای نمونه، دبیان و اوبونتو یک بسته با نام <code>php-pear</code> دارند.</p>
+
+<h3 id="section">چگونکی نصب یک بسته</h3>
+
+<p>اگر بسته‌ی مورد نظر در <a href="http://pear.php.net/packages.php">فهرست بسته‌های PEAR</a> وجود دارد، می‌توانید با اسم رسمی آن را نصب کنید:</p>
+
+<pre><code>pear install foo
+</code></pre>
+
+<p>اگر بسته در کانال دیگری قرار دارد، ابتدا باید آن کانال را <code>discover</code> کرده و در زمان نصب نام آن را ذکر کنید. برای اطلاعات بیشتر در این مورد، <a href="http://pear.php.net/manual/en/guide.users.commandline.channels.php">مستندات مربوط به کانال‌ها</a> را مشاهده کنید</p>
+
+<ul>
+  <li><a href="http://pear.php.net/">درباره‌ی PEAR بیشتر بدانید</a></li>
+</ul>
+
+<h3 id="pear----composer">مدیریت وابستگی‌ها در PEAR با استفاده از Composer</h3>
+
+<p>اگر از <a href="http://novid.github.io/#composer_and_packagist">Composer</a>
+ استفاده می‌کنید و قصد دارید تعدادی بسته‌ی PEAR هم داشته باشید، 
+می‌توانید از Composer برای مدیریت این بسته‌ها بهره ببرید. این مثال، کد 
+مورد نظر را از <code>pear2.php.net</code> دانلود و نصب می‌کند:</p>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">"repositories"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"type"</span><span class="p">:</span> <span class="s2">"pear"</span><span class="p">,</span>
+            <span class="nt">"url"</span><span class="p">:</span> <span class="s2">"http://pear2.php.net"</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">"require"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"pear-pear2/PEAR2_Text_Markdown"</span><span class="p">:</span> <span class="s2">"*"</span><span class="p">,</span>
+        <span class="nt">"pear-pear2/PEAR2_HTTP_Request"</span><span class="p">:</span> <span class="s2">"*"</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>اولین بخش که <code>"repositories"</code> نام دارد به Composer می‌گوید باید مخزن مربوط به PEAR را “راه‌اندازی اولیه” (یا همان “discover” در اصطلاح PEAR) کند. سپس بخش <code>"require"</code> نام بسته‌ها را به این صورت تشخیص می‌دهد:</p>
+
+<blockquote>
+  <p>pear-channel/Package</p>
+</blockquote>
+
+<p>در اینجا از پیشوند “pear” استفاده شده است تا هر گونه تشابه نام با 
+سایر بسته‌ها از بین برود. وقتی این کد اجرا و بسته‌های مورد نیاز نصب شوند
+ از دایرکتوری vendor قابل دسترس خواهد بود و به صورت خودکار توسط فراخوان 
+Composer قابل فراخوانی است:</p>
+
+<blockquote>
+  <p>vendor/pear-pear2.php.net/PEAR2_HTTP_Request/pear2/HTTP/Request.php</p>
+</blockquote>
+
+<p>به منظور استفاده از این بسته به راحتی آن را فراخوانی کرد:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">$request = new pear2\HTTP\Request();</span></code></pre></div>
+
+<ul>
+  <li><a href="http://getcomposer.org/doc/05-repositories.md#pear">درباره‌ی استفاده از PEAR در Composer بیشتر بدانید</a></li>
+</ul>
+
+
+    </div>
+
+    
+    <p><a href="#top" class="top">Back to Top</a></p>
+
+    
+    <div id="coding_practices">
+    <h1 id="coding_practices_title">عادت‌های کدنویسی</h1>
+
+    </div>
+
+    
+    <div id="the_basics">
+    <h2 id="the_basics_title">مفاهیم مقدماتی</h2>
+
+<p>زبانی به وسعت PHP نه تنها به تمام برنامه‌نویسان اجازه‌ی کدنویسی سریع،
+ بلکه این کار را بهینه انجام می‌دهد. البته هر چه بیشتر با این زبان آشنا 
+شده و پیش می‌رویم مفاهیم مقدماتی که در ابتدا یاد گرفتیم را بر حسب 
+عادت‌های بد یا روش‌های میانبر، فراموش می‌کنیم. برای مقابله با این مساله،
+ در ادامه این مفاهیم را مرور خواهیم کرد.</p>
+
+<ul>
+  <li>ادامه‌ی مطالعه <a href="http://novid.github.io/php-the-right-way/pages/The-Basics.html">مقدمات زبان</a></li>
+</ul>
+
+    </div>
+
+    
+    <div id="date_and_time">
+    <h2 id="date_and_time_title">تاریخ و زمان</h2>
+
+<p>برای خواندن، نوشتن و مقایسه‌ی تاریخ و زمان، از کلاس DateTime در PHP 
+استفاده می‌شود. توابع مختلفی در رابطه با تاریخ و زمان وجود دارند اما 
+ساختار شی‌گرا این کلاس به بیشتر نیازهای ما پاسخ می‌دهد. همچنین توانایی 
+مدیریت منطقه‌های زمانی/جغرافیایی را نیز دارد که خارج از این مقدمه کوتاه 
+است.</p>
+
+<p>برای شروع، تنها کافی است تاریخ و زمان خام را به یک شی با استفاده از متد <code>()createFromFormat</code> تبدیل کرده یا جهت دریافت تاریخ و زمان فعلی از <code>new \DateTime</code> استفاده کنیم. با استفاده از متد <code>()format</code> می‌توان شی DateTime را به یک رشته‌ی قابل نمایش تبدیل کرد.</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="nv">$raw</span> <span class="o">=</span> <span class="s1">'22. 11. 1968'</span><span class="p">;</span>
+<span class="nv">$start</span> <span class="o">=</span> <span class="nx">\DateTime</span><span class="o">::</span><span class="na">createFromFormat</span><span class="p">(</span><span class="s1">'d. m. Y'</span><span class="p">,</span> <span class="nv">$raw</span><span class="p">);</span>
+
+<span class="k">echo</span> <span class="s1">'Start date: '</span> <span class="o">.</span> <span class="nv">$start</span><span class="o">-&gt;</span><span class="na">format</span><span class="p">(</span><span class="s1">'m/d/Y'</span><span class="p">)</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span></code></pre></div>
+
+<p>محاسبات روی DateTime با استفاده از کلاس DateInterval قابل انجام است. کلاس DateTime متدهایی مانند <code>()add</code> و <code>()sub</code>
+ دارد که از DateInterval به عنوان آرگومان استفاده می‌کنند. کدی ننویسید 
+که به ازای هر روز تعداد ثانیه‌های ثابتی را درخواست کند چرا که تغییر در 
+منطقه‌های زمانی/جغرافیایی این فرض را باطل می‌کند. در عوض، از بازه‌های 
+زمانی استفاده کرده و برای محاسبه‌ی اختلاف زمانی از متد <code>()diff</code> استفاده کنید که مقدار بازگشتی آن DateInterval است و به راحتی می‌توان آن را نمایش داد.</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="c1">// create a copy of $start and add one month and 6 days</span>
+<span class="nv">$end</span> <span class="o">=</span> <span class="k">clone</span> <span class="nv">$start</span><span class="p">;</span>
+<span class="nv">$end</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="nx">\DateInterval</span><span class="p">(</span><span class="s1">'P1M6D'</span><span class="p">));</span>
+
+<span class="nv">$diff</span> <span class="o">=</span> <span class="nv">$end</span><span class="o">-&gt;</span><span class="na">diff</span><span class="p">(</span><span class="nv">$start</span><span class="p">);</span>
+<span class="k">echo</span> <span class="s1">'Difference: '</span> <span class="o">.</span> <span class="nv">$diff</span><span class="o">-&gt;</span><span class="na">format</span><span class="p">(</span><span class="s1">'%m month, %d days (total: %a days)'</span><span class="p">)</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+<span class="c1">// Difference: 1 month, 6 days (total: 37 days)</span></code></pre></div>
+
+<p>روی شی DateTime می‌توانید از مقایسه‌های استاندارد استفاده کنید:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$start</span> <span class="o">&lt;</span> <span class="nv">$end</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"Start is before end!</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<p>جهت پیمایش بین رخدادهای تکراری از کلاس DatePeriod استفاده کنید که دو 
+شی DateTime را دریافت کرده (start و end) و با استفاده از بازه‌ی زمانی، 
+تمام رخدادهای بین آن‌ها را محاسبه می‌کند. </p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="c1">// output all thursdays between $start and $end</span>
+<span class="nv">$periodInterval</span> <span class="o">=</span> <span class="nx">\DateInterval</span><span class="o">::</span><span class="na">createFromDateString</span><span class="p">(</span><span class="s1">'first thursday'</span><span class="p">);</span>
+<span class="nv">$periodIterator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\DatePeriod</span><span class="p">(</span><span class="nv">$start</span><span class="p">,</span> <span class="nv">$periodInterval</span><span class="p">,</span> <span class="nv">$end</span><span class="p">,</span> <span class="nx">\DatePeriod</span><span class="o">::</span><span class="na">EXCLUDE_START_DATE</span><span class="p">);</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$periodIterator</span> <span class="k">as</span> <span class="nv">$date</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// output each date in the period</span>
+    <span class="k">echo</span> <span class="nv">$date</span><span class="o">-&gt;</span><span class="na">format</span><span class="p">(</span><span class="s1">'m/d/Y'</span><span class="p">)</span> <span class="o">.</span> <span class="s1">' '</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<ul>
+  <li><a href="http://www.php.net/manual/book.datetime.php">درباره‌ی DateTime بخوانید</a></li>
+  <li><a href="http://www.php.net/manual/function.date.php">درباره‌ی نحوه‌ی نمایش تاریخ و زمان بخوانید</a></li>
+</ul>
+
+
+    </div>
+
+    
+    <div id="design_patterns">
+    <h2 id="design_patterns_title">الگوهای طراحی</h2>
+
+<p>زمانی که نرم‌افزار خود را توسعه می‌دهید مرسوم است از الگوهای خاصی در 
+کد و ساختار کلی پروژه استفاده کنید. استفاده از این الگوها بسیار مفید است
+ چرا که نه تنها باعث می‌شود مدیریت کد آسان گردد بلکه درک نرم‌افزار شما 
+برای سایر توسعه‌دهندگان نیز آسان می‌گردد.</p>
+
+<p>اگر از یک فریم‌ورک استفاده می‌کنید پس بیشتر قسمت‌های کدنویسی و ساختار
+ پروژه که بر اساس آن فریم‌ورک است، از پیش برایتان مشخص شده است. اما در 
+نهایت تصمیم با شماست که کد خود را بر اساس آن فریم‌ورک پیش ببرید یا خیر. 
+اگر هم از فریم‌ورک استفاده نمی‌کنید باید خود به دنبال الگوهایی باشید که 
+با نوع و اندازه‌ (حجم) پروژه‌ی شما سازگار باشند.</p>
+
+<p><a href="http://novid.github.io/php-the-right-way/pages/Design-Patterns.html">ادامه‌ی مطالعه درباره‌ی الگوهای طراحی</a></p>
+
+    </div>
+
+    
+    <div id="php_and_utf8">
+    <h2 id="php_and_utf8_title">کار با UTF-8</h2>
+
+<p>محتوای اولیه‌ی این بخش توسط <a href="https://alexcabal.com/">Alex Cabal</a> در مجموعه‌ی <a href="https://phpbestpractices.org/#utf-8">بهترین عادت‌های کدنویسی در PHP</a> نوشته شده است که در اینجا به عنوان مقدمه‌ی مقاله‌ی ما قرار دارد.</p>
+
+<h3 id="section">راهکار ثابتی وجود ندارد. دقت کرده، به جزییات توجه کنید و یکپارچه عمل کنید.</h3>
+
+<p>هم اکنون PHP در سطح پایین از یونیکد پشتیبانی نمی‌کند. روش‌هایی وجود 
+دارد تا اطمینان حاصل کنیم تمام رشته‌های UTF-8 به درستی پردازش می‌شوند 
+اما این روش‌ها آسان نیستند و لایه‌های مختلفی از یک نرم‌افزار تحت وب را 
+شامل می‌شوند، از HTML به SQL به PHP. در ادامه آن‌ها را توضیح می‌دهیم.</p>
+
+<h3 id="utf-8--php">UTF-8 در PHP</h3>
+
+<p>عملیات پایه روی رشته‌ها، مانند چسباندن دو رشته به یکدیگر یا تخصیص به 
+متغیرها، به عملکرد خاصی رو UFT-8 احتیاج ندارد. با این وجود، بیشتر توابع 
+رشته‌ای، مانند <code>()strpos</code> و <code>()strlen</code>، به توجه خاصی نیازمند هستند. این توابع معمولا یک معادل <code>*_mb</code> نیز دارند: مانند <code>()mb_strpos</code> و <code>()mb_strlen</code>. توابع <code>*_mb</code> با استفاده از <a href="http://php.net/manual/en/book.mbstring.php">افزونه‌ی Multibyte String</a> قابل دسترس هستند و به طور خاص برای کار روی رشته‌های یونیکد طراحی شده‌اند.</p>
+
+<p>هر زمان که با رشته‌های یونیکد سروکار دارید باید از توابع <code>*_mb</code> استفاده کنید. اگر از <code>()substr</code> در یک رشته‌ی UTF-8 استفاده کنید، به احتمال زیاد خروجی شامل کاراکترهای آشفته خواهد بود. در این حالت باید از معادل این تابع یعنی <code>()mb_substr</code> استفاده کنید.</p>
+
+<p>مشکل اینجاست که باید یادمان باشد در تمام مدت پروژه از توابع <code>*_mb</code> استفاده کنیم. اگر حتی یکبار هم فراموش کنید، احتمال دارد که رشته‌ی یونیکد شما در پردازش‌های بعدی دچار آشفتگی شود.</p>
+
+<p>البته تمام توابع رشته‌ای معادل <code>*_mb</code> ندارند و این از بدشانسی شماست که برای عملکرد مورد نظرتان، این معادل‌ها وجود نداشته باشند.</p>
+
+<p>باید از تابع <code>()mb_internal_encoding</code> در ابتدای هر اسکریپت PHP (یا اسکریپت سراسری) و از تابع <code>()mb_http_output</code>
+ درست بعد از اینکه اسکریپت خروجی را به مرورگر می‌فرستد، استفاده کنید. 
+اینکار موجب می‌شود که در آینده از مشکلات بسیاری جلوگیری کنید.</p>
+
+<p>به علاوه، بسیاری از توابع رشته‌ای در PHP یک پارامتر اختیاری دریافت 
+می‌کنند که نحوه‌ی کدگذاری کاراکترها را مشخص می‌کند. اگر این پارامتر را 
+تعریف می‌کنید حتما باید UTF-8 باشد. برای نمونه، <code>()htmlentities</code>
+ گزینه‌ای برای کدگذاری کاراکتر دارد و شما همیشه باید از UTF-8 برای آن 
+استفاده کنید. توجه کنید که از PHP 5.4.0، کدگذاری پیشفرض کاراکترها برای <code>()htmlentities</code> و <code>()htmlspecialchars</code> با استفاده از UTF-8 صورت می‌گیرد.</p>
+
+<p>در نهایت، اگر نرم‌افزار شما در سرورهای مختلفی قرار دارد و اطمینان ندارید که افزونه‌ی <code>mbstring</code> فعال خواهد بود، استفاده از بسته‌ی <a href="https://packagist.org/packages/patchwork/utf8">patchwork/utf8</a> در Composer را مد نظر قرار دهید. این بسته در صورت فعال بودن <code>mbstring</code> از آن استفاده می‌کند، در غیر اینصورت از توابع عادی رشته‌ای استفاده خواهد کرد.</p>
+
+<h3 id="utf-8--mysql">UTF-8 در MySQL</h3>
+
+<p>اگر اسکریپت PHP شما به MySQL دسترسی دارد، احتمال دارد رشته‌های شما به
+ صورت UTF-8 در پایگاه‌داده ذخیره نشوند، هر چند گام‌های بالا را انجام 
+داده باشید.</p>
+
+<p>جهت اطمینان از ذخیره‌سازی رشته‌ها به صورت UTF-8، باید پایگاه‌داده و جدول‌های شما از ساختار <code>utf8mb4</code> پشتیبانی کنند و در رشته‌ی اتصال PDO نیز از <code>utf8mb4</code> استفاده کنید. به مثال زیر توجه کنید. این مورد <em>بسیار حایز اهمیت</em> است.</p>
+
+<p>توجه کنید که باید از مجموعه کاراکتر <code>utf8mb4</code> جهت پشتیبانی کامل از UTF-8 استفاده کنید نه از <code>utf8</code>! به قسمت مطاله‌ی بیشتر مراجعه کنید تا دلیل آن را بدانید.</p>
+
+<h3 id="utf-8--">UTF-8 در مرورگر</h3>
+
+<p>از تابع <code>()mb_http_output</code> استفاده کنید تا اطمینان یابید اسکریپت PHP خروجی را به صورت UTF-8 به مرورگر می‌فرستد.</p>
+
+<p>اینکار باعث می‌شود به مرورگر گفته شود صفحه را با توجه به ساختار UTF-8 نمایش دهد. روش قدیمی برای انجام اینکار استفاده از <a href="http://htmlpurifier.org/docs/enduser-utf8.html">تگ <code>&lt;meta&gt;</code> به همراه charset</a> بود که در تگ <code>&lt;head&gt;</code> قرار می‌گرفت. این روش هم اکنون نیز معتبر است اما تنظیم این ویژگی در قسمت <code>Content-Type</code> از header بسیار <a href="https://developers.google.com/speed/docs/best-practices/rendering#SpecifyCharsetEarly">سریع‌تر</a> است.</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="c1">// Tell PHP that we're using UTF-8 strings until the end of the script</span>
+<span class="nb">mb_internal_encoding</span><span class="p">(</span><span class="s1">'UTF-8'</span><span class="p">);</span>
+ 
+<span class="c1">// Tell PHP that we'll be outputting UTF-8 to the browser</span>
+<span class="nb">mb_http_output</span><span class="p">(</span><span class="s1">'UTF-8'</span><span class="p">);</span>
+ 
+<span class="c1">// Our UTF-8 test string</span>
+<span class="nv">$string</span> <span class="o">=</span> <span class="s1">'Êl síla erin lû e-govaned vîn.'</span><span class="p">;</span>
+ 
+<span class="c1">// Transform the string in some way with a multibyte function</span>
+<span class="c1">// Note how we cut the string at a non-Ascii character for demonstration purposes</span>
+<span class="nv">$string</span> <span class="o">=</span> <span class="nb">mb_substr</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">);</span>
+ 
+<span class="c1">// Connect to a database to store the transformed string</span>
+<span class="c1">// See the PDO example in this document for more information</span>
+<span class="c1">// Note the `set names utf8mb4` commmand!</span>
+<span class="nv">$link</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\PDO</span><span class="p">(</span>   
+                    <span class="s1">'mysql:host=your-hostname;dbname=your-db;charset=utf8mb4'</span><span class="p">,</span>
+                    <span class="s1">'your-username'</span><span class="p">,</span>
+                    <span class="s1">'your-password'</span><span class="p">,</span>
+                    <span class="k">array</span><span class="p">(</span>
+                        <span class="nx">\PDO</span><span class="o">::</span><span class="na">ATTR_ERRMODE</span> <span class="o">=&gt;</span> <span class="nx">\PDO</span><span class="o">::</span><span class="na">ERRMODE_EXCEPTION</span><span class="p">,</span>
+                        <span class="nx">\PDO</span><span class="o">::</span><span class="na">ATTR_PERSISTENT</span> <span class="o">=&gt;</span> <span class="k">false</span>
+                    <span class="p">)</span>
+                <span class="p">);</span>
+ 
+<span class="c1">// Store our transformed string as UTF-8 in our database</span>
+<span class="c1">// Your DB and tables are in the utf8mb4 character set and collation, right?</span>
+<span class="nv">$handle</span> <span class="o">=</span> <span class="nv">$link</span><span class="o">-&gt;</span><span class="na">prepare</span><span class="p">(</span><span class="s1">'insert into ElvishSentences (Id, Body) values (?, ?)'</span><span class="p">);</span>
+<span class="nv">$handle</span><span class="o">-&gt;</span><span class="na">bindValue</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">PDO</span><span class="o">::</span><span class="na">PARAM_INT</span><span class="p">);</span>
+<span class="nv">$handle</span><span class="o">-&gt;</span><span class="na">bindValue</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nv">$string</span><span class="p">);</span>
+<span class="nv">$handle</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+ 
+<span class="c1">// Retrieve the string we just stored to prove it was stored correctly</span>
+<span class="nv">$handle</span> <span class="o">=</span> <span class="nv">$link</span><span class="o">-&gt;</span><span class="na">prepare</span><span class="p">(</span><span class="s1">'select * from ElvishSentences where Id = ?'</span><span class="p">);</span>
+<span class="nv">$handle</span><span class="o">-&gt;</span><span class="na">bindValue</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">PDO</span><span class="o">::</span><span class="na">PARAM_INT</span><span class="p">);</span>
+<span class="nv">$handle</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+ 
+<span class="c1">// Store the result into an object that we'll output later in our HTML</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$handle</span><span class="o">-&gt;</span><span class="na">fetchAll</span><span class="p">(</span><span class="nx">\PDO</span><span class="o">::</span><span class="na">FETCH_OBJ</span><span class="p">);</span>
+
+<span class="nb">header</span><span class="p">(</span><span class="s1">'Content-Type: text/html; charset=utf-8'</span><span class="p">);</span>
+<span class="cp">?&gt;</span><span class="x">&lt;!doctype html&gt;</span>
+<span class="x">&lt;html&gt;</span>
+<span class="x">    &lt;head&gt;</span>
+<span class="x">        &lt;title&gt;UTF-8 test page&lt;/title&gt;</span>
+<span class="x">    &lt;/head&gt;</span>
+<span class="x">    &lt;body&gt;</span>
+<span class="x">        </span><span class="cp">&lt;?php</span>
+        <span class="k">foreach</span><span class="p">(</span><span class="nv">$result</span> <span class="k">as</span> <span class="nv">$row</span><span class="p">){</span>
+            <span class="k">print</span><span class="p">(</span><span class="nv">$row</span><span class="o">-&gt;</span><span class="na">Body</span><span class="p">);</span>  <span class="c1">// This should correctly output our transformed UTF-8 string to the browser</span>
+        <span class="p">}</span>
+        <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">    &lt;/body&gt;</span>
+<span class="x">&lt;/html&gt;</span></code></pre></div>
+
+<h3 id="section-1">مطالعه‌ی بیشتر</h3>
+
+<ul>
+  <li><a href="http://php.net/manual/en/language.operators.string.php">PHP Manual: String Operations</a></li>
+  <li><a href="http://php.net/manual/en/ref.strings.php">PHP Manual: String Functions</a>
+    <ul>
+      <li><a href="http://php.net/manual/en/function.strpos.php"><code>strpos()</code></a></li>
+      <li><a href="http://php.net/manual/en/function.strlen.php"><code>strlen()</code></a></li>
+      <li><a href="http://php.net/manual/en/function.substr.php"><code>substr()</code></a></li>
+    </ul>
+  </li>
+  <li><a href="http://php.net/manual/en/ref.mbstring.php">PHP Manual: Multibyte String Functions</a>
+    <ul>
+      <li><a href="http://php.net/manual/en/function.mb-strpos.php"><code>mb_strpos()</code></a></li>
+      <li><a href="http://php.net/manual/en/function.mb-strlen.php"><code>mb_strlen()</code></a></li>
+      <li><a href="http://php.net/manual/en/function.mb-substr.php"><code>mb_substr()</code></a></li>
+      <li><a href="http://php.net/manual/en/function.mb-internal-encoding.php"><code>mb_internal_encoding()</code></a></li>
+      <li><a href="http://php.net/manual/en/function.mb-http-output.php"><code>mb_http_output()</code></a></li>
+      <li><a href="http://php.net/manual/en/function.htmlentities.php"><code>htmlentities()</code></a></li>
+      <li><a href="http://www.php.net/manual/en/function.htmlspecialchars.php"><code>htmlspecialchars()</code></a></li>
+    </ul>
+  </li>
+  <li><a href="http://blog.loftdigital.com/blog/php-utf-8-cheatsheet">PHP UTF-8 Cheatsheet</a></li>
+  <li><a href="http://stackoverflow.com/questions/571694/what-factors-make-php-unicode-incompatible">Stack Overflow: What factors make PHP Unicode-incompatible?</a></li>
+  <li><a href="http://stackoverflow.com/questions/140728/best-practices-in-php-and-mysql-with-international-strings">Stack Overflow: Best practices in PHP and MySQL with international strings</a></li>
+  <li><a href="http://mathiasbynens.be/notes/mysql-utf8mb4">How to support full Unicode in MySQL databases</a></li>
+  <li><a href="http://www.sitepoint.com/bringing-unicode-to-php-with-portable-utf8/">Brining Unicode to PHP with Portable UTF-8</a></li>
+</ul>
+
+    </div>
+
+    
+    <p><a href="#top" class="top">Back to Top</a></p>
+
+    
+    <div id="dependency_injection">
+    <h1 id="dependency_injection_title">Dependency Injection</h1>
+
+<p>از <a href="http://en.wikipedia.org/wiki/Dependency_injection">ویکیپدیا</a>:</p>
+
+<blockquote>
+  <p>Dependency Injection یک الگوی طراحی نرم‌افزار است که اجازه‌ی حذف 
+وابستگی‌هایی را می‌دهد که به صورت دستی در کد وارد شده‌اند، چه در زمان 
+اجرا چه در زمان کامپایل</p>
+</blockquote>
+
+<p>تعریف بالا درک مفهوم ساده‌ی موجود را بسیار پیچیده می‌کند. Dependency 
+Injection ،وابستگی‌های موجود برای یک شی را از طریق تابع سازنده، فراخوانی
+ متد یا تنظیم ویژگی‌ها انجام می‌دهد، به همین سادگی.</p>
+
+    </div>
+
+    
+    <div id="basic_concept">
+    <h2 id="basic_concept_title">مفهوم پایه</h2>
+
+<p>این مفهوم را می‌توان با یک نمونه ساده توضیح داد.</p>
+
+<p>فرض کنید کلاس <code>Database</code> داریم که جهت استفاده از 
+پایگاه‌داده به یک adapter نیاز دارد. adapter را در تابع سازنده 
+نمونه‌سازی می‌کنیم. این کار عملیات آزمایش (test) را دشوار کرده و کلاس <code>Database</code> را به وجود adapter وابسته می‌سازد.</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">namespace</span> <span class="nx">Database</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Database</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$adapter</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">adapter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MySqlAdapter</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">MysqlAdapter</span> <span class="p">{}</span></code></pre></div>
+
+<p>این کد می‌تواند طوری نوشته شود که این میزان وابستگی را کاهش دهد.</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">namespace</span> <span class="nx">Database</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Database</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$adapter</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">MySqlAdapter</span> <span class="nv">$adapter</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">adapter</span> <span class="o">=</span> <span class="nv">$adapter</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">MysqlAdapter</span> <span class="p">{}</span></code></pre></div>
+
+<p>در اینجا برای کلاس <code>Database</code> یک وابستگی تعریف می‌کنیم، به
+ جای آنکه در داخل تابع آن را فراخوانی کنیم. همچنین می‌توانستیم تابع 
+جداگانه‌ای در نظر بگیریم که بر اساس ورودی‌های وابستگی مورد نظر (adapter)
+ عمل کند، یا اگر عملگر <code>adapter$</code> به صورت <code>public</code> بود می‌توانستیم آن را مستقیم تنظیم کنیم.</p>
+
+    </div>
+
+    
+    <div id="complex_problem">
+    <h2 id="complex_problem_title">مشکل پیچیده</h2>
+
+<p>اگر تا به حال درباره‌ی Dependency Injection مطلبی خوانده باشید با عبارت‌هایی مانند <em>“Inversion of Control”</em> یا <em>“Dependency Inversion Principle”</em> مواجه شده‌اید. این‌ها مشکل‌های پیچیده‌ای هستند که Dependency Injection آن‌ها را رفع می‌کند.</p>
+
+<h3 id="inversion-of-control">Inversion of Control</h3>
+
+<p>این عبارت همانطور که از نامش پیداست با جدا نگاه‌داشتن کنترل از تمام 
+شی‌ها، “کنترل را وارونه” می‌سازد. در تعریف Dependency Injection به این 
+معناست که وابستگی‌های موجود را با نمونه‌سازی در قسمت‌های دیگر، ضعیف 
+سازیم.</p>
+
+<p>برای سال‌ها، فریم‌ورک‌های PHP این تکنیک را به کار گرفته‌اند، اگرچه 
+پرسش این است که کدام قسمت کنترل را وارونه می‌سازید و به کجا؟ برای نمونه،
+ فریم‌ورک‌های MVC معمولا یک شی پایه یا کنترل‌کننده‌ی پایه را به وجود 
+می‌آورند که سایر کنترل‌کننده‌ها برای دسترسی به وابستگی‌های آن از این شی 
+پایه ارث‌بری می‌کنند. این <strong>همان</strong> مفهوم وارونگی کنترل است، اگرچه به جای تضعیف وابستگی‌ها، این روش آن‌ها را منتقل می‌کند.</p>
+
+<p>Dependency Injection به ما کمک می‌کند که این مشکل را با تعریف وابستگی‌هایی که تنها به آن‌ها نیاز داریم، رفع کنیم.</p>
+
+<h3 id="dependency-inversion-principle">Dependency Inversion Principle</h3>
+
+<p>این عبارت همان حرف “D” در مجموعه S.O.L.I.D در رابطه با طراحی شی‌گرا است که بیان می‌کند هر جز از سیستم باید <em>“به انتزاع وابسته باشد، نه به پیاده‌سازی خاص”</em>.
+ ساده‌تر بگوییم، وابستگی‌ها باید Interface یا Abstract Class باشند تا یک
+ پیاده‌سازی خاص. نمونه بالا را می‌توان به سادگی به این مفهوم تبدیل کرد.</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">namespace</span> <span class="nx">Database</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Database</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$adapter</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">AdapterInterface</span> <span class="nv">$adapter</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">adapter</span> <span class="o">=</span> <span class="nv">$adapter</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">interface</span> <span class="nx">AdapterInterface</span> <span class="p">{}</span>
+
+<span class="k">class</span> <span class="nc">MysqlAdapter</span> <span class="k">implements</span> <span class="nx">AdapterInterface</span> <span class="p">{}</span></code></pre></div>
+
+<p>مزایای بسیاری در این کلاس <code>Database</code> وجود دارد که به یک Interface وابسته است تا به یک پیاده‌سازی خاص.</p>
+
+<p>تصور کنید در تیمی کار می‌کنید که پیاده‌سازی adapter به عهده‌ی عضوی 
+دیگر است. در اولین نمونه، باید منتظر بمانیم تا همکار ما کار روی adapter 
+را تمام کرده سپس ما آزمایش مورد نظر را انجام دهیم. حالا که وابستگی به یک
+ Interface وجود دارد با خیال راحت می‌توانیم به کار خود ادامه دهیم و 
+اطمینان داشته باشیم که ناتمام بودن adapter روی کار ما تاثیر منفی 
+نمی‌گذارد.</p>
+
+<p>مزیت بزرگ دیگری که در این روش وجود دارد این است که کد مقیاس‌پذیری 
+بیشتری دارد. اگر سال بعد تصمیم بگیریم که از یک پایگاه‌داده‌ی دیگر 
+استفاده کنیم تنها کافی است برای آن پایگاه‌داده بر اساس Interface فعلی یک
+ adapter پیاده‌سازی کنیم که از تمام ویژگی‌های فعلی پشتیبانی می‌کند.</p>
+
+    </div>
+
+    
+    <div id="containers">
+    <h2 id="containers_title">ظرف وابستگی</h2>
+
+<p>اولین چیزی که باید درباره‌ی ظرف‌های وابستگی بدانید این است که آن‌ها 
+با Dependency Injection تفاوت دارند. یک ظرف وابستگی، ابزاری است که به ما
+ کمک می‌کند Dependency Injection را پیاده‌سازی کنیم، اگرچه از آن‌ها به 
+اشتباه در موارد دیگر (Service Location) استفاده می‌شود که اینکار باعث 
+ایجاد وابستگی‌های بیشتری در نرم‌افزار می‌شود.</p>
+
+<p>اکثر فریم‌ورک‌ها ظرف مربوط به Dependency Injection خود را دارا هستند 
+که به کاربر اجازه می‌دهد درست مانند همان فریم‌ورکی که از آن استفاده 
+می‌کند، نرم‌افزار خود را پیاده‌سازی کند.</p>
+
+    </div>
+
+    
+    <div id="further_reading">
+    <h2 id="further_reading_title">مطالعه بیشتر</h2>
+
+<ul>
+  <li><a href="http://ralphschindler.com/2011/05/18/learning-about-dependency-injection-and-php">درباره‌ی Dependency Injection و PHP بدانید</a></li>
+  <li><a href="http://fabien.potencier.org/article/11/what-is-dependency-injection">تعریف وابستگی به چه معناست؟</a></li>
+  <li><a href="http://mwop.net/blog/260-Dependency-Injection-An-analogy.html">تعریف وابستگی: یک مقایسه</a></li>
+  <li><a href="http://net.tutsplus.com/tutorials/php/dependency-injection-huh/">تعریف وابستگی، چی؟</a></li>
+  <li><a href="http://www.happyaccidents.me/dependency-injection-as-a-tool-for-testing/">تعریف وابستگی، ابزاری برای آزمایش</a></li>
+</ul>
+
+    </div>
+
+    
+    <p><a href="#top" class="top">Back to Top</a></p>
+
+    
+    <div id="databases">
+    <h1 id="databases_title">پایگاه داده</h1>
+
+<p>بسیاری از مواقع کد شما از یک پایگاه‌داده استفاده می‌کند تا اطلاعات را
+ ذخیره کند. شما با گزینه‌های مختلفی جهت تعامل با پایگاه‌داده رو‌به‌رو 
+هستید. روش توصیه شده تا <strong>نسخه PHP 5.1.0</strong> استفاده از درایورهایی مانند <a href="http://php.net/mysqli">mysqli</a> و <a href="http://php.net/pgsql">pgsql</a> و <a href="http://php.net/mssql">mssql</a> و … بود.</p>
+
+<p>استفاده از این درایورها بسیار مناسب است به شرط آنکه برنامه‌ی شما تنها با <em>یک</em>
+ پایگاه‌داده سروکار داشته باشد، اگر،‌برای نمونه، به طور همزمان از MySQL و
+ MSSQL استفاده می‌کنید، یا نیاز به برقراری ارتباط با Oracle دارید، آنگاه
+ قادر نخواهید بود از این درایورها استفاده کنید. اینجاست که باید برای هر 
+درایور کد جداگانه‌ای بنویسید — که این کار بیهوده‌ای است.</p>
+
+<h2 id="mysql">افزونه‌ی MySQL</h2>
+
+<p>افزونه‌ی <a href="http://php.net/mysql">mysql</a> دیگر توسعه داده نمی‌شود و <a href="http://php.net/manual/en/migration55.deprecated.php">پایان عمر آن در نسخه PHP 5.5.0 به طور رسمی اعلام شده است</a>، بدین معنی که در نسخه‌های بعدی حذف خواهد شد. اگر در برنامه‌ی خود از تابع‌هایی که با <code>*_mysql</code> شروع می‌شوند استفاده می‌کنید، مانند <code>()mysql_connect</code> و <code>()mysql_query</code>، این‌ها در نسخه‌های بعدی PHP قابل استفاده نخواهند بود. این بدان معنی است که باید آن‌ها را با گزینه‌های مناسب‌تری مانند <a href="http://php.net/mysqli">mysqli</a> یا <a href="http://php.net/pdo">PDO</a> جایگزین کنید و بهتر است که این کار را اکنون انجام دهید تا بعدها مجبور نباشید این تغییرات را با عجله انجام دهید.</p>
+
+<p><strong>اگر از ابتدا نرم‌افزاری را شروع کرده‌اید به طور حتم نباید از افزونه‌ی <a href="http://php.net/mysql">mysql</a> استفاده کنید: در عوض از <a href="http://php.net/mysqli">افزونه‌ی MySQLi</a> یا PDO استفاده کنید.</strong></p>
+
+<ul>
+  <li><a href="http://php.net/manual/en/mysqlinfo.api.choosing.php">PHP: انتخاب API مناسب برای MySQL</a></li>
+  <li><a href="http://wiki.hashphp.org/PDO_Tutorial_for_MySQL_Developers">آموزش PDO برای توسعه‌دهندگان MySQL</a></li>
+</ul>
+
+<h2 id="pdo">افزونه‌ی PDO</h2>
+
+<p>PDO یک کتابخانه‌ی انتزاعی جهت برقراری ارتباط با پایگاه‌داده‌های مختلف
+ است — که از نسخه‌ی PHP 5.1.0 قابل دسترس است. برای نمونه، شما می‌توانید 
+از کد یکسانی جهت برقراری ارتباط با MySQL یا SQLite استفاده کنید:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">// PDO + MySQL</span>
+<span class="x">$pdo = new PDO('mysql:host=example.com;dbname=database', 'user', 'password');</span>
+<span class="x">$statement = $pdo-&gt;query("SELECT some\_field FROM some\_table");</span>
+<span class="x">$row = $statement-&gt;fetch(PDO::FETCH_ASSOC);</span>
+<span class="x">echo htmlentities($row['some_field']);</span>
+
+<span class="x">// PDO + SQLite</span>
+<span class="x">$pdo = new PDO('sqlite:/path/db/foo.sqlite');</span>
+<span class="x">$statement = $pdo-&gt;query("SELECT some\_field FROM some\_table");</span>
+<span class="x">$row = $statement-&gt;fetch(PDO::FETCH_ASSOC);</span>
+<span class="x">echo htmlentities($row['some_field']);</span></code></pre></div>
+
+<p>PDO پرس‌وجوهای SQL را ترجمه نمی‌کند یا ویژگی‌های خاص هر پایگاه‌داده 
+را شبیه‌سازی نمی‌کند; تنها برای اتصال به چند پایگاه‌داده از طریق یک API 
+طراحی شده است.</p>
+
+<p>از همه مهم‌تر، <code>PDO</code> این امکان را می‌دهد تا داده‌های ورودی
+ به نرم‌افزار را با روش‌های امن وارد پایگاه‌داده کنید که اینکار منجر به 
+جلوگیری از حملات SQL Injection می‌گردد.</p>
+
+<p>فرض کنید اسکریپت PHP یک ID از نوع عددی را به عنوان پارامتر می‌پذیرد. 
+از این ID جهت فراخوانی کاربر از پایگاه‌داده استفاده می‌شود. قطعه کد 
+پایین روش <code>اشتباه</code> پیاده‌سازی اینکار است:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="nv">$pdo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PDO</span><span class="p">(</span><span class="s1">'sqlite:/path/db/users.db'</span><span class="p">);</span>
+<span class="nv">$pdo</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">"SELECT name FROM users WHERE id = "</span> <span class="o">.</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]);</span> <span class="c1">// &lt;-- NO!</span></code></pre></div>
+
+<p>اینطور کدنویسی وحشتناک است. شما پارامتری را به طور مستقیم وارد 
+پایگاه‌داده می‌کنید بدون آنکه آن را بررسی کنید. اینکار باعث می‌شود در 
+کسری از ثانیه، مورد حمله قرار بگیرید با استفاده از روشی به نام <a href="http://wiki.hashphp.org/Validation">SQL Injection</a>. فقط تصور کنید فرد مهاجم عبارتی مانند <code>http://domain.com/?id=1%3BDELETE+FROM+users</code> را فراخوانی کند. اینکار متغیر ‍‍<code>GET_$</code> را با مقدار <code>1;DELETE FROM users</code>
+ تنظیم می‌کند که باعث می‌شود اطلاعات تمام کاربران شما از بین برود! شما 
+باید با استفاده از انقیاد پارامتر در PDO داده‌ی ورودی را بررسی کنید.</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="nv">$pdo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PDO</span><span class="p">(</span><span class="s1">'sqlite:/path/db/users.db'</span><span class="p">);</span>
+<span class="nv">$stmt</span> <span class="o">=</span> <span class="nv">$pdo</span><span class="o">-&gt;</span><span class="na">prepare</span><span class="p">(</span><span class="s1">'SELECT name FROM users WHERE id = :id'</span><span class="p">);</span>
+<span class="nv">$stmt</span><span class="o">-&gt;</span><span class="na">bindParam</span><span class="p">(</span><span class="s1">':id'</span><span class="p">,</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">'id'</span><span class="p">],</span> <span class="nx">PDO</span><span class="o">::</span><span class="na">PARAM_INT</span><span class="p">);</span> <span class="c1">// &lt;-- Automatically sanitized by PDO</span>
+<span class="nv">$stmt</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span></code></pre></div>
+
+<p>این کد صحیح است، چرا که با استفاده از انقیاد پارامتر روی عبارت PDO 
+کار می‌کند. اینکار باعث می‌شود داده‌ی ورودی قبل از اینکه وارد 
+پایگاه‌داده شود بررسی شده و احتمال خطر SQL Injection را از بین می‌برد.</p>
+
+<ul>
+  <li><a href="http://www.php.net/manual/en/book.pdo.php">درباره‌ی PDO بیشتر بدانید</a></li>
+</ul>
+
+<p>باید آگاه باشید که برقراری ارتباط با پایگاه‌داده از منابع سیستم 
+استفاده می‌کند و اگر این ارتباط پایان نیابد، این منابع به صورت خودکار 
+آزاد نمی‌شوند. با استفاده از PDO این اطمینان را دارید که زمان خاتمه‌ی 
+ارتباط، شی مربوط به پایگاه‌داده از بین می‌رود و تمام منابع آن باز 
+می‌گردد. اگر اینکار را به صورت واضح انجام ندهید، PHP به صورت خودکار 
+هنگام خاتمه‌ی اسکریپت ارتباط پایگاه‌داده را قطع می‌کند مگر اینکه ار یک 
+ارتباط پایدار استفاه کرده باشید.</p>
+
+<ul>
+  <li><a href="http://php.net/manual/en/pdo.connections.php">درباره‌ی برقراری ارتباط با استفاده از PDO بیشتر بدانید</a></li>
+</ul>
+
+
+    </div>
+
+    
+    <div id="databases_interacting">
+    <h2 id="databases_interacting_title">ارتباط با پایگاه‌داده</h2>
+
+<p>زمانی که توسعه‌دهندگان شروع به یادگیری PHP می‌کنند، اغلب کد مربوط به 
+بخش پایگاه‌داده را با کد مربوط به بخش نرم‌افزار خود مخلوط می‌کنند، 
+مانند:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">&lt;ul&gt;</span>
+<span class="cp">&lt;?php</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">'SELECT * FROM table'</span><span class="p">)</span> <span class="k">as</span> <span class="nv">$row</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"&lt;li&gt;"</span><span class="o">.</span><span class="nv">$row</span><span class="p">[</span><span class="s1">'field1'</span><span class="p">]</span><span class="o">.</span><span class="s2">" - "</span><span class="o">.</span><span class="nv">$row</span><span class="p">[</span><span class="s1">'field1'</span><span class="p">]</span><span class="o">.</span><span class="s2">"&lt;/li&gt;"</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">&lt;/</span><span class="nx">ul</span><span class="o">&gt;</span></code></pre></div>
+
+<p>این روش اشتباهی است بنا به دلایل مختلف، بیشتر به خاطر دشوار بودن 
+عیب‌یابی، آزمایش و خواندن آن، که باعث می‌شود داده‌ی بسیاری به خروجی برود
+ اگر برای آن حد خاصی مشخص نشده باشد.</p>
+
+<p>با توجه به روش‌های دیگری که برای این مساله وجود دارد - مانند <a href="#object-oriented-programming">برنامه‌نویسی شی‌گرا</a> یا <a href="#functional-programming">برنامه‌نویسی تابعی</a> - بایستی این فرآیند به صورت جداگانه انجام شود.</p>
+
+<p>ساده‌ترین روش را در نظر بگیرید:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">function</span> <span class="nf">getAllSomethings</span><span class="p">(</span><span class="nv">$db</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">'SELECT * FROM table'</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">foreach</span> <span class="p">(</span><span class="nx">getAllFoos</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$row</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"&lt;li&gt;"</span><span class="o">.</span><span class="nv">$row</span><span class="p">[</span><span class="s1">'field1'</span><span class="p">]</span><span class="o">.</span><span class="s2">" - "</span><span class="o">.</span><span class="nv">$row</span><span class="p">[</span><span class="s1">'field1'</span><span class="p">]</span><span class="o">.</span><span class="s2">"&lt;/li&gt;"</span><span class="p">;</span> <span class="c1">// BAD!!</span>
+<span class="p">}</span></code></pre></div>
+
+<p>این شروع خوبی است. آن دو مورد را داخل فایل‌های جداگانه قرار دهید تا جدایی بخش‌ها ملموس شود.</p>
+
+<p>با ایجاد یک کلاس که متد شما را در بر می‌گیرد می‌توانید یک “Model” به وجود آورید. یک فایل ساده با پسوند <code>php.</code> جهت قراردادن خروجی خود به وجود آورید تا در اینجا به یک “View” برسید، که تقریبا نزدیک به <a href="http://code.tutsplus.com/tutorials/mvc-for-noobs--net-10488">MVC</a> - یک معماری شی‌گرا برای اکثر <a href="#frameworks_title">فریم‌ورک‌ها</a> است.</p>
+
+<p><strong>foo.php</strong></p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="nv">$db</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PDO</span><span class="p">(</span><span class="s1">'mysql:host=localhost;dbname=testdb;charset=utf8'</span><span class="p">,</span> <span class="s1">'username'</span><span class="p">,</span> <span class="s1">'password'</span><span class="p">);</span>
+
+<span class="c1">// Make your model available</span>
+<span class="k">include</span> <span class="s1">'models/FooModel.php'</span><span class="p">;</span>
+
+<span class="c1">// Create an instance</span>
+<span class="nv">$fooList</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FooModel</span><span class="p">(</span><span class="nv">$db</span><span class="p">);</span>
+
+<span class="c1">// Show the view</span>
+<span class="k">include</span> <span class="s1">'views/foo-list.php'</span><span class="p">;</span></code></pre></div>
+
+<p><strong>models/FooModel.php</strong></p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">class</span> <span class="nc">Foo</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$db</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">PDO</span> <span class="nv">$db</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span> <span class="o">=</span> <span class="nv">$db</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getAllFoos</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">'SELECT * FROM table'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p><strong>views/foo-list.php</strong></p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$fooList</span> <span class="k">as</span> <span class="nv">$row</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">    </span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$row</span><span class="p">[</span><span class="s1">'field1'</span><span class="p">]</span> <span class="cp">?&gt;</span><span class="x"> - </span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$row</span><span class="p">[</span><span class="s1">'field1'</span><span class="p">]</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="cp">&lt;?</span> <span class="k">endforeach</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+
+<p>این تقریبا مشابه کاری است که تمام فریم‌ورک‌ها انجام می‌دهند البته با 
+کمی تفاوت. شما نیاز ندارید که این گام‌ها را مجدد تکرار کنید، اما زمانی 
+که قصد <a href="#unit-testing">آزمایش کردن واحدی</a> از نرم‌افزار خود را دارید، قاطی کردن کدهای مختلف با یکدیگر برای شما مشکل‌ساز خواهد شد.</p>
+
+<p><a href="http://phpbridge.org/">PHPBridge</a> مقاله‌ی فوق‌العاده‌ای دارد با مضمون <a href="http://phpbridge.org/intro-to-php/creating_a_data_class">ایجاد یک کلاس داده‌ای</a>
+ که موضوعی بسیار مشابه به این را پوشش می‌دهد و برای توسعه‌دهندگانی که به
+ تازگی می‌خواهند با پایگاه‌داده کار کنند، بسیار مناسب است.</p>
+
+
+    </div>
+
+    
+    <div id="databases_abstraction_layers">
+    <h2 id="databases_abstraction_layers_title">لایه‌های انتزاعی</h2>
+
+<p>بسیاری از فریم‌ورک‌ها لایه‌ی انتزاعی خود جهت برقراری ارتباط با 
+پایگاه‌داده را به وجود می‌آورند که ممکن است بر اساس PDO باشد یا نه. 
+این‌ها اغلب ویژگی‌هایی را که در یک پایگاه‌داده وجود ندارد پیاده‌سازی 
+می‌کنند با قرار دادن پرس‌و‌جو شما در متدهای مختلف PHP، که اینکار امکان 
+برقراری کامل حالت انتزاعی با پایگاه‌داده را فراهم می‌سازد و با عملیات 
+ابتدایی PDO بسیار متفاوت است.
+اینکار اندکی سربار به وجود می‌آورد اما اگر نرم‌افزار شما نیاز دارد با 
+چندین پایگاه‌داده مختلف ارتباط داشته باشد، این سربار ارزشش را دارد.</p>
+
+<p>برخی از این لایه‌های انتزاعی با استفاده از استانداردهای فضای‌نام‌گذاری <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md">PSR-0</a> یا <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md">PSR-4</a> ساخته شده‌اند و می‌توانند در بسیاری از نرم‌افزارها مورد استفاده قرار بگیرند:</p>
+
+<ul>
+  <li><a href="https://github.com/auraphp/Aura.Sql">Aura SQL</a></li>
+  <li><a href="http://www.doctrine-project.org/projects/dbal.html">Doctrine2 DBAL</a></li>
+  <li><a href="http://propelorm.org/">Propel</a></li>
+  <li><a href="http://packages.zendframework.com/docs/latest/manual/en/index.html#zend-db">ZF2 Db</a></li>
+</ul>
+
+
+    </div>
+
+    
+    <p><a href="#top" class="top">Back to Top</a></p>
+
+    
+    <div id="templating">
+    <h1 id="templating_title">قالب‌ها</h1>
+
+<p>قالب‌ها باعث می‌شوند منطق کد شما از قسمت نمایش‌دهنده یا خروجی آن جدا 
+گردد. قالب‌ها بیشتر دربردارنده‌ی HTML نرم‌افزار شما هستند اما می‌توانند 
+ساختارهای دیگری را نیز شامل شوند، مانند XML. قالب‌ها با نام “Views” نیز 
+یاد می‌شوند، دومین بخش الگوی معماری نرم‌افزار <a href="http://novid.github.io/php-the-right-way/pages/Design-Patterns.html#model-view-controller">MVC</a>.</p>
+
+    </div>
+
+    
+    <div id="templating_benefits">
+    <h2 id="templating_benefits_title">مزیت‌ها</h2>
+
+<p>مزیت اصلی در استفاده از قالب‌ها این است که منطق نرم‌افزار شما از قسمت
+ ظاهری  و نمایشی آن جدا می‌شود. قالب‌ها وظیفه‌ی اصلی در نمایش دادن محتوا
+ را دارند. آن‌ها وظیفه‌ی ذخیره‌سازی یا عملیات پیچیده‌ی دیگر روی داده‌ها 
+را ندارند. این موضوع بیشتر در تیم‌های نرم‌افزاری که افراد گوناگون روی 
+قسمت‌های مختلف پروژه کار می‌کنند، تاثیرگذار است، برای نمونه کد سمت سرور 
+(کنترل‌کننده‌ها، مدل‌ها) که توسط توسعه‌دهندگان و کد سمت مرورگر که توسط 
+طراحان نوشته می‌شود.</p>
+
+<p>استفاده از قالب‌ها منجر به بهینه‌شدن کد قسمت ظاهری نرم‌افزار خواهد 
+شد. قالب‌ها معمولا در پوشه‌ی “views” قرار داده می‌شوند، که هر کدام در یک
+ فایل جداگانه قرار دارند. این رویکرد استفاده مجدد از کد را بهینه می‌کند 
+چرا که قسمت‌های بزرگ کد را به بخش‌های کوچک‌تر تبدیل می‌کند. برای نمونه، 
+قسمت header و footer سایت شما می‌تواند توسط قالب تعریف شود، که این 
+قالب‌ها قبل و بعد از قالب اصلی نرم‌افزار قرار می‌گیرند.</p>
+
+<p>در نهایت، بر اساس کتابخانه‌ای که از آن استفاده می‌کنید، قالب‌ها 
+می‌توانند امنیت بیشتری ایجاد کنند چرا که محتوای تولید شده توسط کاربر را 
+به صورت خودکار امن می‌سازند (به عبارت دیگر escape می‌کنند). برخی 
+کتابخانه‌ها محیط‌های امنی را در اختیار طراحان قالب قرار می‌دهند که تنها 
+به بخشی از متغیرها و توابع دسترسی دارند.</p>
+
+    </div>
+
+    
+    <div id="plain_php_templates">
+    <h2 id="plain_php_templates_title">قالب‌های خام PHP</h2>
+
+<p>این قالب‌ها تنها دربردارنده‌ی کد PHP هستند. از آنجا که PHP خود زبانی 
+است که بر اساس template ساخته شده،‌این قالب‌ها انتخاب پیش‌فرض هستند. این
+ بدان معنی است که به راحتی می‌توانید کد PHP را داخل HTML یا سایر کدها 
+قرار دهید. این مزیت برای توسعه‌دهندگان PHP بسیار کاربردی است چرا که نیاز
+ به یادگرفتن مفاهیم پیچیده‌تر ندارند. به تمام توابع مورد نیاز خود دسترسی
+ دارند و IDE آن‌ها از قابلیت‌های مختلف جهت پشتیبانی از این ساختار حمایت 
+می‌کند. علاوه بر این، این قالب‌ها بسیار سریع هستند چرا که به عملیات 
+کامپایل نیازی ندارند.</p>
+
+<p>هر فریم‌ورک پیشرفته‌ی PHP امروزه از یک ساختار قالب مانند استفاده 
+می‌کند، که اکثر آن‌ها از قالب‌های خام بهره می‌برند. جدا از این 
+فریم‌ورک‌ها، کتابخانه‌هایی مانند <a href="http://platesphp.com/">Plates</a> یا <a href="https://github.com/auraphp/Aura.View">Aura.View</a> کار با قالب‌های خام را تسهیل می‌کنند با ارایه‌ی عملکردهای پیشرفته‌ای مانند وراثت، ساختارها و قابلیت توسعه‌ی بیشتر.</p>
+
+<p>نمونه‌ای از یک قالب خام PHP (که از کتابخانه‌ی <a href="http://platesphp.com/">Plates</a> استفاده می‌کند):</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">(</span><span class="s1">'header'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'title'</span> <span class="o">=&gt;</span> <span class="s1">'User Profile'</span><span class="p">])</span> <span class="cp">?&gt;</span><span class="x"></span>
+
+<span class="x">&lt;h1&gt;User Profile&lt;/h1&gt;</span>
+<span class="x">&lt;p&gt;Hello, </span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">escape</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span><span class="cp">?&gt;</span><span class="x">&lt;/p&gt;</span>
+
+<span class="cp">&lt;?php</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">(</span><span class="s1">'footer'</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+
+
+    </div>
+
+    
+    <div id="compiled_templates">
+    <h2 id="compiled_templates">قالب‌های کامپایل شدنی</h2>
+
+<p>درست است که PHP به عنوان یک زبان برنامه‌نویسی شی‌گرا پیشرفت زیادی 
+داشته است اما به عنوان یک زبان که از ساختار templating پشتیبانی می‌کند <a href="http://fabien.potencier.org/article/34/templating-engines-in-php">پیشرفت چندانی نداشته</a> است. قالب‌های کامپایل شدنی مانند <a href="http://twig.sensiolabs.org/">Twig</a> یا <a href="http://www.smarty.net/">Smarty</a>
+ این فضای خالی را با ارایه‌ی ساختاری جدید پر می‌کنند، که به طور خاص به 
+این منظور طراحی شده است. قالب‌های کامپایل شدنی آسان‌تر نوشته، تمیزتر 
+خوانده و امن‌تر استفاده می‌شوند چرا که از قابلیت‌هایی مانند بررسی خودکار
+ محتوای کاربر، پشتیبانی از وراثت و ساختار داده‌های مناسب استفاده 
+می‌کنند. این قالب‌ها حتی می‌توانند بین چند زبان برنامه‌نویسی به اشتراک 
+گذاشته شوند که <a href="http://mustache.github.io/">Mustache</a> 
+نمونه‌ای از آن‌ها است. از آن‌جایی که این قالب‌ها کامپایل می‌شوند درصدی 
+مشکل در سرعت به وجود می‌آورند که اگر از ساختار Caching مناسب استفاده شود
+ این مشکل رفع می‌گردد.</p>
+
+<p>نمونه‌ای از یک قالب کامپایل شدنی (که از کتابخانه‌ی <a href="http://twig.sensiolabs.org/">Twig</a> استفاده می‌کند):</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">{% include 'header.html' with {'title': 'User Profile'} %}
+
+&lt;h1&gt;User Profile&lt;/h1&gt;
+&lt;p&gt;Hello, {{ name }}&lt;/p&gt;
+
+{% include 'footer.html' %}</code></pre></div>
+
+
+    </div>
+
+    
+    <div id="templating_further_reading">
+    <h2 id="templating_further_reading_title">مطالعه‌ی بیشتر</h2>
+
+<h3 id="section">مقاله‌های آموزشی</h3>
+
+<ul>
+  <li><a href="http://fabien.potencier.org/article/34/templating-engines-in-php">Template Engine ها در PHP</a></li>
+  <li><a href="http://code.tutsplus.com/tutorials/an-introduction-to-views-templating-in-codeigniter--net-25648">مقدمه‌ای بر View و Template در CodeIgniter</a></li>
+  <li><a href="http://www.smashingmagazine.com/2011/10/17/getting-started-with-php-templating/">آغاز به کار با قالب‌ها</a></li>
+  <li><a href="http://code.tutsplus.com/tutorials/roll-your-own-templating-system-in-php--net-16596">قالب خود در PHP را بنویسید</a></li>
+  <li><a href="https://laracasts.com/series/laravel-from-scratch/episodes/7">صفحه‌های اصلی</a></li>
+  <li><a href="http://code.tutsplus.com/tutorials/working-with-templates-in-symfony-2--cms-21172">کار با قالب‌ها در Symfony2</a></li>
+</ul>
+
+<h3 id="section-1">کتابخانه‌ها</h3>
+
+<ul>
+  <li><a href="https://github.com/auraphp/Aura.View">Aura.View</a> <em>(بومی)</em></li>
+  <li><a href="http://laravel.com/docs/templates">Blade</a> <em>(کامپایل شدنی، وابسته به فریم‌ورک)</em></li>
+  <li><a href="http://dwoo.org/">Dwoo</a> <em>(کامپایل شدنی)</em></li>
+  <li><a href="https://github.com/nette/latte">Latte</a> <em>(کامپایل شدنی)</em></li>
+  <li><a href="https://github.com/bobthecow/mustache.php">Mustache</a> <em>(کامپایل شدنی)</em></li>
+  <li><a href="http://phptal.org/">PHPTAL</a> <em>(کامپایل شدنی)</em></li>
+  <li><a href="http://platesphp.com/">Plates</a> <em>(بومی)</em></li>
+  <li><a href="http://www.smarty.net/">Smarty</a> <em>(کامپایل شدنی)</em></li>
+  <li><a href="http://twig.sensiolabs.org/">Twig</a> <em>(کامپایل شدنی)</em></li>
+  <li><a href="http://framework.zend.com/manual/2.3/en/modules/zend.view.quick-start.html">Zend\View</a> <em>(بومی، وابسته به فریم‌ورک)</em></li>
+</ul>
+
+    </div>
+
+    
+    <p><a href="#top" class="top">Back to Top</a></p>
+
+    
+    <div id="errors_and_exceptions">
+    <h1 id="errors_and_exceptions_title">خطا و استثنا</h1>
+
+    </div>
+
+    
+    <div id="errors">
+    <h2 id="errors_title">خطا</h2>
+
+<p>در زبان‌های برنامه‌نویسی که “خطایابی سنگین” دارند، هر زمان خطایی رخ 
+دهد یک استثنا به وجود می‌آید. البته این روش ماندگاری جهت انجام کارها است
+ اما PHP یک زبان برنامه‌نویسی با “خطایابی سبک” است. اگرچه دارای عملیات 
+خطایابی است و قسمت بزرگی از هسته (Zend Engine) برای کار با شی‌های مختلف 
+از آن بهره می‌برد، اما در بسیاری عملیات دیگر، PHP به ادامه‌ی پردازش 
+برنامه ادامه می‌دهد مگر اینکه یک خطای مهلک رخ داده باشد.</p>
+
+<p>برای نمونه:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">$ php -a</span>
+<span class="x">php &gt; echo $foo;</span>
+<span class="x">Notice: Undefined variable: foo in php shell code on line 1</span></code></pre></div>
+
+<p>این خطا از نوع اعلان است و PHP با آن کاری ندارد. این امر ممکن است 
+برای افرادی که با مکانیزم خطایابی سایر زبان‌های برنامه‌نویسی آشنا هستند،
+ گیج‌کننده باشد. برای نمونه، ارجاع به یک متغیر تعریف‌نشده در پایتون منجر
+ به ایجاد یک استثنا می‌شود:</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="err">$</span> <span class="n">python</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="n">foo</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s">"&lt;stdin&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s">'foo'</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span></code></pre></div>
+
+<p>تنها تفاوت این است که در پایتون کوچکترین خطا منجر به ایجاد یک استثنا 
+می‌شود که اینکار به توسعه‌دهندگان اطمینان خاطر می‌دهد تمام حالت‌های 
+نامطلوب در یک برنامه قابل رسیدگی هستند، اما PHP در برخورد با چنین 
+خطاهایی به کار خود ادامه می‌دهد مگر اینکه آن خطا مهلک باشد که در این 
+نقطه اجرای برنامه متوقف و خطا گزارش می‌شود.</p>
+
+<h3 id="section">شدت خطا</h3>
+
+<p>سطح‌های مختلفی از شدت خطا در PHP وجود دارد که سه سطح خطا، اعلان و هشدار بسیار مرسوم هستند که با استفاده از <code>E_NOTICE</code>، <code>E_ERROR</code> و <code>E_WARNING</code>
+ تعریف شده‌اند. خطاها، در زمان اجرا رخ می‌دهند و مهلک هستند و معمولا 
+منشا در کد اصلی برنامه دارند که منجر به توقف اجرای آن می‌شوند. اعلان‌ها،
+ پیام‌هایی هستند که توجه نکردن به آن‌ها ممکن است منجر به توقف برنامه 
+بشود یا نشود و اجرای برنامه را متوقف نمی‌کنند. هشدارها خطاهایی غیر مهلک 
+هستند که منجر به توقف برنامه نمی‌شوند.</p>
+
+<p>نوع دیگری از این پیام‌ها که در زمان کامپایل رخ می‌دهند، پیام‌های <code>E_STRICT</code>
+ است. این پیام‌ها به شما پیشنهادهایی درباره تغییر کد فعلی می‌دهند تا 
+نرم‌افزار شما با نسخه‌های بعدی PHP سازگاری بیشتری داشته باشد.</p>
+
+<h3 id="php">تغییر روش گزارش‌دهی خطا در PHP</h3>
+
+<p>گزارش‌دهی خطا با استفاده از تنظیمات سراسری PHP یا فراخوانی برخی توابع قابل تغییر است. با استفاده از تابع <code>()error_reporting</code>
+ می‌توانید سطح خطایی را که در زمان اجرای اسکریپت رخ می‌دهد با استفاده از
+ متغیرهای ثابت، تنظیم کنید. بدین معنی که اگر می‌خواهید تنها خطاها و 
+هشدارها را مشاهده کنید - و نه اعلان‌ها - بدین شکل آن را تنظیم کنید:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">error_reporting(E_ERROR | E_WARNING);</span></code></pre></div>
+
+<p>همچنین می‌توانید نحوه‌ی نمایش خطا روی نمایشگر (مناسب زمان توسعه)، عدم
+ نمایش آن و ثبت شدن (مناسب زمان اجرا) آن را کنترل کنید. برای اطلاعات 
+بیشتر در این مورد بخش <a href="#error_reporting">گزارش‌دهی خطا</a> را مشاهده کنید.</p>
+
+<h3 id="section-1">جلوگیری از نمایش خطا</h3>
+
+<p>با استفاده از عملگر کنترل خطا <code>@</code> می‌توانید از به وجود 
+آمدن برخی خطاها جلوگیری کنید. با قرار دادن این عملگر در ابتدای عبارت اگر
+ خطایی از آن عبارت به وجود آید، گزارش داده نمی‌شود.</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">echo @$foo['bar'];</span></code></pre></div>
+
+<p>خروجی این دستور در صورت وجود <code>['bar']foo$</code> خواهد بود، اما اگر متغیر <code>foo$</code> یا کلید <code>'bar'</code> وجود نداشته باشند خروجی null باز می‌گرداند یا چیزی چاپ نمی‌شود. بدون استفاده از عملگر کنترل خطا، این عبارت می‌توانست یک خطای <code>PHP Notice:  Undefined variable: foo</code> یا <code>PHP Notice:  Undefined index: bar</code> به وجود آورد.</p>
+
+<p>ممکن است ایده‌ی خوبی به نظر بیاید اما ممکن است نتایج نامطلوبی در پی داشته باشد. عبارت‌هایی که شامل عملگر <code>@</code>
+ هستند سرعت اجرای کمتری نسبت به سایر عبارت‌ها دارند. بهینه‌سازی پیش از 
+موعد (قبل از اجرای نهایی برنامه) از مباحث ریشه‌ای در مناظره‌های 
+برنامه‌نویسی به حساب می‌آید، اما اگر کارایی و قابلیت اجرای بالا برای 
+برنامه‌ی شما مهم است، درک صحیحی از کارایی پایین برنامه با استفاده از 
+عملگر کنترل خطا مورد نیاز شما است.</p>
+
+<p>از طرف دیگر، عملگر کنترل خطا به صورت <strong>کامل</strong> خطا را محو
+ می‌سازد. خطا نه تنها نمایش داده نمی‌شود بلکه جایی نیز ثبت نمی‌گردد. 
+همچنین در محیط‌های فعال PHP (مانند سرورها)، راهی برای غیرفعال کردن این 
+عملگر وجود ندارد. ممکن است در مرحله‌ی اول خطایی که می‌بینید بدون ضرر 
+باشد، اما همان نیز نمایش داده نمی‌شود و جایی ثبت نمی‌گردد.</p>
+
+<p>اگر راهی برای غیرفعال کردن این عملگر وجود دارد باید از آن بهره گیرید. برای نمونه، کد بالا می‌تواند بدین شکل نوشته شود:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">echo isset($foo['bar']) ? $foo['bar'] : '';</span></code></pre></div>
+
+<p>یکی از نمونه‌هایی که این عملگر در آن کاربرد دارد تابع <code>()fopen</code>
+ است که نمی‌تواند فایل مورد نظر را بارگیری کند. قبل از بارگیری فایل 
+می‌توانید وجود یا عدم وجود آن را بررسی کنید، اما اگر فایل بلافاصله پس از
+ بررسی شما پاک شود آنگاه <code>()fopen</code> مقدار false و <em>یک</em> 
+خطا باز می‌گرداند. البته این مشکلی است که PHP باید حل کند اما جزو مواردی
+ به حساب می‌آید که عملگر کنترل خطا می‌تواند کاربرد داشته باشد.</p>
+
+<p>پیشتر اشاره کردیم که در محیط‌های فعال PHP امکان غیرفعال‌سازی این عملگر وجود ندارد. اگرچه، <a href="http://xdebug.org/docs/basic">xDebug</a> یک تنظیم <code>xdebug.stream</code> دارد که این عملگر را غیرفعال می‌سازد. می‌توانید با استفاده از فایل <code>php.ini</code> آن را تنظیم کنید.</p>
+
+<pre><code>xdebug.scream = On
+</code></pre>
+
+<p>همچنین می‌توانید در زمان اجرا و با استفاده از تابع <code>ini_set</code> آن را تنظیم کنید</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">ini_set('xdebug.scream', '1')</span></code></pre></div>
+
+<p>افزونه‌ی “<a href="http://www.php.net/manual/en/book.scream.php">Scream</a>” برای PHP عملکرد مشابهی مانند xDebug دارد با این تفاوت که نام آن <code>scream.enabled</code> است.</p>
+
+<p>این برای زمانی مفید است که احساس می‌کنید جلوگیری از نمایش خطا، 
+اطلاعات مفیدی را از شما پنهان می‌سازد. از این افزونه با احتیاط و به 
+عنوان یک ابزار کمکی جهت خطایابی استفاه کنید. کدهای فراوانی از کتابخانه‌ی
+ PHP وجود دارند که با خاموش بودن کامل این عملگر کار نخواهند کرد.</p>
+
+<ul>
+  <li><a href="http://php.net/manual/en/language.operators.errorcontrol.php">عملگرهای کنترل خطا</a></li>
+  <li><a href="http://www.sitepoint.com/">SitePoint</a></li>
+  <li><a href="http://xdebug.org/docs/basic">xDebug</a></li>
+  <li><a href="http://www.php.net/manual/en/book.scream.php">Scream</a></li>
+</ul>
+
+<h3 id="errorexception">ErrorException</h3>
+
+<p>برای اینکه PHP به یک زبان برنامه‌نویسی با قابلیت “خطایابی سنگین” 
+تبدیل شود تنها اضافه شدن چند خط کد کافی است. می‌توانید با استفاده از 
+کلاس <code>ErrorException</code> که خود از کلاس <code>Exception</code> مشتق شده است، “خطا”های خود را به عنوان “استثنا” در نظر بگیرید.</p>
+
+<p>این تکنیک متدوالی است که توسط اکثر چارچوب‌های نرم‌افزاری مدرن مانند 
+Symfony یا Laravel پیاده‌سازی شده است. Laravel به صورت پیش‌فرض تمام 
+خطاها را به صورت استثنا با استفاده از بسته‌ی نرم‌افزاری <a href="http://filp.github.io/whoops/">Whoops!</a> نمایش می‌دهد در صورتی که گزینه‌ی <code>app.debug</code> فعال باشد و در صورت غیرفعال بودن آن‌ها را پنهان می‌سازد.</p>
+
+<p>با تبدیل خطاها به استثناها در زمان تولید نرم‌افزار، می‌توانید آن‌ها 
+را بهتر از حالت اولیه‌شان مدیریت کنید و اگر در این زمان به یک استثنا 
+برخورد کردید می‌توانید به راحتی آن را با استفاده از دستور catch بررسی 
+کنید. با بررسی هر استثنا در این زمینه، برنامه‌ی شما به مرور زمان 
+پایدارتر خواهد شد.</p>
+
+<p>اطلاعات بیشتر در مورد <code>ErrorException</code> و نحوه‌ی بررسی خطا در <a href="http://php.net/manual/en/class.errorexception.php">کلاس ErrorException</a> قابل دسترس است.</p>
+
+<ul>
+  <li><a href="http://php.net/manual/en/language.operators.errorcontrol.php">عملگرهای کنترل خطا</a></li>
+  <li><a href="http://www.php.net/manual/en/errorfunc.constants.php">رشته‌های پیش‌فرض جهت بررسی خطا</a></li>
+  <li><a href="http://www.php.net/manual/en/function.error-reporting.php">تابع error_reporting و نحوه‌ی استفاده از آن</a></li>
+  <li><a href="#error_reporting">گزارش‌دهی خطا</a></li>
+</ul>
+
+
+    </div>
+
+    
+    <div id="exceptions">
+    <h2 id="exceptions_title">استثنا</h2>
+
+<p>استثناها بخشی استاندارد در اکثر زبان‌های برنامه‌نویسی هستند، اما اغلب
+ در PHP نادیده گرفته می‌شوند. زبان‌هایی مانند روبی که دارای خطایابی 
+سنگین هستند، هر زمان اتفاقی در آن‌ها بیفتد (یک درخواست HTTP ناقص به 
+پایان برسد، پرس و جو از پایگاه داده اشتباه باشد یا حتی یک فایل تصویری 
+پیدا نشود) بلافاصله با ایجاد و نمایش آن خطا شما را مطلع می‌سازند.</p>
+
+<p>اما PHP با اینطور مسائل به روشی سهل‌انگارانه برخورد می‌کند، مانند فراخوانی تابع <code>()file_get_contents</code> که در صورت پیدا نکردن فایل یک عبارت <code>FALSE</code>
+ و یک هشدار باز می‌گرداند. بسیاری از چارچوب‌های نرم‌افزاری قدیمی‌ PHP 
+مانند CodeIgniter تنها یک مقدار false باز می‌گردانند یا آن را در سیستم 
+داخلی خود ذخیره کرده و در نهایت با استفاده از متدی مانند <code>()this-&gt;upload-&gt;get_error$</code>
+ کاربر را در جریان خطا قرار می‌دهند. مشکل اینجاست برای اینکه درک کنید 
+این متد چه نوع خطایی را گزارش می‌دهد باید در مستندات دنبال آن بگردید به 
+جای اینکه از اسم و روش نامگذاری آن متوجه نوع خطا شوید.</p>
+
+<p>مشکل دیگر با کلاس‌هایی است که به صورت خودکار خطا را در نمایشگر نشان 
+می‌دهند و بلافاصله فرآیند اجرا خاتمه می‌یابد. با اینکار شما توانایی 
+مدیریت خطا توسط سایر توسعه‌دهندگان را نادیده می‌گیرید. استثناها باید 
+ایجاد شوند تا یک توسعه‌دهنده از بروز خطا آگاهی یابد، سپس آن‌ها هستند که 
+تصمیم می‌گیرند چگونه خطا را مدیریت کنند. برای نمونه:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="nv">$email</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Fuel\Email</span><span class="p">;</span>
+<span class="nv">$email</span><span class="o">-&gt;</span><span class="na">subject</span><span class="p">(</span><span class="s1">'My Subject'</span><span class="p">);</span>
+<span class="nv">$email</span><span class="o">-&gt;</span><span class="na">body</span><span class="p">(</span><span class="s1">'How the heck are you?'</span><span class="p">);</span>
+<span class="nv">$email</span><span class="o">-&gt;</span><span class="na">to</span><span class="p">(</span><span class="s1">'guy@example.com'</span><span class="p">,</span> <span class="s1">'Some Guy'</span><span class="p">);</span>
+
+<span class="k">try</span>
+<span class="p">{</span>
+    <span class="nv">$email</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="k">catch</span><span class="p">(</span><span class="nx">Fuel\Email\ValidationFailedException</span> <span class="nv">$e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// The validation failed</span>
+<span class="p">}</span>
+<span class="k">catch</span><span class="p">(</span><span class="nx">Fuel\Email\SendingFailedException</span> <span class="nv">$e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// The driver could not send the email</span>
+<span class="p">}</span>
+<span class="k">finally</span>
+<span class="p">{</span>
+    <span class="c1">// Executed regardless of whether an exception has been thrown, and before normal execution resumes</span>
+<span class="p">}</span></code></pre></div>
+
+<h3 id="php">استثناها در کتابخانه‌ی استاندارد PHP</h3>
+
+<p>کلاس عمومی <code>Exception</code> زمینه‌ی خطایابی محدودی برای توسعه‌دهنده ایجاد می‌کند. اگرچه، برای غلبه بر این محدودیت، این امکان وجود دارد از کلاس اصلی <code>Execption</code> ارث‌بری کنیم:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">class</span> <span class="nc">ValidationException</span> <span class="k">extends</span> <span class="nx">Exception</span> <span class="p">{}</span></code></pre></div>
+
+<p>این بدان معنی است که می‌توانید حالت‌های مختلفی جهت بررسی خطا در این کلاس تعریف کنید. این کار منجر به تولید <strong>بسیاری</strong> موارد استثنا خواهد شد، که برخی از آن‌ها به صورت کلی توسط <a href="#standard_php_library">افزونه SPL</a> نادیده گرفته می‌شوند.</p>
+
+<p>برای نمونه اگر از تابع <code>()call__</code> استفاده کنید و طی آن یک 
+متد نامعتبر فراخوانی شود به جای اینکه یک استثنا از نوع استاندارد ایجاد 
+شود، می‌توانید به راحتی از استثنایی مانند <code>throw new BadMethodCallException</code> استفاده کنید.</p>
+
+<ul>
+  <li><a href="http://php.net/manual/en/language.exceptions.php">درباره‌ی استثناها بیشتر بخوانید</a></li>
+  <li><a href="http://php.net/manual/en/spl.exceptions.php">درباره‌ی افزونه‌ی SPL بیشتر بخوانید</a></li>
+  <li><a href="http://www.brandonsavage.net/exceptional-php-nesting-exceptions-in-php/">استفاده‌ی تودرتو از استثناها در PHP</a></li>
+  <li><a href="http://ralphschindler.com/2010/09/15/exception-best-practices-in-php-5-3">بهترین روش‌های استفاده از استثنا در PHP5.3</a></li>
+</ul>
+
+
+    </div>
+
+    
+    <p><a href="#top" class="top">Back to Top</a></p>
+
+    
+    <div id="security">
+    <h1 id="security_title">امنیت</h1>
+
+    </div>
+
+    
+    <div id="web_application_security">
+    <h2 id="web_application_security_title">امنیت در نرم‌افزار وب</h2>
+
+<p>افراد مختلفی وجود دارند که می‌توانند از نرم‌افزار وب شما سواستفاده 
+کنند و این وظیفه‌ی شماست که اقدامات لازم جهت هرچه امن‌تر شدن نرم‌افزار 
+را انجام دهید. خوشبختانه، افراد حاضر در <a href="https://www.owasp.org/">پروژه‌ی امنیت نرم‌افزارهای تحت وب</a>،
+ چارچوبی را به عنوان سند برای پیاده‌سازی روش‌های امنیت اطلاعات در 
+نرم‌افزارهای تحت وب فراهم ساخته‌اند. این سند، برای توسعه‌دهندگانی که به 
+امنیت نرم‌افزار خود اهمیت می‌دهند بسیار مفید است.</p>
+
+<ul>
+  <li><a href="https://www.owasp.org/index.php/Guide_Table_of_Contents">مطالعه‌ی راهنمای امنیت OWASP</a></li>
+</ul>
+
+
+    </div>
+
+    
+    <div id="password_hashing">
+    <h2 id="password_hashing_title">ایمن‌سازی گذرواژه</h2>
+
+<p>به طور طبیعی، یکی از فرآیندهای موجود نرم‌افزارهای وب مبتنی بر PHP 
+استفاده از نام کاربری و گذرواژه جهت ایجاد حساب کاربری است که این اطلاعات
+ در پایگاه‌داده ذخیره می‌شوند تا برای احراز هویت کاربران مورد استفاده 
+قرار گیرند.</p>
+
+<p>بسیار مهم است که گذرواژه‌ها را قبل از ذخیره‌سازی، <a href="http://en.wikipedia.org/wiki/Cryptographic_hash_function">hash</a>
+ کنید. این یک عمل بازگشت‌ناپذیر است که گذرواژه‌ی کاربر را به رشته‌ای با 
+طول ثابت تبدیل می‌کند که این رشته قابل بازگشت به گذرواژه‌ی اولیه نباشد. 
+این بدان معناست که می‌توانید دو مقدار را با یکدیگر بررسی کنید تا مشخص 
+شود آیا از یک گذرواژه‌ی یکسان تولید شده‌اند یا خیر در حالی که نمی‌توانید
+ رشته‌ی اولیه (گذرواژه‌) را تشخیص دهید. اگر این اقدام مهم را انجام ندهید
+ و پایگاه‌داده‌ی شما در اختیار شخص دیگری قرار گیرد آنگاه اطلاعات ورود 
+کاربران شما فاش خواهد شد. در نظر داشته باشید برخی کاربران از یک گذرواژه‌
+ (متاسفانه) برای سرویس‌های دیگر نیز استفاده می‌کنند. به همین خاطر، مهم 
+است که این مسایل را جدی بگیرید.</p>
+
+<p><strong>کاربرد تابع <code>password_hash</code></strong></p>
+
+<p>این تابع در 5.5 PHP معرفی شد و در حال حاضر از الگوریتم BCrypt، که 
+قوی‌ترین الگوریتم موجود در PHP است، استفاده می‌کند. در صورت نیاز به 
+الگوریتم‌های قوی‌تر، در آینده بروزرسانی خواهد شد. همچنین کتابخانه‌ی <code>password_compat</code> برای نسخه‌های قدیمی‌تر مانند 5.3.7 به بالا، به وجود آمده است.</p>
+
+<p>در ادامه، با استفاده از این تابع یک رشته را hash کرده و با یک رشته‌ی 
+دیگر مقایسه می‌کنیم. از آنجایی که دو رشته‌ی ورودی متفاوت هستند، عملیات 
+ورود ناموفق خواهد بود.</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+                      
+<span class="k">require</span> <span class="s1">'password.php'</span><span class="p">;</span>
+
+<span class="nv">$passwordHash</span> <span class="o">=</span> <span class="nb">password_hash</span><span class="p">(</span><span class="s1">'secret-password'</span><span class="p">,</span> <span class="nx">PASSWORD_DEFAULT</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">password_verify</span><span class="p">(</span><span class="s1">'bad-password'</span><span class="p">,</span> <span class="nv">$passwordHash</span><span class="p">))</span> <span class="p">{</span>
+    <span class="c1">// Correct Password</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// Wrong password</span>
+<span class="p">}</span></code></pre></div>
+
+<ul>
+  <li><a href="http://us2.php.net/manual/en/function.password-hash.php">درباره‌ی <code>password_hash</code> بیشتر بدانید</a></li>
+  <li><a href="https://github.com/ircmaxell/password_compat">تابع <code>password_compat</code> برای نسخه‌های 5.3.7 تا 5.5</a></li>
+  <li><a href="http://en.wikipedia.org/wiki/Cryptographic_hash_function">درباره‌ی هشینگ و رمزنگاری بیشتر بدانید</a></li>
+  <li><a href="https://wiki.php.net/rfc/password_hash">چگونگی به وجود آمدن تابع <code>password_hash</code> و اسناد فنی مربوطه</a></li>
+</ul>
+
+
+    </div>
+
+    
+    <div id="data_filtering">
+    <h2 id="data_filtering_title">بررسی داده‌ی ورودی</h2>
+
+<p>هیچگاه و به هیچ عنوان به داده‌ی ورودی از طرف کاربر اطمینان نکنید. قبل
+ از اینکه داده را در کد مورد استفاده قرار دهید، همیشه آن را بررسی و 
+کنترل کنید. با استفاده از توابع <code>filter_var</code> و <code>filter_input</code> می‌توانید از صحت داده‌ی ورودی اطمینان حاصل کنید (مانند ایمیل و …).</p>
+
+<p>داده‌ی ورودی شامل طیف گسترده‌ای است: متغیرهای <code>GET_$</code> و <code>POST_$</code> از طریق فرم، برخی مقادیر درون متغیر <code>SERVER_$</code> و حتی درخواست HTTP با استفاده از <code>fopen('php://input', 'r')</code>.
+ به یاد داشته باشید که داده‌ی ورودی تنها از طریق فرم‌هایی که کاربران پر 
+می‌کنند به دست نمی‌آید و مواردی مانند دانلود و آپلود فایل، مقدارهای 
+موجود در session، داده cookie و داده‌ی مربوط به سرویس‌های دیگر، همگی از 
+این طیف گسترده هستند.</p>
+
+<p>هرچند داده‌ی ورودی قابل ذخیره‌سازی، ترکیب و دسترسی در زمان دیگر است، 
+کماکان داده‌ی ناامن به حساب می‌آید. هر زمان که قصد پردازش، خروجی‌گرفتن، 
+الحاق کردن یا استفاده از آن را در کد داشتید از خود بپرسید آیا می‌توان به
+ این داده اطمینان کرد یا خیر.</p>
+
+<p>هر نوع داده‌ای با توجه به کاربردش می‌تواند به یک شکل <em>فیلتر</em> 
+شود. برای نمونه، زمانی که داده‌ی ورودی بدون بررسی و کنترل به صورت مستقیم
+ در ساختار HTML قرار می‌گیرد این تهدید وجود دارد که عملیات غیرمجازی را 
+توسط JavaScript روی وبسایت شما انجام دهد! این نوع آسیب‌پذیری، Cross-Site
+ Scripting یا XSS نامیده می‌شود که یکی از خطرناکترین حملات متداول است. 
+یک روش برای جلوگیری از این حمله، بررسی و کنترل داده‌ی ورودی کاربر قبل از
+ قرار گرفتن در ساختار نهایی صفحه است که می‌تواند با استفاده از تابع <code>strip_tags</code> صورت پذیرد. برای نادیده گرفتن برخی کاراکترهای خاص توابعی مانند <code>htmlentities</code> و <code>htmlspecialchars</code> مورد استفاده قرار می‌گیرند.</p>
+
+<p>نمونه‌ی دیگر استفاده از داده‌ی ورودی جهت اجرا در محیط خط فرمان است. 
+این کار بسیار خطرناک (و در عین حال اصلا توصیه نمی‌شود) است اما می‌توان 
+از تابع <code>escapeshellarg</code> برای بررسی و کنترل داده‌ی ارسالی استفاده کرد.</p>
+
+<p>به عنوان نمونه‌ی آخر به دریافت فایل توسط کاربر از روی سرور اشاره 
+می‌کنیم. این کار می‌تواند با تغییر نام فایل به مسیر فایل صورت بگیرد که 
+در صورت بررسی نکردن داده‌ی ورودی، اطلاعات مهم سرور در اختیار دیگران قرار
+ می‌گیرد. برای جلوگیری از این امر باید کاراکترهای “/”، “/..”، و <a href="http://php.net/manual/en/security.filesystem.nullbytes.php">null bytes</a> یا سایر کاراکترها را حذف کرد تا منجر به نمایش مکان‌های مخفی در سرور نشوند.</p>
+
+<ul>
+  <li><a href="http://www.php.net/manual/en/book.filter.php">درباره‌ی بررسی و کنترل داده بیشتر بدانید</a></li>
+  <li><a href="http://php.net/manual/en/function.filter-var.php">درباره‌ی تابع <code>filter_var</code> بیشتر بدانید</a></li>
+  <li><a href="http://www.php.net/manual/en/function.filter-input.php">درباره‌ی تابع <code>filter_input</code> بیشتر بدانید</a></li>
+  <li><a href="http://php.net/manual/en/security.filesystem.nullbytes.php">درباره‌ی بررسی و مدیریت بایت‌های خالی بیشتر بدانید</a></li>
+</ul>
+
+<h3 id="section">پاکسازی داده‌ی ورودی</h3>
+
+<p>این فرآیند، با حذف یا نادیده‌گرفتن برخی کاراکترهای ناامن از داده‌ی ورودی، صورت می‌گیرد.</p>
+
+<p>برای نمونه، قبل از قرار دادن داده‌ی ورودی در خروجی نهایی یا درج آن در
+ پایگاه‌داده باید آن را از کاراکترهای غیرمجاز پاکسازی کنید. عمل تخصیص 
+پارامتر به یک پرس‌وجو توسط <a href="#databases">PDO</a> اینکار را برای شما انجام می‌دهد.</p>
+
+<p>گاهی اوقات لازم است به برخی تگ‌های امن HTML اجازه‌ی قرارگیری در صفحه 
+داده شود. مدیریت این فرآیند گاهی بسیار دشوار می‌شود تا جایی که برخی 
+ترجیح می‌دهند از پیش‌پردازنده‌هایی مانند Markdown یا BBCode استفاده کنند
+ و کتابخانه‌هایی مانند <a href="http://htmlpurifier.org/">HTML Purifier</a> به همین منظور وجود دارند.</p>
+
+<p><a href="http://www.php.net/manual/en/filter.filters.sanitize.php">مشاهده‌ی فیلترهای به کار رفته در پاکسازی داده‌ی ورودی</a></p>
+
+<h3 id="section-1">اعتبارسنجی</h3>
+
+<p>این فرآیند به شما کمک می‌کند از صحت اطلاعات ورودی اطمینان حاصل کنید. 
+برای نمونه، هنگام پردازش یک فرم ثبت‌نام، شاید بخواهید ایمیل، شماره تلفن 
+یا سن فرد را بررسی و کنترل کنید.</p>
+
+<p><a href="http://www.php.net/manual/en/filter.filters.validate.php">مشاهده‌ی فیلترهای به کار رفته در اعتبارسنجی داده‌ی ورودی</a></p>
+
+
+    </div>
+
+    
+    <div id="configuration_files">
+    <h2 id="configuration_files_title">فایل‌های پیکربندی</h2>
+
+<p>هنگام به وجود آوردن فایل‌های پیکربندی برای نرم‌افزار خود بهتر است به برخی اصول بنیادی پایبند باشید:</p>
+
+<ul>
+  <li>توصیه می‌شود این فایل‌ها را در جایی که قابلیت دسترسی عمومی به آن وجود ندارد نگاه دارید.</li>
+  <li>اگر مجبور به ذخیره‌سازی این فایل‌ها در قسمت عمومی وب‌سرور هستید، آن‌ها را با پسوند <code>php.</code> ذخیره سازید. حتی اگر اسکریپت به صورت مستقیم فراخوانی شود، خروجی آن به صورت متن نمایش داده نمی‌شود.</li>
+  <li>اطلاعات موجود در این فایل‌ها باید مورد حفاظت قرار گیرند، خواه با 
+استفاده از رمزنگاری یا مجوزهای مربوط به کاربر/گروه در سیستم‌عامل سرور</li>
+</ul>
+
+    </div>
+
+    
+    <div id="register_globals">
+    <h2 id="register_globals_title">استفاده از متغیرهای سراسری</h2>
+
+<p><strong>تذکر:</strong> از نسخه‌ی PHP 5.4.0 به بالا پیکربندی <code>register_globals</code> حذف و غیرقابل استفاده است و در فرآیند برورزسانی یک نرم‌افزار قدیمی به صورت یک اخطار نمایش داده می‌شود.</p>
+
+<p>زمانی که این پیکربندی فعال باشد، منجر به در دسترس بودن تمام متغیرهای سراسری (مانند <code>GET_$</code>، <code>POST_$</code>، و <code>REQUEST_$</code>)
+ در تمام حوزه‌های نرم‌افزار شما خواهد بود که این امر به مشکلات امنیتی 
+بسیار دامن می‌زند و هیچ روشی وجود ندارد که بتوان تعیین کرد داده‌ی ورودی 
+از کدام قسمت وارد نرم‌افزار شده است.</p>
+
+<p>برای نمونه: متغیر <code>$_GET['foo']</code> با استفاده از <code>foo$</code> نیز قابل دسترسی است، که ممکن است منجر به تعریف متغیرهای نامشخص گردد. اگر از PHP 5.4.0 به پایین استفاده می‌کنید <strong>اطمینان حاصل کنید</strong> که <code>register_globals</code> <strong>غیرفعال باشد</strong>.</p>
+
+<ul>
+  <li><a href="http://www.php.net/manual/en/security.globals.php">درباره‌ی register_globals بیشتر بدانید</a></li>
+</ul>
+
+    </div>
+
+    
+    <div id="error_reporting">
+    <h2 id="error_reporting_title">گزارش خطا</h2>
+
+<p>ثبت و گزارش خطا روشی مناسب جهت عیب‌یابی نرم‌افزار است اما در صورتی که
+ اقدامات لازم جهت محرمانه بودن این خطاها صورت نگیرد می‌تواند منجر به فاش
+ شدن ساختار نرم‌افزار شما گردد. برای اینکه این مشکل به وجود نیاید باید 
+تنظیمات متفاوتی در محیط توسعه در مقایسه با محیط نهایی نرم‌افزار داشته 
+باشید.</p>
+
+<h3 id="section">محیط توسعه</h3>
+
+<p>جهت نمایش تمام خطاهای موجود در محیط <em>توسعه</em>، تنظیمات زیر را در فایل <code>php.ini</code> انجام دهید:</p>
+
+<pre><code>display_errors = On
+display_startup_errors = On
+error_reporting = -1
+log_errors = On
+</code></pre>
+
+<blockquote>
+  <p>استفاده از <code>1-</code> تمام خطاهای موجود را نمایش می‌دهد، حتی آن‌هایی که در نسخه‌های بعدی PHP به وجود بیایند. ثابت <code>E_ALL</code> رفتاری مشابه به این عملکرد را در نسخه‌ی PHP 5.4 دارد. - <a href="http://php.net/manual/function.error-reporting.php">php.net</a></p>
+</blockquote>
+
+<p>سطح خطا <code>E_STRICT</code> در نسخه‌ی 5.3.0 معرفی شد و قسمتی از <code>E_ALL</code> نیست، اگرچه در نسخه‌ی 5.4.0 به قسمتی از <code>E_ALL</code> تبدیل شد. این به چه معناست؟ در نسخه‌ی 5.3 اگر بخواهید تمام خطاهای موجود را ببینید باید از <code>1-</code> یا <code>E_ALL | E_STRICT</code> استفاه کنید.</p>
+
+<p><strong>گزارش خطا با توجه به نسخه‌های مختلف PHP</strong></p>
+
+<ul>
+  <li>&gt; 5.3 <code>-1</code> یا <code>E_ALL</code></li>
+  <li>&nbsp; 5.3 <code>-1</code> یا <code>E_ALL | E_STRICT</code></li>
+  <li>&lt; 5.3 <code>-1</code> یا <code>E_ALL</code></li>
+</ul>
+
+<h3 id="section-1">محیط نهایی</h3>
+
+<p>جهت پنهان‌سازی تمام خطاهای موجود در محیط <em>نهایی</em>، تنظیمات زیر را در فایل <code>php.ini</code> انجام دهید:</p>
+
+<pre><code>display_errors = Off
+display_startup_errors = Off
+error_reporting = E_ALL
+log_errors = On
+</code></pre>
+
+<p>با استفاده از این تنظیمات، خطاها کماکان در سرور ثبت می‌شوند اما به 
+کاربر نمایش داده نمی‌شوند. برای اطلاعات بیشتر درباره‌ی این تنظیمات، 
+راهنمای رسمی PHP را مشاهده کنید:</p>
+
+<ul>
+  <li><a href="http://php.net/manual/errorfunc.configuration.php#ini.error-reporting">error_reporting</a></li>
+  <li><a href="http://php.net/manual/errorfunc.configuration.php#ini.display-errors">display_errors</a></li>
+  <li><a href="http://php.net/manual/errorfunc.configuration.php#ini.display-startup-errors">display_startup_errors</a></li>
+  <li><a href="http://php.net/manual/errorfunc.configuration.php#ini.log-errors">log_errors</a></li>
+</ul>
+
+    </div>
+
+    
+    <p><a href="#top" class="top">Back to Top</a></p>
+
+    
+    <div id="testing">
+    <h1 id="testing_title">آزمون</h1>
+
+<p>نوشتن آزمون‌های خودکار برای کد PHP یک عادت خوب محسوب می‌شود که منجر 
+به تولید برنامه‌های خوش‌ساخت می‌گردد. آزمون‌های خودکار ابزارهای قدرتمندی
+ هستند که زمان تغییر در برنامه اطمینان حاصل کنید چیزی به هم نمی‌ریزد یا 
+در زمان اضافه‌کردن امکانات جدید، بخش‌های قبلی به کار خود ادامه می‌دهند.</p>
+
+<p>ابزارها یا چارچوب‌های مختلفی در این زمینه برای PHP وجود دارد که هر یک
+ رویکرد متفاوتی پیش گرفته‌اند - ولی همه‌ی آن‌ها سعی دارند جلوی آزمون‌های
+ دستی را گرفته و نیاز گروه‌هایی که مرتبط با تضمین کیفیت نرم‌افزار هستند 
+را برآورده سازند، مهم‌تر اینکه تغییرات جدید عملکرد فعلی نرم‌افزار را 
+مختل نسازند.</p>
+
+    </div>
+
+    
+    <div id="test_driven_development">
+    <h2 id="test_driven_development_title">توسعه مبتنی بر آزمون</h2>
+
+<p>از <a href="http://en.wikipedia.org/wiki/Test-driven_development">ویکیپدیا</a>:</p>
+
+<blockquote>
+  <p>توسعه مبتنی بر آزمون یا TDD یک فرآیند توسعه‌ی نرم‌افزار است که از 
+چرخه‌های بسیار کوتاه تشکیل شده است: توسعه‌دهنده نخست یک آزمون خودکار که 
+منجر به شکست شود را طراحی کرده و بر اساس کاری که آن آزمون باید انجام دهد
+ کد واقعی را می‌نویسد و در نهایت کد نوشته شده را بهبود می‌بخشد.Kent Beck
+ ، کسی که توسعه یا ‘بازآفرینی’ این تکنیک منسوب به اوست در سال ۲۰۰۳ اعلام
+ کرده است TDD مشوق طراحی‌های ساده و الهام‌بخش، اعتماد است</p>
+</blockquote>
+
+<p>انواع مختلفی از آزمون‌نویسی وجود دارد که می‌توان از آن‌ها در برنامه‌های خود استفاده کرد.</p>
+
+<h3 id="section">آزمون‌نویسی واحد</h3>
+
+<p>این سبک برنامه‌نویسی روشی است جهت اطمینان از اینکه تمام توابع، 
+کلاس‌ها و متدها در طول چرخه‌ی نرم‌افزار همانگونه که مد نظر است کار کنند.
+ با بررسی داده‌های ورودی و خروجی به/از توابع و متدها، می‌توان از منطق 
+داخلی نرم‌افزار اطمینان حاصل کرد. با استفاده از Dependency Injection و 
+نمونه‌سازی از کلاس‌ها می‌توان استفاده‌ی صحیح از وابستگی‌های موجود در 
+نرم‌افزار را مورد بررسی قرار داد.</p>
+
+<p>زمانی که یک کلاس یا تابع به وجود می‌آورید باید برای هر عملکردی که از 
+آن مد نظر است نیز یک آزمون بنویسید. به عنوان اولین گام، باید اطمینان 
+حاصل کنید هنگام دریافت ورودی اشتباه، خطا و هنگام دریافت ورودی صحیح، 
+خروجی باز می‌گردد. این تکنیک به شما کمک می‌کند هر زمان تغییری در این 
+کلاس یا تابع به وجود بیاورید عملکرد سابق آن به قوت خود باقی است. تنها 
+جایگزین این روش استفاده از تابع <code>()var_dump</code> در فایل test.php است، که در عمل روش درستی برای تولید نرم‌افزار نیست - چه آن نرم‌افزار کوچک باشد چه بزرگ.</p>
+
+<p>کاربرد دیگر این سبک آزمون‌نویسی مشارکت در پروژه‌های آزاد است. اگر 
+می‌توانید آزمونی بنویسید که نواقص بخشی از یک نرم‌افزار را مشخص کند، پس 
+بهتر است آن را بر طرف کرده و آزمون دیگری بنویسید که نشان دهد مشکل رفع 
+شده است چرا که تولید وصله، بیشتر مورد استقبال قرار می‌گیرد. اگر پروژه‌ای
+ دارید که به صورت عمومی درخواست دیگران را جهت مشارکت می‌پذیرد باید این 
+عملکرد را به عنوان یک پیشنیاز مطرح کنید.</p>
+
+<p><a href="http://phpunit.de/">PHPUnit</a> مهم‌ترین چارچوب استاندارد آزمون‌نویسی در PHP است، اما راه حل‌های دیگری نیز وجود دارند:</p>
+
+<ul>
+  <li><a href="https://github.com/atoum/atoum">atoum</a></li>
+  <li><a href="https://github.com/Enhance-PHP/Enhance-PHP">Enhance PHP</a></li>
+  <li><a href="http://punit.smf.me.uk/">PUnit</a></li>
+  <li><a href="http://simpletest.org/">SimpleTest</a></li>
+</ul>
+
+<h3 id="section-1">آزمون‌نویسی یکپارچه</h3>
+
+<p>از <a href="http://en.wikipedia.org/wiki/Integration_testing">ویکیپدیا</a>:</p>
+
+<blockquote>
+  <p>آزمون‌نویسی یکپارچه (که یکپارچگی یا آزمون‌نویسی نیز خوانده می‌شود، 
+به طور مخفف “I&amp;T”) مرحله‌ای از آزمون نرم‌افزار است که قسمت‌های مختلف
+ را با در کنار هم قرار دادن، بررسی می‌کند. معمولا پس از آزمون‌نویسی واحد
+ و قبل از آزمون‌نویسی اعتبارسنجی صورت می‌گیرد. این روش، ورودی خود را یک 
+افزونه از نرم‌افزار قرار می‌دهد، آن‌ها را گروه‌بندی می‌کند و روی گروه 
+تشکیل شده آزمون‌های مورد نظر را اعمال می‌کند.</p>
+</blockquote>
+
+<p>بسیاری از ابزارهای مورد استفاده در آزمون‌نویسی واحد، در این سبک نیز کاربرد دارند و بسیاری از قوانین آن‌ها نیز اینجا صادق است.</p>
+
+<h3 id="section-2">آزمون‌نویسی کاربردی</h3>
+
+<p>این سبک از آزمون‌نویسی از مجموعه ابزاری تشکیل شده است که در عمل 
+نرم‌افزار نهایی را مورد آزمون قرار می‌دهند نه تنها بخش‌های کوچکی از آن 
+را. این ابزارها معمولا با ایجاد داده‌های واقعی و شبیه‌سازی محیط حقیقی 
+نرم‌افزار، به این کار می‌پردازند.</p>
+
+<h4 id="section-3">ابزارهای مورد استفاده در آزمون‌نوسی کاربردی</h4>
+
+<ul>
+  <li><a href="http://seleniumhq.com/">Selenium</a></li>
+  <li><a href="http://mink.behat.org/">Mink</a></li>
+  <li><a href="http://codeception.com/">Codeception</a> یک چارچوب آزمون‌نویسی تمام-عیار است که شامل ابزارهای متفاوتی اس</li>
+  <li><a href="http://datasift.github.io/storyplayer">Storyplayer</a> یک چارچوب آزمون‌نویسی تمام-عیار است که از ایجاد و حذف محیط‌های شبیه‌سازی شده پشتیبانی می‌کند</li>
+</ul>
+
+    </div>
+
+    
+    <div id="behavior_driven_development">
+    <h2 id="behavior_driven_development_title">توسعه مبتنی بر رفتار</h2>
+
+<p>دو نوع مختلف از توسعه‌ی مبتنی بر رفتار (BDD) وجود دارد: SpecBDD و 
+StoryBDD . تمرکز SpecBDD بر جنبه‌ی فنی کد است، در حالی که تمرکز StoryBDD
+ بر جنبه‌ی منطق یا ویژگی‌های بارز کد است. PHP برای هر کدام راه حلی دارد.</p>
+
+<p>با StoryBDD ، شما داستان‌هایی می‌نویسید که عملکرد نرم‌افزار را مشخص 
+می‌کنند. این داستان‌ها می‌توانند به عنوان آزمون حقیقی در نرم‌افزار اجرا 
+شوند. چارچوبی که در PHP از آن برای StoryBDD استفاده می‌شود Behat نام 
+دارد، که از پروژه‌ی <a href="http://cukes.info/">Cucumber</a> مربوط به روبی الهام گرفته شده است و زبان Gherkin را پیاده‌سازی می‌کند.</p>
+
+<p>با SpecBDD ، شما استانداردی تعیین می‌کند که چگونه کد شما باید عمل 
+کند، جدای اینکه چه کاری انجام می‌دهد. بجای آزمون یک تابع یا متد، شما 
+توضیح می‌دهید که آن تابع یا متد چگونه کار می‌کند. چارچوبی که PHP از آن 
+برای SpecBDD استفاه می‌کند، PHPSpec نام دارد که از پروژه‌ی <a href="http://rspec.info/">RSpec project</a> مربوط به روبی الهام گرفته شده است.</p>
+
+<h3 id="section">پیوندهای مفید</h3>
+
+<ul>
+  <li><a href="http://behat.org/">Behat</a></li>
+  <li><a href="http://www.phpspec.net/">PHPSpec</a></li>
+  <li><a href="http://www.codeception.com/">Codeception</a> یک چارچوب آزمون‌نویسی تمام-عیار است که از مفاهیم BDD استفاده می‌کند</li>
+</ul>
+
+    </div>
+
+    
+    <div id="complementary_testing_tools">
+    <h2 id="complementary_testing_tools_title">ابزار مکمل برای آزمون‌نویسی</h2>
+
+<p>علاوه بر چارچوب‌های معرفی شده، ابزارهای دیگری نیز برای آزمون‌نویسی وجود دارد که در ادامه به آن‌ها اشاره می‌کنیم.</p>
+
+<h3 id="section">پیوند به ابزارها</h3>
+
+<ul>
+  <li><a href="http://seleniumhq.org/">Selenium</a> یک ابزار خودکارسازی در سطح مرورگر است که قابلیت <a href="http://phpunit.de/manual/current/en/selenium.html">یکپارچگی با PHPUnit را دارد</a></li>
+  <li><a href="https://github.com/padraic/mockery">Mockery</a> چارچوب شبیه‌سازی آزمون است که با  <a href="http://phpunit.de/">PHPUnit</a> یا <a href="http://www.phpspec.net/">PHPSpec</a> یکپارچه می‌شود</li>
+  <li><a href="https://github.com/phpspec/prophecy">Prophecy</a> چارچوب شبیه‌سازی آزمون در PHP است که با <a href="http://www.phpspec.net/">PHPSpec</a> و <a href="http://phpunit.de/">PHPUnit</a> مورد استفاده قرار می‌گیرد.</li>
+</ul>
+
+    </div>
+
+    
+    <p><a href="#top" class="top">Back to Top</a></p>
+
+    
+    <div id="servers_and_deployment">
+    <h1 id="servers_and_deployment_title">سرورها و توسعه‌ی آن‌ها</h1>
+
+<p>برنامه‌های PHP به روش‌های متفاوتی روی سرورهای حقیقی می‌توانند اجرا شوند یا توسعه یابند.</p>
+
+    </div>
+
+    
+    <div id="platform_as_a_service">
+    <h2 id="platform_as_a_service_title">Platform as a Service یا (PaaS)</h2>
+
+<p>بستر PaaS معماری سیستم و شبکه‌ی مورد نیاز جهت اجرای برنامه‌های PHP را
+ فراهم می‌کند. این بدان معناست که تغییرات ناچیزی جهت اجرای برنامه‌های 
+PHP یا چارچوب‌های نرم‌افزاری PHP در این بستر، مورد نیاز است.</p>
+
+<p>اخیرا بستر PaaS به روشی متداول جهت توسعه، میزبانی و مقیاس‌پذیری 
+برنامه‌های PHP در ابعاد مختلف تبدیل شده است. شما می‌توانید فهرستی از <a href="#php_paas_providers">فراهم‌آورندگان بستر PaaS برای PHP</a> را در قسمت <a href="#resources">منابع</a> مشاهده کنید.</p>
+
+    </div>
+
+    
+    <div id="virtual_or_dedicated_servers">
+    <h2 id="virtual_or_dedicated_servers_title">سرورهای مجازی یا اختصاصی</h2>
+
+<p>اگر با مدیریت سیستم آشنا هستید یا قصد یادگیری آن را دارید، سرورهای 
+مجازی یا اختصاصی قدرت کامل در اختیار گرفتن محیط اجرای برنامه‌ها را، به 
+شما می‌دهند.</p>
+
+<h3 id="nginx--php-fpm">nginx و PHP-FPM</h3>
+
+<p>ماژول قدرتمندی در PHP وجود دارد با نام مدیر فرآیند FastCGI یا FPM و قابلیت انطباق بالایی با <a href="http://nginx.org/">nginx</a>
+ دارد که وب‌سروری است سبک و با قابلیت اجرایی بسیار بالا. نسبت به آپاچی 
+از حافظه‌ی کمتری استفاده می‌کند و بهتر می‌تواند درخواست‌های همزمان را 
+مدیریت کند. این امر درباره‌ی سرورهای مجازی که از حافظه‌ی کمتری استفاده 
+می‌کنند اهمیت بسیار زیادی دارد.</p>
+
+<ul>
+  <li><a href="http://nginx.org/">درباره‌ی nginx بیشتر بخوانید</a></li>
+  <li><a href="http://php.net/manual/en/install.fpm.php">درباره‌ی PHP-FPM بیشتر بخوانید</a></li>
+  <li><a href="https://nealpoole.com/blog/2011/04/setting-up-php-fastcgi-and-nginx-dont-trust-the-tutorials-check-your-configuration/">درباره‌ی راه‌اندازی امن nginx با PHP-FPM بیشتر بخوانید</a></li>
+</ul>
+
+<h3 id="apache--php">Apache و PHP</h3>
+
+<p>تاریخچه‌ی طولانی بین PHP و آپاچی وجود دارد. آپاچی قابلیت تنظیم بالایی دارد و برای اینکار از <a href="http://httpd.apache.org/docs/2.4/mod/">ماژول‌های</a>
+ بسیاری بهره می‌گیرد. در بین سرورهای اشتراکی بسیار محبوب است و به سادگی 
+می‌توان روی آن بسیاری از چارچوب‌های نرم‌افزاری PHP و برنامه‌های 
+اُپن‌سورس مانند دروپال و وُردپِرس را راه‌اندازی کرد. متاسفانه‌، آپاچی از
+ منابع بیشتری نسبت به nginx استفاده می‌کند به خوبی آن نمی‌تواند 
+بازدیدکنندگان همزمان با تعداد بالا را مدیریت کند.</p>
+
+<p>آپاچی پیکربندی‌های متفاوتی جهت اجرای PHP دارد. معمول‌ترین آن‌ها برای راه‌اندازی <a href="http://httpd.apache.org/docs/2.4/mod/prefork.html">prefork MPM</a>
+ با استفاده از ماژول mod_php5 است. با اینکه بهینه‌ترین روش جهت مدیریت 
+حافظه نیست اما ساده‌ترین آن‌ها برای استفاده است. اگر قصد ندارید به 
+جنبه‌های مختلف مدیریت سیستم بپردازید، این روش مناسب شماست. به یاد داشته 
+باشید استفاده از ماژول mod_php5 مستلزم استفاده از prefork MPM است.</p>
+
+<p>از طرف دیگر، اگر قصد بهره‌گیری از قدرت اجرای بالاتر و پایدارتر شدن 
+آپاچی را دارید می‌توانید از همان سیستم FPM موجود در nginx که در آپاچی با
+ ماژول‌های <a href="http://httpd.apache.org/docs/2.4/mod/worker.html">worker MPM</a> یا <a href="http://httpd.apache.org/docs/2.4/mod/event.html">event MPM</a>
+ و با استفاده از mod_fastcgi یا mod_fcgid پیاده‌سازی شده است، استفاده 
+کنید. این پیکربندی مصرف حافظه را بهبود بخشیده و سرعت بالایی به همراه 
+می‌آورد اما زمان بیشتری جهت پیکربندی خواهد برد.</p>
+
+<ul>
+  <li><a href="http://httpd.apache.org/">درباره‌ی آپاچی بیشتر بخوانید</a></li>
+  <li><a href="http://httpd.apache.org/docs/2.4/mod/mpm_common.html">درباره‌ی ماژول‌های چندپردازشی بیشتر بخوانید</a></li>
+  <li><a href="http://www.fastcgi.com/mod_fastcgi/docs/mod_fastcgi.html">درباره‌ی mod_fastcgi بیشتر بخوانید</a></li>
+  <li><a href="http://httpd.apache.org/mod_fcgid/">درباره‌ی mod_fcgid بیشتر بخوانید</a></li>
+</ul>
+
+    </div>
+
+    
+    <div id="shared_servers">
+    <h2 id="shared_servers_title">سرورهای اشتراکی</h2>
+
+<p>سرورهای اشتراکی بسیاری، برای اجرای PHP به خاطر محبوبیت آن وجود دارند.
+ به ندرت می‌توان سرویس میزبانی پیدا کرد که از PHP پشتیبانی نکند، اما 
+باید توجه کرد از نسخه‌ی پایدار آن بهره گیرد. سرورهای اشتراکی به شما و 
+سایر توسعه‌دهندگان اجازه می‌دهند وب‌سایت‌های خود را روی یک و تنها یک 
+ماشین مجزا راه‌اندازی کنید. این سرورها باعث شده‌اند تجارت‌های بسیاری به 
+سمت نرم‌افزارهای تحت وب کشیده شوند چرا که هزینه‌ی پایینی برایشان به 
+همراه دارد. از طرفی شما هیچگاه متوجه نمی‌شوید همسایه‌تان (فردی که از 
+همان سرور اشتراکی استفاده می‌کند و به همان منابع دسترسی دارد) قصد انجام 
+چه کاری دارد. بار اضافه روی سرور گذاشتن و ایجاد حفره‌های امنیتی، مهمترین
+ دغدغه‌‌های این نوع سرورها هستند. اگر بودجه‌ی پروژه‌ی شما این اجازه را 
+می‌دهد که از سرورهای بهتر استفاده کنید، پس حتما این کار را بکنید.</p>
+
+    </div>
+
+    
+    <div id="building_and_deploying_your_application">
+    <h2 id="building_and_deploying_your_application_title">ایجاد و راه‌اندازی نرم‌افزار خود</h2>
+
+<p>اگر تغییرات مربوط به پایگاه‌داده را دستی انجام می‌دهید یا آزمون‌های 
+نوشته شده را به صورت دستی اجرا می‌کنید، بهتر است دوباره بیندیشید! با 
+انجام هر کار به صورت دستی در هر نسخه‌ از نرم‌افزار خود احتمال بروز خطای 
+مهلک افزایش می‌یابد. خواه تغییر کوچکی اعمال کنید یا با یک فرآیند ساخت 
+پیچیده روبه‌رو باشید، <a href="http://en.wikipedia.org/wiki/Build_automation">خودکارسازی فرآیند تولید</a> به کمک شما می‌آید.</p>
+
+<p>از میان کارهایی که قصد خودکارسازی آن‌ها را دارید می‌توان به موارد زیر اشاره کرد:</p>
+
+<ul>
+  <li>مدیریت وابستگی</li>
+  <li>کامپایل کردن و کم حجم ساختن منابع مورد نیاز</li>
+  <li>اجرای آزمون‌های مختلف</li>
+  <li>ایجاد مستندات گوناگون</li>
+  <li>بسته‌بندی و طبقه‌بندی نرم‌افزار</li>
+  <li>راه‌اندازی نهایی</li>
+</ul>
+
+<h3 id="section">ابزارهای خودکارسازی فرآیند تولید</h3>
+
+<p>این ابزارها معمولا از تعدادی اسکریپت تشکیل شده‌اند که فرآیند توسعه‌ی 
+نرم‌افزار را آسان می‌کنند. ابزار تولید، بخشی از نرم‌افزار شما نیست، بلکه
+ از بیرون آن را مدیریت می‌کند.</p>
+
+<p>ابزارهای اُپِن سورس بسیاری در این رابطه وجود دارند، که برخی از آن‌ها 
+نیز با PHP نوشته شده‌اند. این نباید منجر به استفاده نکردن از آن‌ها شود، 
+اگر برای کار خاصی مورد نیاز باشند. چند نمونه عبارتند از:</p>
+
+<p><a href="http://www.phing.info/">Phing</a> متداول‌ترین ابزار مورد 
+استفاده در خودکارسازی فرآیند تولید است که در دنیای PHP بسیار مورد 
+استفاده قرار می‌گیرد. با استفاده از Phing شما می‌توانید کنترل بسته‌بندی،
+ راه‌اندازی و اجرای آزمون‌ها را تنها از یک فایل XML مدیریت کنید. این 
+ابزار (که مبتنی بر <a href="http://ant.apache.org/">Apache Ant</a> است) 
+فعالیت‌های بسیاری را جهت نصب و بروزرسانی نرم‌افزار تحت وب فراهم می‌آورد و
+ امکان توسعه‌پذیری بالایی دارد، که می‌توان با استفاده از خود PHP اینکار 
+را انجام داد.</p>
+
+<p><a href="https://github.com/capistrano/capistrano/wiki">Capistrano</a> یک سیستم <em>متوسط-به-بالا برای برنامه‌نویسان</em>
+ است که اجازه‌ی اجرای فرما‌ن‌های مختلف را به روشی ساخت‌یافته، روی یک یا 
+چند ماشین می‌دهد. اگرچه به منظور توسعه‌ی برنامه‌های Ruby on Rails ایجاد 
+شده است اما بسیاری <strong>موفق شده‌اند PHP را روی آن توسعه دهند</strong>. استفاده کاربردی از Capistrano مستلزم داشتن دانش کافی درباره‌ی Ruby on Rails است.</p>
+
+<p>برای توسعه‌دهندگانی که قصد استفاده از Capistrano روی نرم‌افزار PHP خود را دارند، نوشته‌ی Dave Gardner با عنوان <a href="http://www.davegardner.me.uk/blog/2012/02/13/php-deployment-with-capistrano/">توسعه‌ی PHP با Capistrano</a> نقطه‌ی آغاز مناسبی است.</p>
+
+<p><a href="http://www.opscode.com/chef/">Chef</a> بیش از یک چارچوب 
+راه‌اندازی کاربرد دارد، یک سیستم بسیار قدرتمند براساس Ruby است که نه 
+تنها برای توسعه‌ی نرم‌افزار کاربرد دارد بلکه زیرساخت اولیه یک یا چند 
+سرور را می‌تواند پیاده‌سازی کند.</p>
+
+<p>منابع Chef برای توسعه‌دهندگان PHP:</p>
+
+<ul>
+  <li><a href="http://www.jasongrimes.org/2012/06/managing-lamp-environments-with-chef-vagrant-and-ec2-1-of-3/">مجموعه وبلاگ درباره‌ی پیاده‌سازی LAMP با استفاده از Chef</a></li>
+  <li><a href="https://github.com/opscode-cookbooks/php">کتاب راهنمای Chef با تمرکز بر نصب PHP 5.3 و سیستم مدیریت بسته PEAR</a></li>
+</ul>
+
+<p>مطالعه‌ی بیشتر:</p>
+
+<ul>
+  <li><a href="http://net.tutsplus.com/tutorials/other/automate-your-projects-with-apache-ant/">فرآیند خودکارسازی پروژه با استفاده از Apache Ant</a></li>
+  <li><a href="http://maven.apache.org/">Maven</a> ، چارچوب تولید مبتنی بر Ant و اینکه <a href="http://www.php-maven.org/">چگونه با PHP استفاده شود</a></li>
+</ul>
+
+<h3 id="continuous-integration">Continuous Integration</h3>
+
+<blockquote>
+  <p>یک فرآیند توسعه‌ی نرم‌افزار است که طی آن اعضای یک تیم کار روزانه‌ی 
+خود را با سایر اعضا یکپارچه می‌سازند، که ممکن است این عمل چند  مرتبه در 
+روز صورت گیرد. بسیاری از تیم‌ها به این نتیجه رسیده‌اند که این عمل منجر 
+به یکپارچگی بیشتری در محصول نهایی خواهد شد و به تیم این اجازه را می‌دهد 
+که در زمان کوتاه‌تری فرآیند توسعه را سپری کنند.</p>
+</blockquote>
+
+<p><em>– Martin Fowler</em></p>
+
+<p>روش‌های مختلفی جهت پیاده‌سازی این فرآیند در PHP وجود دارد. اخیرا <a href="https://travis-ci.org/">Travis CI</a>
+ موفق شده است این تکنیک را در بسیاری از پروژه‌ها پیاده‌سازی کند، حتی 
+پروژه‌های کوچک. Travis CI یک سرویس آنلاین است که در اختیار جامعه‌ی اِپِن
+ سورس قرار دارد. این ابزار با GitHub یکپارچه شده است و پشتیبانی خوبی از 
+زبان‌های برنامه‌نویسی موجود، از جمله PHP دارد.</p>
+
+<p>مطالعه‌ی بیشتر:</p>
+
+<ul>
+  <li><a href="http://jenkins-ci.org/">یکپارچگی مداوم با Jenkins</a></li>
+  <li><a href="http://www.phptesting.org/">یکپارچگی مداوم با PHPCI</a></li>
+  <li><a href="http://www.jetbrains.com/teamcity/">یکپارچگی مداوم با Teamcity</a></li>
+</ul>
+
+    </div>
+
+    
+    <p><a href="#top" class="top">Back to Top</a></p>
+
+    
+    <div id="caching">
+    <h1 id="caching_title">ذخیره‌سازی موقت</h1>
+
+<p>به صورت پیش فرض PHP زبان سریعی است اما ممکن است گاهی اوقات 
+گلوگاه‌هایی ایجاد شود که منجر به کند شدن نرم‌افزار گردند مانند اتصال به 
+سرورهای دیگر، بارگیری فایل و موارد دیگر. خوشبختانه، ابزارهای مختلفی وجود
+ دارند که می‌توانند به قسمتی از نرم‌افزار شما سرعت بخشند یا باعث پیشگیری
+ از تعداد دفعاتی شوند که عملیات زمان‌بر نام برده، کل نرم‌افزار را تحت 
+تاثیر قرار می‌دهند.</p>
+
+    </div>
+
+    
+    <div id="bytecode_cache">
+    <h2 id="bytecode_cache_title">ذخیره‌سازی Bytecode</h2>
+
+<p>زمانی که یک فایل PHP اجرا می‌شود، در پشت صحنه ابتدا به یک فایل 
+bytecode یا opcode کامپایل شده، سپس این فایل bytecode اجرا می‌شود. اگر 
+فایل PHP تغییر نکند، خروجی bytecode همیشه ثابت خواهد بود. این بدان 
+معناست که عملیات کامپایل در این صورت فقط منابع پردازنده را هدر می‌دهد.</p>
+
+<p>این دقیقا جایی است که ذخیره‌سازی Bytecode به میان می‌آید. این عمل 
+منجر به نگهداری فایل bytecode در حافظه شده و از کامپایل مجدد و بیهوده‌ی 
+آن جلوگیری می‌کند. پیاده‌سازی این نوع ذخیره‌سازی تنها چند دقیقه زمان 
+می‌برد و بعد از آن متوجه افزایش سرعت نرم‌افزار خواهید شد. حقیقتا دلیلی 
+وجود ندارد که از آن استفاده نکنیم.</p>
+
+<p>با انتشار PHP 5.5، یک ذخیره‌ساز درونی به نام <a href="http://php.net/manual/en/book.opcache.php">OPcache</a> وجود دارد. البته برای نسخه‌های قبل از آن نیز موجود بود.</p>
+
+<p>سایر ذخیره‌سازهای Bytecode عبارتند از:</p>
+
+<ul>
+  <li><a href="http://php.net/manual/en/book.apc.php">APC</a> (برای PHP 5.4 و قبل از آن)</li>
+  <li><a href="http://xcache.lighttpd.net/">XCache</a></li>
+  <li><a href="http://www.zend.com/products/server/">Zend Optimizer+</a> (قسمتی از زِند سرور)</li>
+  <li><a href="http://www.iis.net/download/wincacheforphp">WinCache</a> (افزونه‌ای برای ویندوز سرور)</li>
+</ul>
+
+    </div>
+
+    
+    <div id="object_caching">
+    <h2 id="object_caching_title">ذخیره‌سازی Object</h2>
+
+<p>شرایطی وجود دارد که طی آن نیاز باشد یک شی منحصربه‌فرد را به صورت 
+جداگانه در حافظه ذخیره کنیم، مانند حالتی که فراخوانی از پایگاه‌داده 
+بسیار پرهزینه و خروجی آن نیز تغییر چندانی نداشته باشد. شما می‌توانید از 
+نرم‌افزارهایی که به این منظور طراحی شده‌اند جهت ذخیره‌سازی یک شی خاص در 
+حافظه برای دسترسی‌های سریع‌تر در آینده استفاده کنید. اگر این گزینه‌ها را
+ در یک انبار داده ذخیره کنید، سپس طی درخواست‌های بعد آن‌ها را از حافظه 
+فراخوانی کنید، مقدار قابل توجهی به سرعت نرم‌افزار شما اضافه خواهد شد و 
+بار اضافی نیز به سمت پایگاه‌داده روانه نمی‌شود.</p>
+
+<p>بسیاری از راه‌حل‌های مبتنی بر ذخیره‌سازی bytecode اجازه‌ی ذخیره‌سازی 
+داده‌های سفارشی را نیز می‌دهند، پس دلایل بیشتری برای استفاده کردن از 
+آن‌ها وجود دارد. از جمله ابزارهایی که با ارایه‌ی رابط برنامه‌نویسی 
+اجازه‌ی اینکار را به شما می‌دهند عبارتند از APCu و XCache و WinCache.</p>
+
+<p>متداول‌ترین ابزارهای مورد استفاده در این زمینه عبارتند از APCu و 
+memcached. برای ذخیره‌سازی شی، APCu ابزار فوق‌العاده‌ای است که با یک 
+رابط برنامه‌نویسی ساده اجازه می‌دهد داده‌ی سفارشی خود را در آن ذخیره 
+کنید. یکی از محدودیت‌های APCu این است که وابسته به سروری است که روی آن 
+نصب و راه‌اندازی شده است. از طرف دیگر، Memcached روی سرویس جداگانه‌ای 
+قابل نصب است که از طریق شبکه می‌توان به آن رسید. به این معنا که شما 
+می‌توانید داده‌های خود را در یک محیط مرکزی ذخیره‌سازی کنید و سایر سرورها
+ از این محیط جهت فراخوانی داده استفاده کنند.</p>
+
+<p>به یاد داشته باشید زمانی که PHP به عنوان یک نرم‌افزار FastCGI در 
+وب‌سرور اجرا می‌شود، هر فرآیند آن حافظه‌ی مربوط به خود را دارد. به همین 
+دلیل داده‌های APCu قابلیت اشتراک‌گذاری بین چند فرآیند را ندارند. در 
+اینگونه شرایط شاید بخواهید از memcached استفاده کنید، که وابسته به 
+فرآیند‌های PHP نیست.</p>
+
+<p>در یک پیکربندی مبتنی بر شبکه، APCu بهتر از memcached عمل می‌کند، اما 
+memcached قابلیت بهتری برای مقیاس‌پذیری و افزایش سرعت دارد. اگر 
+نرم‌افزار شما در چند سرور مختلف اجرا نمی‌شود یا به قابلیت‌های اضافه‌ی 
+memcached نیاز ندارد، در این صورت APCu گزینه‌ی مناسبی برای شماست.</p>
+
+<p>نمونه‌ای از کاربرد APCu:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="c1">// check if there is data saved as 'expensive_data' in cache</span>
+<span class="nv">$data</span> <span class="o">=</span> <span class="nb">apc_fetch</span><span class="p">(</span><span class="s1">'expensive_data'</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$data</span> <span class="o">===</span> <span class="k">false</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// data is not in cache; save result of expensive call for later use</span>
+    <span class="nb">apc_add</span><span class="p">(</span><span class="s1">'expensive_data'</span><span class="p">,</span> <span class="nv">$data</span> <span class="o">=</span> <span class="nx">get_expensive_data</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span></code></pre></div>
+
+<p>نکته اینکه تا قبل از PHP 5.5، نرم‌افزار APC هر دو ذخیره‌سازی object و
+ bytecode را ارایه می‌داد. بنابراین APCu به پروژه‌ای تبدیل شد که 
+ذخیره‌سازی object از APC را برای PHP 5.5 به بالا به ارمغان آورد، چرا که 
+PHP به صورت پیش‌فرض یک ذخیره‌ساز bytecode به نام OPcache دارد.</p>
+
+<p>درباره‌ی سیستم‌‌های محبوب ذخیره‌سازی شی بیشتر بدانید:</p>
+
+<ul>
+  <li><a href="https://github.com/krakjoe/apcu">APCu</a></li>
+  <li><a href="http://php.net/manual/en/ref.apc.php"> APC Functions</a></li>
+  <li><a href="http://memcached.org/">Memcached</a></li>
+  <li><a href="http://redis.io/">Redis</a></li>
+  <li><a href="http://xcache.lighttpd.net/wiki/XcacheApi">XCache APIs</a></li>
+  <li><a href="http://www.php.net/manual/en/ref.wincache.php">WinCache Functions</a></li>
+</ul>
+
+    </div>
+
+    
+    <p><a href="#top" class="top">Back to Top</a></p>
+
+    
+    <div id="resources">
+    <h1 id="resources_title">منابع</h1>
+
+<h2 id="section">مستندات رسمی</h2>
+
+<ul>
+  <li><a href="http://php.net/">وبسایت PHP</a></li>
+  <li><a href="http://php.net/docs.php">مستندات PHP</a></li>
+</ul>
+
+<h2 id="section-1">چه کسانی را دنبال کنم؟</h2>
+
+<ul>
+  <li><a href="http://twitter.com/rasmus">Rasmus Lerdorf</a></li>
+  <li><a href="http://twitter.com/fabpot">Fabien Potencier</a></li>
+  <li><a href="http://twitter.com/derickr">Derick Rethans</a></li>
+  <li><a href="http://twitter.com/shiflett">Chris Shiflett</a></li>
+  <li><a href="http://twitter.com/s_bergmann">Sebastian Bergmann</a></li>
+  <li><a href="http://twitter.com/mwop">Matthew Weier O’Phinney</a></li>
+  <li><a href="http://twitter.com/padraicb">Pádraic Brady</a></li>
+  <li><a href="http://twitter.com/ircmaxell">Anthony Ferrara</a></li>
+  <li><a href="http://twitter.com/nikita_ppv">Nikita Popov</a></li>
+</ul>
+
+<h2 id="section-2">آموزش دادن</h2>
+
+<ul>
+  <li><a href="http://phpmentoring.org/">phpmentoring.org</a> - آموزش یک به یک در میان جامعه‌ی PHP</li>
+</ul>
+
+<h2 id="paas--php">فراهم‌آورندگان بستر PaaS برای PHP</h2>
+
+<ul>
+  <li><a href="https://pagodabox.com/">PagodaBox</a></li>
+  <li><a href="https://appfog.com/">AppFog</a></li>
+  <li><a href="https://devcenter.heroku.com/categories/php">Heroku</a></li>
+  <li><a href="http://fortrabbit.com/">fortrabbit</a></li>
+  <li><a href="https://www.engineyard.com/products/cloud">Engine Yard Cloud</a></li>
+  <li><a href="http://openshift.com/">Red Hat OpenShift Platform</a></li>
+  <li><a href="http://docs.dotcloud.com/services/php/">dotCloud</a></li>
+  <li><a href="http://aws.amazon.com/elasticbeanstalk/">AWS Elastic Beanstalk</a></li>
+  <li><a href="https://www.cloudcontrol.com/">cloudControl</a></li>
+  <li><a href="http://www.windowsazure.com/">Windows Azure</a></li>
+  <li><a href="http://www.phpcloud.com/develop">Zend Developer Cloud</a></li>
+  <li><a href="https://developers.google.com/appengine/docs/php/gettingstarted/">Google App Engine</a></li>
+  <li><a href="http://jelastic.com/">Jelastic</a></li>
+</ul>
+
+    </div>
+
+    
+    <div id="frameworks">
+    <h2 id="frameworks_title">چارچوب‌های نرم‌افزاری</h2>
+
+<p>بسیاری از توسعه‌دهندگان PHP به جای اینکه تمام کار را از ابتدا خود 
+انجام دهند، از چارچوب‌های نرم‌افزاری یا فِریم‌وُرک موجود استفاده 
+می‌کنند. این ابزارها بسیاری از پیچیدگی‌های سطح پایین را از بین برده و با
+ در اختیار گذاشتن رابط‌های برنامه‌نویسی گوناگون، طیف گسترده‌ای از مشکلات
+ را حل می‌کنند.</p>
+
+<p>برای هر پروژه‌ای هم نیاز به استفاده از این چارچوب‌ها وجود ندارد. گاهی
+ اوقات کدنویسی اولیه مشکل را حل می‌کند، اما اگر به یک چارچوب نرم‌افزاری 
+نیاز داشتید بدانید که از سه خانواده‌ی مختلف تشکیل شده‌اند:</p>
+
+<ul>
+  <li>چارچوب‌های نرم‌افزاری کوچک (Micro)</li>
+  <li>چارچوب‌های نرم‌افزاری تمام عیار (Full-Stack)</li>
+  <li>چارچوب‌های نرم‌افزاری خاص منظوره (Component)</li>
+</ul>
+
+<p>چارچوب‌های نرم‌افزاری کوچک حقیقتا یک دربرگیرنده یا wrapper هستند که 
+درخواست‌های HTTP را به کنترل‌کننده‌ها و متدهای خاصی ارجاع می‌دهند و گاهی
+ اوقات ممکن است این فرآیند را در سمت پایگاه‌داده نیز انجام دهند. از 
+آن‌ها بیشتر برای ایجاد سرویس‌های مبتنی بر HTTP استفاده می‌شود.</p>
+
+<p>بسیاری از چارچوب‌های نرم‌افزاری دیگر امکانات بیشتری را به دسته‌ی اول 
+اضافه می‌کنند که به آن‌ها تمام عیار یا Full Stack اطلاق می‌شود. 
+قابلیت‌هایی مانند ORMs، بسته‌های احراز هویت و موارد دیگر.</p>
+
+<p>دسته‌ی سوم از مجموعه کتابخانه‌هایی برای اهداف خاص منظوره تشکیل شده 
+است. با ترکیب این چارچوب‌ها با یکدیگر می‌توان به دو دسته‌ی قبلی رسید.</p>
+
+<ul>
+  <li><a href="https://github.com/codeguy/php-the-right-way/wiki/Frameworks">محبوب‌ترین چارچوب‌های نرم‌افزاری PHP</a></li>
+</ul>
+
+    </div>
+
+    
+    <div id="components">
+    <h2 id="components_title">بسته‌ها</h2>
+
+<p>همان‌طور که اشاره شد “بسته‌ها” رویکرد دیگری برای ایجاد، توزیع و 
+پیاده‌سازی یک هدف مشخص هستند. مخازن گوناگونی برای نگهداری از این بسته‌ها
+ وجود دارند، دو تا از اصلی‌ترین این مخازن عبارتند از:</p>
+
+<ul>
+  <li><a href="#composer_and_packagist">Packagist</a></li>
+  <li><a href="#pear">PEAR</a></li>
+</ul>
+
+<p>هر کدام از این مخازن دارای ابزار مدیریت قدرتمندی در خط فرمان هستند که
+ اجازه‌ی نصب و بروزرسانی تمام بسته‌های مورد نیاز را به شما می‌دهند، این 
+مخازن پیش‌تر در قسمت <a href="#dependency_management">مدیریت وابستگی</a> توضیح داده شدند.</p>
+
+<p>دسته‌ی دیگری از بسته‌ها وجود دارند که در این مخازن نگهداری نمی‌شوند 
+اما هیچ وابستگی هم به سایر بسته‌ها یا چارچوب‌های نرم‌افزاری دیگر ندارند.</p>
+
+<p>برای نمونه، می‌توانید از <a href="https://github.com/fuelphp/validation">بسته‌ی اعتبارسنجی FuelPHP</a> بدون استفاده از چارچوب نرم‌افزاری FuelPHP استفاده کنید.</p>
+
+<ul>
+  <li><a href="http://auraphp.github.com/">Aura</a></li>
+  <li><a href="https://github.com/fuelphp">FuelPHP</a></li>
+  <li><a href="https://github.com/hoaproject">Hoa Project</a></li>
+  <li><a href="https://github.com/orno">Orno</a></li>
+  <li><a href="http://symfony.com/doc/current/components/index.html">Symfony Components</a></li>
+  <li><a href="http://thephpleague.com/">The League of Extraordinary Packages</a></li>
+  <li>Laravel’s Illuminate Components
+    <ul>
+      <li><a href="https://github.com/illuminate/database">Eloquent ORM</a></li>
+      <li><a href="https://github.com/illuminate/queue">Queue</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p><em>بسته‌ی <a href="https://github.com/illuminate">Illuminate components</a>
+ مربوط به Laravel با جدا شدن از این پروژه، در حال بهتر شدن است. هم 
+اکنون، تنها بسته‌هایی که از این پروژه جدا شده‌اند در فهرست بالا 
+آمده‌اند.</em></p>
+
+    </div>
+
+    
+    <div id="books">
+    <h2 id="books_title">کتاب‌ها</h2>
+
+<p>کتاب‌های بسیاری درباره‌ی PHP وجود دارند که تعداد زیادی از آن‌ها قدیمی
+ شده و حاوی اطلاعات جدید نیستند. کتاب‌هایی هم هستند درباره‌ی PHP 6 که 
+اصلا وجود ندارد، و ممکن است که هم اکنون به خاطر این کتاب‌ها به وجود 
+نیامده است.</p>
+
+<p>این قسمت به عنوان یک سند فعال درباره‌ی کتاب‌هایی است که به توسعه‌ی 
+PHP می‌پردازند. اگر قصد دارید کتاب خود را معرفی کنید، یک درخواست PR 
+ارسال کنید تا پس از بازبینی در این قسمت منتشر شود.</p>
+
+<h3 id="section">کتاب‌های آزاد (رایگان)</h3>
+
+<ul>
+  <li><a href="https://leanpub.com/phptherightway/">PHP The Right Way</a> - مطالب این وبسایت به صورت آزاد در قالب یک کتاب گردآوری شده است</li>
+</ul>
+
+<h3 id="section-1">کتاب‌های غیرآزاد (خریدنی)</h3>
+
+<ul>
+  <li><a href="https://leanpub.com/mlaphp">Modernizing Legacy Applications In PHP</a> - کنترل کد خود را در مراحل کوتاهی به دست گیرید</li>
+  <li><a href="https://leanpub.com/buildingsecurephpapps">Building Secure PHP Apps</a>
+ - مقدمات مسایل امنیتی را بیاموزید که یک توسعه‌دهنده‌ی ارشد ممکن است 
+سال‌ها برای دانستشان زحمت کشیده باشد و شما در قالب یک کتاب به آن دسترسی 
+دارید</li>
+  <li><a href="https://leanpub.com/grumpy-testing">The Grumpy Programmer’s Guide To Building Testable PHP Applications</a> - یاد بگیرید چگونه آزمون‌نویسی کنید</li>
+  <li><a href="https://leanpub.com/securingphp-coreconcepts">Securing PHP: Core Concepts</a> - راهنمایی همه منظوره درباره‌ی مسایل امنیتی در PHP</li>
+  <li><a href="https://leanpub.com/scalingphp">Scaling PHP</a> - مدیریت سیستم و کنار بذارید و شروع کنید به کدنویسی!</li>
+  <li><a href="https://leanpub.com/signalingphp">Signaling PHP</a> - چگونه از سیگنال‌های PCNLT در برنامه‌های خط فرمان استفاده کنیم</li>
+</ul>
+
+    </div>
+
+    
+    <p><a href="#top" class="top">Back to Top</a></p>
+
+    
+    <div id="community">
+    <h1 id="community_title">جامعه‌کاربری</h1>
+
+<p>جامعه‌ی PHP از طیف افراد گوناگونی با قابلیت‌های گوناگون به وجود آمده 
+است و همیشه آماّده‌ی پذیرش برنامه‌نویسان جدید است. سعی کنید در گروه 
+کاربری PHP شهر خود (PUG) شرکت کنید تا دانش مطرح شده در این وبسایت را 
+بهتر درک کنید. همچنین در شبکه‌ی IRC و کانال phpc# روی <a href="http://webchat.freenode.net/?channels=phpc">irc.freenode.com</a> می‌توانید حضور داشته باشید و حساب کاربری <a href="https://twitter.com/phpc">phpc@</a>
+ در توییتر را دنبال کنید. به محفل آن‌ها بپیوندید، با توسعه‌دهندگان جدیدی
+ آشنا شوید، مباحث تازه‌ای فرا گیرید و از همه مهم‌تر، دوستان جدیدی پیدا 
+کنید! سایر شبکه‌ها عبارتند از گوگل‌پلاس <a href="https://plus.google.com/u/0/communities/104245651975268426012">php-programmers-gplus</a> و <a href="http://stackoverflow.com/questions/tagged/php">StackOverflow</a></p>
+
+<p><a href="http://www.php.net/cal.php">مطالعه‌ی تقویم رویدادهای رسمی PHP</a></p>
+
+<h2 id="php">گروه‌های کابران PHP</h2>
+
+<p>اگر در شهر بزرگی زندگی می‌کنید، به احتمال زیاد یک گروه کاربران PHP در
+ آن حوالی است. اگرچه فهرست رسمی از این گروه‌ها وجود ندارد اما می‌توانید 
+با جستجو در <a href="https://www.google.com/search?q=php+user+group+near+me">گوگل</a> و <a href="http://www.meetup.com/find/">Meetup.com</a> یا <a href="http://php.ug/">PHP.ug</a> آن‌ها را پیدا کنید. اگر در شهر کوچکی زندگی می‌کنید و گروه کاربران نیز ندارید، خوب دست به کار بشید و یکی بسازید!</p>
+
+<p><a href="https://wiki.php.net/usergroups">درباره‌ی گرو‌ه‌های کاربران در ویکی PHP بیشتر بخوانید</a></p>
+
+<h2 id="php-1">کنفرانس‌های PHP</h2>
+
+<p>جامعه‌ی PHP میزبان کنفرانس‌های کوچک و بزرگ در نقاط مختلف دنیا است. 
+اعضای شناخته‌شده‌ی این جامعه، بیشتر در این کنفرانس‌ها سخن می‌گویند، پس 
+فرصت خوبی است که به صورت مستقیم از این پیشتازان PHP مطالب جدید را 
+بیاموزیم.</p>
+
+<p><a href="http://php.net/conferences/index.php">یک کنفرانس PHP پیدا کنید</a></p>
+
+
+    </div>
+
+    
+    <p><a href="#top" class="top">Back to Top</a></p>
+
+    
+    <div id="phpdoc">
+    <h1 id="phpdoc">PHPDoc</h1>
+
+<p>یک روش غیر رسمی برای درج توضیحات در کد PHP است. <a href="http://www.phpdoc.org/docs/latest/references/phpdoc/tags/index.html">تگ‌های</a>
+ بسیار زیادی جهت استفاده در کد وجود دارند. فهرست کاملی از این تگ‌ها و 
+نمونه‌های مربوط به آن‌ها در [راهنمای 
+PHPDoc][http://www.phpdoc.org/docs/latest/index.html] آورده شده است.</p>
+
+<p>در ادامه، نمونه‌ای آمده است که نشان می‌دهد چطور می‌توان برای یک کلاس و متدهای مربوط به آن توضیحات نوشت:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="sd">/**</span>
+<span class="sd"> * @author A Name &lt;a.name@example.com&gt;</span>
+<span class="sd"> * @link http://www.phpdoc.org/docs/latest/index.html</span>
+<span class="sd"> * @package helper</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">DateTimeHelper</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @param mixed $anything Anything that we can convert to a \DateTime object</span>
+<span class="sd">     *</span>
+<span class="sd">     * @return \DateTime</span>
+<span class="sd">     * @throws \InvalidArgumentException</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">dateTimeFromAnything</span><span class="p">(</span><span class="nv">$anything</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$type</span> <span class="o">=</span> <span class="nb">gettype</span><span class="p">(</span><span class="nv">$anything</span><span class="p">);</span>
+
+        <span class="k">switch</span> <span class="p">(</span><span class="nv">$type</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Some code that tries to return a \DateTime object</span>
+        <span class="p">}</span>
+
+        <span class="k">throw</span> <span class="k">new</span> <span class="nx">\InvalidArgumentException</span><span class="p">(</span>
+            <span class="s2">"Failed Converting param of type '</span><span class="si">{</span><span class="nv">$type</span><span class="si">}</span><span class="s2">' to DateTime object"</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @param mixed $date Anything that we can convert to a \DateTime object</span>
+<span class="sd">     *</span>
+<span class="sd">     * @return void</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">printISO8601Date</span><span class="p">(</span><span class="nv">$date</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dateTimeFromAnything</span><span class="p">(</span><span class="nv">$date</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">format</span><span class="p">(</span><span class="s1">'c'</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @param mixed $date Anything that we can convert to a \DateTime object</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">printRFC2822Date</span><span class="p">(</span><span class="nv">$date</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dateTimeFromAnything</span><span class="p">(</span><span class="nv">$date</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">format</span><span class="p">(</span><span class="s1">'r'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>مستندسازی کلاس در اولین قدم با یک تگ <a href="http://www.phpdoc.org/docs/latest/references/phpdoc/tags/author.html">author@</a> آغاز می‌شود، که از این تگ برای تشخیص اینکه چه افرادی این کد را نوشته‌اند، استفاده می‌شود. سپس یک تگ <a href="http://www.phpdoc.org/docs/latest/references/phpdoc/tags/link.html">link@</a> آمده است که ارتباط بین کد موجود و وبسایت اصلی را نشان می‌دهد. در نهایت یک تگ <a href="http://www.phpdoc.org/docs/latest/references/phpdoc/tags/package.html">package@</a> جهت طبقه‌بندی کد آورده شده است.</p>
+
+<p>درون کلاس، اولین متد یک تگ <a href="http://www.phpdoc.org/docs/latest/references/phpdoc/tags/param.html">param@</a> دارد که نوع، نام و توضیحات پارامترهای مورد نیاز متد را دربر دارد. همچنین دارای تگ <a href="http://www.phpdoc.org/docs/latest/references/phpdoc/tags/return.html">return@</a> و <a href="http://www.phpdoc.org/docs/latest/references/phpdoc/tags/throws.html">throws@</a> است که جهت مستندسازی مقدار بازگشتی و روش مدیریت خطا استفاده می‌شود.</p>
+
+<p>متدهای دوم و سوم به نسبت ساده هستند و همان تگ <a href="http://www.phpdoc.org/docs/latest/references/phpdoc/tags/param.html">param@</a> را دارند که در متد اول مورد استفاده قرار گرفت. تفاوت مهم بین متدهای دو و سه چگونگی به کارگیری/حذف تگ <a href="http://www.phpdoc.org/docs/latest/references/phpdoc/tags/return.html">return@</a> است. <code>return void@</code> به صورت واضح بیان می‌کند که خروجی وجود ندارد.</p>
+
+    </div>
+
+<p><a href="#top" class="top">Back to Top</a></p>
+
+
+            <div id="site-footer">
+                <h1 id="site-footer_title">تهیه‌کنندگان</h1>
+                <footer class="site-footer" id="site-footer">
+                    <h2 class="epsilon">توسعه و گردآوری اطلاعات توسط</h2>
+                    <ul>
+                        <li><a href="http://twitter.com/codeguy">Josh Lockhart</a></li>
+                    </ul>
+                    <h2 class="epsilon">مشارکت‌کنندگان در پروژه</h2>
+                    <ul>
+                        <li><a href="http://krisjordan.com/">Kris Jordan</a></li>
+                        <li><a href="http://philsturgeon.co.uk/">Phil Sturgeon</a></li>
+                    </ul>
+                    <h2 class="epsilon">مشارکت‌کنندگان در پروژه</h2>
+                    <div id="contributors"><p>This project would not be possible without the help of <a href="https://github.com/codeguy/php-the-right-way/graphs/contributors">our amazing contributors</a> on GitHub.</p></div>
+                    <h2 class="epsilon">حامیان پروژه</h2>
+                    <ul class="mbd">
+                        <li><a href="http://www.newmediacampaigns.com/">New Media Campaigns</a></li>
+                    </ul>
+                    <p>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="%D9%BE%DB%8C%E2%80%8C%D8%A7%DA%86%E2%80%8C%D9%BE%DB%8C:%20%D8%A7%D8%B2%20%D8%B1%D8%A7%D9%87%20%D8%AF%D8%B1%D8%B3%D8%AA%D8%B4_files/88x31.png"></a><br><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">پی‌اچ‌پی: از راه درستش</span> توسط <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.twitter.com/codeguy" property="cc:attributionName" rel="cc:attributionURL">Josh Lockhart</a> تحت مجوز <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.<br>بر اساس کاری از <a xmlns:dct="http://purl.org/dc/terms/" href="http://www.phptherightway.com/" rel="dct:source">www.phptherightway.com</a>.
+                    </p>
+                </footer>
+            </div>
+        </div>
+
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <script src="%D9%BE%DB%8C%E2%80%8C%D8%A7%DA%86%E2%80%8C%D9%BE%DB%8C:%20%D8%A7%D8%B2%20%D8%B1%D8%A7%D9%87%20%D8%AF%D8%B1%D8%B3%D8%AA%D8%B4_files/jquery.js"></script>
+        <script src="%D9%BE%DB%8C%E2%80%8C%D8%A7%DA%86%E2%80%8C%D9%BE%DB%8C:%20%D8%A7%D8%B2%20%D8%B1%D8%A7%D9%87%20%D8%AF%D8%B1%D8%B3%D8%AA%D8%B4_files/setup.js"></script>
+    
+
+</body></html>
